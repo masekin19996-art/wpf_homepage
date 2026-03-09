@@ -1,0 +1,11 @@
+# Netlify 用設定（静的エクスポート）
+# デプロイ: リポジトリ連携後、ビルドが自動実行されます
+
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# 404 ページは /404.html および /404/index.html で提供されます（Next 静的エクスポート標準）

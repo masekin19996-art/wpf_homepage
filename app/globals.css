@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  overflow: hidden;
+  width: 100%; height: 100%;
+  user-select: none;
+  font-family: 'M PLUS Rounded 1c', system-ui, sans-serif;
+}
+
+/* ── Background ── */
+.wii-bg {
+  background:
+    radial-gradient(ellipse at 28% 18%, rgba(255,255,255,0.52) 0%, transparent 58%),
+    radial-gradient(ellipse at 74% 82%, rgba(205,220,240,0.38) 0%, transparent 52%),
+    linear-gradient(158deg, #dde6ef 0%, #e6edf5 28%, #eef2f8 62%, #f4f6fa 100%);
+}
+
+/* ── Tile（白より少し暗いグレー） ── */
+.wii-tile {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #c8d4e2;
+  border: 1px solid rgba(170,195,225,0.65);
+  box-shadow:
+    0 3px 10px rgba(0,50,110,0.12),
+    0 1px 3px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.55);
+  transition: box-shadow 0.18s ease;
+}
+.wii-tile:hover {
+  box-shadow:
+    0 0 0 2px rgba(100,170,240,0.6),
+    0 0 20px 5px rgba(80,160,255,0.2),
+    0 6px 18px rgba(0,50,110,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.55);
+}
+.wii-tile::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 42%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0) 100%);
+  border-radius: 12px 12px 38% 38%;
+  pointer-events: none; z-index: 10;
+}
+
+/* ── Detail Panel ── */
+.wii-panel {
+  background: linear-gradient(180deg, rgba(234,244,255,0.98) 0%, rgba(255,255,255,0.98) 100%);
+  border: 1.5px solid rgba(255,255,255,0.95);
+  box-shadow:
+    0 28px 90px rgba(0,30,80,0.28),
+    0 0 0 1px rgba(150,200,255,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.95);
+}
+.wii-panel::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 36%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.36) 0%, transparent 100%);
+  border-radius: 24px 24px 0 0;
+  pointer-events: none; z-index: 1;
+}
+
+/* ── Wii Blue Button ── */
+.wii-btn {
+  display: block;
+  background: linear-gradient(180deg, #65bef6 0%, #3098e2 42%, #1c7ed0 100%);
+  border-bottom: 2px solid #1060b0;
+  box-shadow: 0 2px 0 rgba(255,255,255,0.32) inset, 0 4px 16px rgba(10,80,180,0.38);
+  color: white; font-weight: 800; text-align: center;
+  letter-spacing: 0.08em; cursor: pointer;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0,0,60,0.36);
+}
+.wii-btn:hover { background: linear-gradient(180deg, #85cef8 0%, #50a8e8 42%, #2c8edc 100%); }
+.wii-btn:active { transform: translateY(1px); }
+
+/* ── Bottom Bar ── */
+.wii-bottom-bar {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 -6px 18px rgba(255, 255, 255, 0.88), 0 -1px 5px rgba(100, 185, 255, 0.20);
+}
+
+/* ── Wii風円形ボタン（Shop・Mail 共通） ── */
+.wii-circle-btn {
+  background: linear-gradient(180deg, #a8d8f5 0%, #d8eeff 42%, #ffffff 100%);
+  border: 1.5px solid rgba(140,205,252,0.75);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.95) inset,
+    0 -1px 0 rgba(130,210,255,0.30) inset,
+    0 3px 12px rgba(0,55,120,0.12),
+    0 0 0 3.5px rgba(120,200,255,0.18);
+  color: #4a78a0;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.15s, background 0.15s;
+  text-decoration: none;
+}
+.wii-circle-btn:hover {
+  background: linear-gradient(180deg, #bce0f8 0%, #e2f3ff 42%, #ffffff 100%);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.95) inset,
+    0 4px 16px rgba(0,55,120,0.16),
+    0 0 0 3.5px rgba(90,185,252,0.32);
+}
+.wii-circle-btn:active { transform: scale(0.91); }
+
+/* ── Pig SNS Button ── */
+.pig-btn {
+  background: rgba(210,222,236,0.88);
+  border: 1.5px solid rgba(255,255,255,0.75);
+  box-shadow: 0 2px 8px rgba(0,50,110,0.12), inset 0 1px 0 rgba(255,255,255,0.6);
+  cursor: pointer;
+  border-radius: 50%;
+}
+.pig-btn:hover { background: rgba(200,215,232,0.95); }
+
+/* ── Mail Modal ── */
+.mail-modal {
+  background: linear-gradient(180deg, rgba(234,244,255,0.98) 0%, rgba(255,255,255,0.98) 100%);
+  border: 1.5px solid rgba(255,255,255,0.95);
+  box-shadow: 0 28px 80px rgba(0,30,80,0.28), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+.mail-input {
+  background: rgba(240,246,255,0.9);
+  border: 1.5px solid rgba(175,205,235,0.7);
+  border-radius: 10px;
+  outline: none;
+  font-family: inherit;
+  color: #2a4060;
+  transition: border-color 0.2s;
+}
+.mail-input:focus { border-color: rgba(80,160,240,0.65); }
+
+/* ── Tile flash ── */
+@keyframes tileFlash {
+  0%   { opacity: 0.72; }
+  100% { opacity: 0; }
+}
+.tile-flash {
+  animation: tileFlash 0.3s ease-out forwards;
+  position: absolute; inset: 0;
+  background: white;
+  border-radius: inherit;
+  z-index: 30; pointer-events: none;
+}
+
+/* ── Star ── */
+.wii-star {
+  position: absolute; border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  animation: twinkle 3s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%,100% { opacity: 0.3; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.4); }
+}
+
+/* ── Page arrows ── */
+.page-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: rgba(255,255,255,0.70);
+  border: 1.5px solid rgba(140,195,252,0.52);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  color: #4878a8;
+  font-size: 32px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 2px 14px rgba(0,55,130,0.13),
+    inset 0 1px 0 rgba(255,255,255,0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: box-shadow 0.16s, background 0.16s;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.page-arrow:hover {
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 4px 20px rgba(0,60,140,0.18), inset 0 1px 0 rgba(255,255,255,0.95);
+}
+
+/* ── Page dots ── */
+.page-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.page-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background: rgba(140,185,230,0.36);
+  transition: background 0.22s, transform 0.22s;
+}
+.page-dot.active {
+  background: #4a8fd4;
+  transform: scale(1.45);
+}
+
+/* ── Shop Modal ── */
+.shop-modal {
+  background: linear-gradient(180deg, #eaf3ff 0%, #f8fbff 100%);
+  border: 1.5px solid rgba(255,255,255,0.95);
+  box-shadow:
+    0 28px 90px rgba(0,30,80,0.30),
+    0 0 0 1px rgba(150,200,255,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.92);
+}
+
+/* ── PIN pad ── */
+.pin-btn {
+  background: linear-gradient(180deg, #f4f9ff 0%, #e4eef8 100%);
+  border: 1.5px solid rgba(140,195,240,0.55);
+  border-radius: 12px;
+  padding: 11px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2a5080;
+  cursor: pointer;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  box-shadow:
+    0 2px 7px rgba(0,55,120,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.85);
+  transition: background 0.14s, box-shadow 0.14s;
+  letter-spacing: 0.02em;
+  width: 100%;
+}
+.pin-btn:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #edf5ff 100%);
+  box-shadow: 0 3px 10px rgba(0,55,120,0.15), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+.pin-del {
+  color: #7890b0;
+  font-size: 16px;
+}
+.shop-btn-cancel {
+  padding: 10px 0;
+  border-radius: 22px;
+  border: 1.5px solid rgba(140,185,230,0.48);
+  background: rgba(225,235,248,0.80);
+  color: #5070a0;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.shop-btn-cancel:hover { background: rgba(210,225,242,0.92); }
+.shop-btn-confirm {
+  padding: 10px 0;
+  border-radius: 22px;
+  border: none;
+  border-bottom: 2px solid #1060b0;
+  background: linear-gradient(180deg, #65bef6 0%, #3098e2 42%, #1c7ed0 100%);
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(10,80,180,0.32), inset 0 1px 0 rgba(255,255,255,0.28);
+  transition: background 0.15s;
+  text-shadow: 0 1px 2px rgba(0,30,80,0.3);
+}
+.shop-btn-confirm:hover {
+  background: linear-gradient(180deg, #80cef8 0%, #50a8e8 42%, #2c8edc 100%);
+}
