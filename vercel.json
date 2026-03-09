@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "installCommand": "npm install",
-  "buildCommand": "npm run build",
+  "installCommand": "echo 'Skip install'",
+  "buildCommand": "echo 'Pre-built out in repo'",
   "outputDirectory": "out"
 }
