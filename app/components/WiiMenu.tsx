@@ -38,6 +38,22 @@ function IconMail() {
   );
 }
 
+/* ── ページ矢印（円の中心に収まる SVG） ── */
+function IconChevronLeft() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: "block" }}>
+      <path d="M15 18l-6-6 6-6" />
+    </svg>
+  );
+}
+function IconChevronRight() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: "block" }}>
+      <path d="M9 18l6-6-6-6" />
+    </svg>
+  );
+}
+
 /* ── スライドアニメーション（Wii風残像） ── */
 const slideVariants = {
   enter: (dir: number) => ({
@@ -129,7 +145,7 @@ export default function WiiMenu() {
               onClick={() => goTo(page - 1)}
               aria-label="前のページ"
             >
-              ‹
+              <IconChevronLeft />
             </motion.button>
           )}
         </AnimatePresence>
@@ -174,7 +190,7 @@ export default function WiiMenu() {
               onClick={() => goTo(page + 1)}
               aria-label="次のページ"
             >
-              ›
+              <IconChevronRight />
             </motion.button>
           )}
         </AnimatePresence>
@@ -258,12 +274,18 @@ export default function WiiMenu() {
             </motion.button>
           </div>
 
-          {/* ── 中央：wpfロゴ（1.5倍） ── */}
+          {/* ── 中央：wpfロゴ（1.2倍・バナー上下のちょうど中間に中心） ── */}
           <motion.a
             href={ABOUT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: "flex", alignItems: "center", textDecoration: "none" }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textDecoration: "none",
+              marginTop: "-17px",
+            }}
             whileHover={{ scale: 1.06, opacity: 0.85 }}
             whileTap={{ scale: 0.94 }}
             title="whenpigsfly about"
@@ -273,7 +295,9 @@ export default function WiiMenu() {
                 src="/wpf-logo.png"
                 alt="whenpigsfly"
                 style={{
-                  height: "39px", width: "auto", display: "block",
+                  height: "47px",
+                  width: "auto",
+                  display: "block",
                   filter: "invert(45%) sepia(18%) saturate(380%) hue-rotate(185deg) brightness(82%) opacity(0.72)",
                 }}
               />

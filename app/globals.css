@@ -212,8 +212,6 @@ html, body {
   height: 44px;
   cursor: pointer;
   color: #4878a8;
-  font-size: 32px;
-  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,7 +222,10 @@ html, body {
   -webkit-backdrop-filter: blur(8px);
   transition: box-shadow 0.16s, background 0.16s;
   padding: 0;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 0;
+}
+.page-arrow svg {
+  flex-shrink: 0;
 }
 .page-arrow:hover {
   background: rgba(255,255,255,0.92);

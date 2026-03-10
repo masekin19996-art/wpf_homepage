@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-/* ── SNSリンク（ここを変更） ── */
-const SNS = [
+/* ── SNSリンク（ここを変更。href が無い場合は飛ばない・後日設定） ── */
+const SNS: { label: string; href?: string; color: string; icon: ReactNode }[] = [
   {
     label: "Instagram",
-    href: "https://www.instagram.com/whenpigsfly/",
+    href: "https://www.instagram.com/wpf.jp/",
     color: "#b0a0b8",
     icon: (
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
@@ -20,7 +20,7 @@ const SNS = [
   },
   {
     label: "X",
-    href: "https://x.com/whenpigsfly",
+    href: undefined,
     color: "#7888a0",
     icon: (
       <svg width="13" height="13" viewBox="0 0 24 24" fill="white">
@@ -30,7 +30,7 @@ const SNS = [
   },
   {
     label: "Discord",
-    href: "https://discord.gg/whenpigsfly",
+    href: undefined,
     color: "#8a90b8",
     icon: (
       <svg width="15" height="15" viewBox="0 0 24 24" fill="white">
@@ -100,38 +100,56 @@ export default function PigSnsButton() {
               minWidth: "130px",
             }}
           >
-            {SNS.map((s) => (
-              <motion.a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  padding: "6px 10px",
-                  borderRadius: "9px",
-                  background: s.color,
-                  textDecoration: "none",
-                  boxShadow: "0 2px 6px rgba(0,0,0,0.12)",
-                }}
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setOpen(false)}
-              >
-                {s.icon}
-                <span style={{
-                  color: "white",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  letterSpacing: "0.04em",
-                  fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-                }}>
-                  {s.label}
-                </span>
-              </motion.a>
-            ))}
+            {SNS.map((s) => {
+              const style = {
+                display: "flex" as const,
+                alignItems: "center" as const,
+                gap: "8px",
+                padding: "6px 10px",
+                borderRadius: "9px",
+                background: s.color,
+                boxShadow: "0 2px 6px rgba(0,0,0,0.12)",
+              };
+              const content = (
+                <>
+                  {s.icon}
+                  <span style={{
+                    color: "white",
+                    fontSize: "12px",
+                    fontWeight: 600,
+                    letterSpacing: "0.04em",
+                    fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                  }}>
+                    {s.label}
+                  </span>
+                </>
+              );
+              if (s.href) {
+                return (
+                  <motion.a
+                    key={s.label}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ ...style, textDecoration: "none" }}
+                    whileHover={{ scale: 1.04 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setOpen(false)}
+                  >
+                    {content}
+                  </motion.a>
+                );
+              }
+              return (
+                <motion.span
+                  key={s.label}
+                  style={{ ...style, cursor: "default", opacity: 0.85 }}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  {content}
+                </motion.span>
+              );
+            })}
           </motion.div>
         )}
       </AnimatePresence>
