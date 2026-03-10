@@ -1,5 +1,5 @@
-import WiiMenu from "./components/WiiMenu";
+import HostAwarePage from "./components/HostAwarePage";
 
 export default function Home() {
-  return <WiiMenu />;
+  return <HostAwarePage />;
 }
