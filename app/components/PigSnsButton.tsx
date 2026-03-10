@@ -40,7 +40,7 @@ const SNS = [
   },
 ];
 
-/* ── 豚アイコン（白背景を抜いてオブジェクトのみ・トンマナに合わせてフィルター） ── */
+/* ── 豚アイコン（白背景を背景色になじませてオブジェクトのみ見えるように） ── */
 function PigSnsIcon({ size = 36 }: { size?: number }) {
   return (
     <img
@@ -51,9 +51,10 @@ function PigSnsIcon({ size = 36 }: { size?: number }) {
       style={{
         width: size,
         height: size,
-        objectFit: "contain",
+        objectFit: "cover",
+        borderRadius: "999px",
+        backgroundColor: "rgba(210,222,236,0.88)", // pig-btn と同じ色で四角をなじませる
         filter: "brightness(0.92) saturate(0.7) hue-rotate(185deg) contrast(1.05)",
-        mixBlendMode: "multiply",
       }}
     />
   );
