@@ -24,10 +24,11 @@ export default function BlankPage({ host = "" }: { host?: string }) {
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectFit: "cover" }}
         >
-          <source src="/videos/snobbycover-bg.mov" type="video/quicktime" />
+          <source src="/videos/snobbycover-bg.mp4" type="video/mp4" />
         </video>
       )}
     </div>
