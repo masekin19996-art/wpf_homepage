@@ -14,10 +14,12 @@ const BLANK_PAGE_HOSTS = [
 
 export default function HostAwarePage() {
   const [showWii, setShowWii] = useState<boolean | null>(null);
+  const [host, setHost] = useState("");
 
   useEffect(() => {
-    const host = typeof window !== "undefined" ? window.location.hostname : "";
-    setShowWii(!BLANK_PAGE_HOSTS.includes(host));
+    const h = typeof window !== "undefined" ? window.location.hostname : "";
+    setHost(h);
+    setShowWii(!BLANK_PAGE_HOSTS.includes(h));
   }, []);
 
   if (showWii === null) {
@@ -28,5 +30,5 @@ export default function HostAwarePage() {
       />
     );
   }
-  return showWii ? <WiiMenu /> : <BlankPage />;
+  return showWii ? <WiiMenu /> : <BlankPage host={host} />;
 }
