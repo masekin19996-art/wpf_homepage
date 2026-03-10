@@ -40,8 +40,8 @@ const SNS = [
   },
 ];
 
-/* ── 豚アイコン（サイトの青系トンマナに合わせてフィルター） ── */
-function PigSnsIcon({ size = 28 }: { size?: number }) {
+/* ── 豚アイコン（白背景を抜いてオブジェクトのみ・トンマナに合わせてフィルター） ── */
+function PigSnsIcon({ size = 36 }: { size?: number }) {
   return (
     <img
       src="/pig-sns-icon.png"
@@ -53,6 +53,7 @@ function PigSnsIcon({ size = 28 }: { size?: number }) {
         height: size,
         objectFit: "contain",
         filter: "brightness(0.92) saturate(0.7) hue-rotate(185deg) contrast(1.05)",
+        mixBlendMode: "multiply",
       }}
     />
   );
@@ -66,13 +67,13 @@ export default function PigSnsButton() {
       {/* 豚ボタン */}
       <motion.button
         className="pig-btn flex items-center justify-center"
-        style={{ width: 46, height: 46 }}
+        style={{ width: 56, height: 56 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.88 }}
         onClick={() => setOpen((v) => !v)}
         aria-label="SNSメニューを開く"
       >
-        <PigSnsIcon size={28} />
+        <PigSnsIcon size={36} />
       </motion.button>
 
       {/* SNSドロップダウン */}
@@ -85,7 +86,7 @@ export default function PigSnsButton() {
             transition={{ type: "spring", stiffness: 340, damping: 28 }}
             style={{
               position: "absolute",
-              top: "50px",
+              top: "62px",
               left: 0,
               background: "rgba(232,240,250,0.97)",
               border: "1.5px solid rgba(200,218,240,0.8)",

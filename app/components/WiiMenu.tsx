@@ -146,7 +146,7 @@ export default function WiiMenu() {
             style={{ width: "min(1280px, 94vw)", willChange: "transform, opacity, filter" }}
           >
             {currentTiles.map((tile, i) => (
-              <WiiTile key={tile.id} tile={tile} index={i} isClickable={i < 4} />
+              <WiiTile key={tile.id} tile={tile} index={i} />
             ))}
           </motion.div>
         </AnimatePresence>

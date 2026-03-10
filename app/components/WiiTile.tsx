@@ -1,13 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { TileData } from "../data/tiles";
 
 interface WiiTileProps {
   tile: TileData;
   index: number;
-  isClickable?: boolean;
 }
 
 const tileVariants = {
@@ -18,78 +16,17 @@ const tileVariants = {
   }),
 };
 
-export default function WiiTile({ tile, index, isClickable = true }: WiiTileProps) {
-  const [flashing, setFlashing] = useState(false);
-
-  const handleClick = () => {
-    if (!isClickable || flashing) return;
-    setFlashing(true);
-    setTimeout(() => {
-      setFlashing(false);
-      window.open(tile.url, "_blank", "noopener,noreferrer");
-    }, 280);
-  };
-
+/* 全タイルをデザインなしの凹みのみに統一（EXAMPLE・アイコンなし） */
+export default function WiiTile({ tile, index }: WiiTileProps) {
   return (
     <motion.div
-      className={isClickable ? "wii-tile" : "wii-tile wii-tile--recessed"}
+      className="wii-tile wii-tile--recessed"
       style={{ aspectRatio: "16/9" }}
       custom={index}
       variants={tileVariants}
       initial="hidden"
       animate="visible"
-      whileHover={isClickable ? { scale: 1.05, transition: { type: "spring", stiffness: 420, damping: 26 } } : undefined}
-      whileTap={isClickable ? { scale: 0.94 } : undefined}
-      onClick={handleClick}
-      role={isClickable ? "link" : "presentation"}
-      tabIndex={isClickable ? 0 : undefined}
-      onKeyDown={isClickable ? (e) => e.key === "Enter" && handleClick() : undefined}
-    >
-      {flashing && <div className="tile-flash" />}
-
-      <div className="absolute inset-0 flex flex-col z-20">
-        {/* サムネイルエリア（上70%） */}
-        <div
-          className="flex-1 flex items-center justify-center"
-          style={{
-            background: isClickable
-              ? "linear-gradient(160deg, #bfceda 0%, #cad8e6 100%)"
-              : "linear-gradient(160deg, #b5c4d0 0%, #c0cdd8 100%)",
-            borderBottom: "1px solid rgba(165,190,218,0.45)",
-          }}
-        >
-          <div style={{
-            width: "36%", aspectRatio: "1",
-            borderRadius: "8px",
-            background: isClickable
-              ? "linear-gradient(135deg, #afc2d4 0%, #9eb6cc 100%)"
-              : "linear-gradient(135deg, #a0b2c4 0%, #8fa4b8 100%)",
-            border: "1.5px solid rgba(140,175,215,0.5)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-          }}>
-            <svg width="44%" height="44%" viewBox="0 0 24 24" fill="none"
-              stroke="rgba(80,120,165,0.65)" strokeWidth="1.8" strokeLinecap="round">
-              <rect x="3" y="3" width="18" height="18" rx="3"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21,15 16,10 5,21"/>
-            </svg>
-          </div>
-        </div>
-
-        {/* タイトルエリア（下30%） */}
-        <div style={{
-          height: "30%", display: "flex", alignItems: "center", justifyContent: "center",
-          background: "rgba(195,210,228,0.75)", padding: "0 6px",
-        }}>
-          <span style={{
-            fontSize: "clamp(9px, 0.95vw, 12px)",
-            fontWeight: 700, color: "#2e4a68",
-            letterSpacing: "0.07em", textAlign: "center",
-          }}>
-            {tile.title}
-          </span>
-        </div>
-      </div>
-    </motion.div>
+      role="presentation"
+    />
   );
 }
