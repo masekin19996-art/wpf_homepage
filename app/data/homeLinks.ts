@@ -19,8 +19,8 @@ export interface HomeLinkItem {
  * 並び順を変えたい場合は、この配列の順序を入れ替えてください。
  */
 export const homeLinks: HomeLinkItem[] = [
-  { url: "https://ultra_omamori.whenpigsfly.jp", title: "ultra_omamori" },
-  { url: "https://snobby_cover.whenpigsfly.jp", title: "snobby_cover" },
-  { url: "https://hickey_tattoo.whenpigsfly.jp", title: "hickey_tattoo" },
-  { url: "https://gummy_gummy.whenpigsfly.jp", title: "gummy_gummy" },
+  { url: "https://ultra.omamori.whenpigsfly.jp", title: "ultra.omamori" },
+  { url: "https://snobbycover.whenpigsfly.jp", title: "snobbycover" },
+  { url: "https://hickeytattoo.whenpigsfly.jp", title: "hickeytattoo" },
+  { url: "https://gummygummy.whenpigsfly.jp", title: "gummygummy" },
 ];
