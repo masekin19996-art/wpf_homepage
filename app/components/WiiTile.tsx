@@ -7,6 +7,10 @@ interface WiiTileProps {
   tile: TileData;
   index: number;
   isClickable?: boolean;
+  /** クリック時に開くURL（未指定時は tile.url） */
+  linkUrl?: string;
+  /** ボタン名（アクセシビリティ用） */
+  linkTitle?: string;
 }
 
 const tileVariants = {
@@ -20,10 +24,11 @@ const tileVariants = {
 };
 
 /* タイル: 上4つだけクリック可能なサムネイル枠、それ以外は凹みのみ */
-export default function WiiTile({ tile, index, isClickable = false }: WiiTileProps) {
+export default function WiiTile({ tile, index, isClickable = false, linkUrl, linkTitle }: WiiTileProps) {
+  const url = linkUrl ?? tile.url;
   const handleClick = () => {
     if (!isClickable) return;
-    window.open(tile.url, "_blank", "noopener,noreferrer");
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -38,6 +43,8 @@ export default function WiiTile({ tile, index, isClickable = false }: WiiTilePro
       whileTap={isClickable ? { scale: 0.94 } : undefined}
       onClick={handleClick}
       role={isClickable ? "link" : "presentation"}
+      aria-label={isClickable && linkTitle ? linkTitle : undefined}
+      title={isClickable && linkTitle ? linkTitle : undefined}
       tabIndex={isClickable ? 0 : undefined}
       onKeyDown={isClickable ? (e) => e.key === "Enter" && handleClick() : undefined}
     >

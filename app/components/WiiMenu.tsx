@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { tiles } from "../data/tiles";
+import { homeLinks } from "../data/homeLinks";
 import WiiTile from "./WiiTile";
 import PigSnsButton from "./PigSnsButton";
 import MailModal from "./MailModal";
@@ -151,6 +152,8 @@ export default function WiiMenu() {
                 tile={tile}
                 index={i}
                 isClickable={page === 0 && i < 4}
+                linkUrl={page === 0 && i < 4 ? homeLinks[i].url : undefined}
+                linkTitle={page === 0 && i < 4 ? homeLinks[i].title : undefined}
               />
             ))}
           </motion.div>
