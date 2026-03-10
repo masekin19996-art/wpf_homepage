@@ -7,6 +7,7 @@ import { TileData } from "../data/tiles";
 interface WiiTileProps {
   tile: TileData;
   index: number;
+  isClickable?: boolean;
 }
 
 const tileVariants = {
@@ -17,11 +18,11 @@ const tileVariants = {
   }),
 };
 
-export default function WiiTile({ tile, index }: WiiTileProps) {
+export default function WiiTile({ tile, index, isClickable = true }: WiiTileProps) {
   const [flashing, setFlashing] = useState(false);
 
   const handleClick = () => {
-    if (flashing) return;
+    if (!isClickable || flashing) return;
     setFlashing(true);
     setTimeout(() => {
       setFlashing(false);
@@ -31,18 +32,18 @@ export default function WiiTile({ tile, index }: WiiTileProps) {
 
   return (
     <motion.div
-      className="wii-tile"
+      className={isClickable ? "wii-tile" : "wii-tile wii-tile--recessed"}
       style={{ aspectRatio: "16/9" }}
       custom={index}
       variants={tileVariants}
       initial="hidden"
       animate="visible"
-      whileHover={{ scale: 1.05, transition: { type: "spring", stiffness: 420, damping: 26 } }}
-      whileTap={{ scale: 0.94 }}
+      whileHover={isClickable ? { scale: 1.05, transition: { type: "spring", stiffness: 420, damping: 26 } } : undefined}
+      whileTap={isClickable ? { scale: 0.94 } : undefined}
       onClick={handleClick}
-      role="link"
-      tabIndex={0}
-      onKeyDown={(e) => e.key === "Enter" && handleClick()}
+      role={isClickable ? "link" : "presentation"}
+      tabIndex={isClickable ? 0 : undefined}
+      onKeyDown={isClickable ? (e) => e.key === "Enter" && handleClick() : undefined}
     >
       {flashing && <div className="tile-flash" />}
 
@@ -51,14 +52,18 @@ export default function WiiTile({ tile, index }: WiiTileProps) {
         <div
           className="flex-1 flex items-center justify-center"
           style={{
-            background: "linear-gradient(160deg, #bfceda 0%, #cad8e6 100%)",
+            background: isClickable
+              ? "linear-gradient(160deg, #bfceda 0%, #cad8e6 100%)"
+              : "linear-gradient(160deg, #b5c4d0 0%, #c0cdd8 100%)",
             borderBottom: "1px solid rgba(165,190,218,0.45)",
           }}
         >
           <div style={{
             width: "36%", aspectRatio: "1",
             borderRadius: "8px",
-            background: "linear-gradient(135deg, #afc2d4 0%, #9eb6cc 100%)",
+            background: isClickable
+              ? "linear-gradient(135deg, #afc2d4 0%, #9eb6cc 100%)"
+              : "linear-gradient(135deg, #a0b2c4 0%, #8fa4b8 100%)",
             border: "1.5px solid rgba(140,175,215,0.5)",
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>

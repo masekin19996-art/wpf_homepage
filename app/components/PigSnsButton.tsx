@@ -40,23 +40,21 @@ const SNS = [
   },
 ];
 
-/* ── 豚シルエット SVG ── */
-function PigFace({ size = 22 }: { size?: number }) {
+/* ── 豚アイコン（サイトの青系トンマナに合わせてフィルター） ── */
+function PigSnsIcon({ size = 28 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 40 40" fill="none">
-      {/* 左耳 */}
-      <ellipse cx="10" cy="12" rx="7" ry="8" fill="rgba(80,110,145,0.55)"/>
-      {/* 右耳 */}
-      <ellipse cx="30" cy="12" rx="7" ry="8" fill="rgba(80,110,145,0.55)"/>
-      {/* 顔 */}
-      <ellipse cx="20" cy="23" rx="14" ry="13" fill="rgba(80,110,145,0.55)"/>
-      {/* 鼻（スナウト） */}
-      <ellipse cx="20" cy="27.5" rx="7" ry="5" fill="rgba(255,255,255,0.22)"/>
-      {/* 鼻の穴 左 */}
-      <circle cx="17" cy="28" r="1.8" fill="rgba(50,80,115,0.35)"/>
-      {/* 鼻の穴 右 */}
-      <circle cx="23" cy="28" r="1.8" fill="rgba(50,80,115,0.35)"/>
-    </svg>
+    <img
+      src="/pig-sns-icon.png"
+      alt=""
+      width={size}
+      height={size}
+      style={{
+        width: size,
+        height: size,
+        objectFit: "contain",
+        filter: "brightness(0.92) saturate(0.7) hue-rotate(185deg) contrast(1.05)",
+      }}
+    />
   );
 }
 
@@ -68,13 +66,13 @@ export default function PigSnsButton() {
       {/* 豚ボタン */}
       <motion.button
         className="pig-btn flex items-center justify-center"
-        style={{ width: 42, height: 42 }}
+        style={{ width: 46, height: 46 }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.88 }}
         onClick={() => setOpen((v) => !v)}
         aria-label="SNSメニューを開く"
       >
-        <PigFace size={24} />
+        <PigSnsIcon size={28} />
       </motion.button>
 
       {/* SNSドロップダウン */}

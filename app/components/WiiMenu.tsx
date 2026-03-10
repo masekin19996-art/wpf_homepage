@@ -142,11 +142,11 @@ export default function WiiMenu() {
             initial="enter"
             animate="center"
             exit="exit"
-            className="grid grid-cols-4 gap-2"
-            style={{ width: "min(1100px, 92vw)", willChange: "transform, opacity, filter" }}
+            className="grid grid-cols-4 gap-3"
+            style={{ width: "min(1280px, 94vw)", willChange: "transform, opacity, filter" }}
           >
             {currentTiles.map((tile, i) => (
-              <WiiTile key={tile.id} tile={tile} index={i} />
+              <WiiTile key={tile.id} tile={tile} index={i} isClickable={i < 4} />
             ))}
           </motion.div>
         </AnimatePresence>
