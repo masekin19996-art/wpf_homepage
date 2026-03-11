@@ -336,14 +336,6 @@ html, body {
   0%   { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
-@keyframes snobbycoverExitRight {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-@keyframes snobbycoverExitLeft {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(50%); }
-}
 @keyframes snobbycoverContentIn {
   0%   { opacity: 0; }
   100% { opacity: 1; }
@@ -363,11 +355,5 @@ html, body {
 }
 .snobbycover-strip--left {
   animation-name: snobbycoverScrollLeft;
-}
-.snobbycover-strip--exit.snobbycover-strip--right {
-  animation: snobbycoverExitRight 2s linear forwards;
-}
-.snobbycover-strip--exit.snobbycover-strip--left {
-  animation: snobbycoverExitLeft 2s linear forwards;
 }
 

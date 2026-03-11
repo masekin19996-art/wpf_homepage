@@ -45,13 +45,13 @@ function SnobbyCoverVideo() {
 }
 
 /** 1行分：白枠＋BOOKテキスト。サイズ・動きは変更なし。 */
-function SnobbyCoverScrollRow({ direction, isExiting }: { direction: "right" | "left"; isExiting: boolean }) {
+function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
   const copiesPerSet = 6;
   const totalCopies = copiesPerSet * 2;
   const cardWidth = "calc(100vw / 6)";
   return (
     <div
-      className={`snobbycover-row ${isExiting ? "snobbycover-row--exiting" : ""}`}
+      className="snobbycover-row"
       style={{
         overflow: "hidden",
         height: "20vh",
@@ -62,7 +62,7 @@ function SnobbyCoverScrollRow({ direction, isExiting }: { direction: "right" | "
       }}
     >
       <div
-        className={`snobbycover-strip snobbycover-strip--${direction} ${isExiting ? "snobbycover-strip--exit" : ""}`}
+        className={`snobbycover-strip snobbycover-strip--${direction}`}
         style={{
           display: "flex",
           alignItems: "center",
@@ -153,7 +153,7 @@ export default function BlankPage({ host = "" }: { host?: string }) {
   const handleEnter = () => {
     if (phase !== "idle") return;
     setPhase("exiting");
-    setTimeout(() => setPhase("entered"), 2200);
+    setTimeout(() => setPhase("entered"), 2000);
   };
 
   return (
@@ -169,22 +169,22 @@ export default function BlankPage({ host = "" }: { host?: string }) {
         <>
           <SnobbyCoverVideo />
 
-          {/* 上段・下段：白枠BOOK（Enterでハイスピード流れて消える） */}
+          {/* 上段・下段：白枠BOOK（Enterでじわっとフェードアウト） */}
           <div
             className="snobbycover-strips-wrap"
             style={{
               position: "absolute",
               inset: 0,
               pointerEvents: "none",
-              opacity: phase === "entered" ? 0 : 1,
-              transition: phase === "entered" ? "opacity 0.4s ease" : "none",
+              opacity: phase === "idle" ? 1 : 0,
+              transition: phase === "exiting" ? "opacity 1.8s ease-out" : phase === "entered" ? "none" : "opacity 0.3s ease",
             }}
           >
             <div style={{ position: "absolute", top: 0, left: 0, right: 0 }}>
-              <SnobbyCoverScrollRow direction="right" isExiting={phase === "exiting"} />
+              <SnobbyCoverScrollRow direction="right" />
             </div>
             <div style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
-              <SnobbyCoverScrollRow direction="left" isExiting={phase === "exiting"} />
+              <SnobbyCoverScrollRow direction="left" />
             </div>
           </div>
 
