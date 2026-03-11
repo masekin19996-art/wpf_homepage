@@ -46,19 +46,19 @@ function SnobbyCoverVideo() {
   );
 }
 
-/** 1行分：白長方形の枠で本画像を表示。矢印方向に無限スクロール（上段→右・下段→左）。 */
+/** 1行分：本画像を表示。白背景を消し、矢印方向に無限スクロール。 */
 function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
   const copiesPerSet = 4;
-  const totalCopies = copiesPerSet * 2; /* 2組でループ */
-  const cardWidth = "clamp(140px, 28vw, 320px)";
-  const gap = "clamp(8px, 2vw, 20px)";
+  const totalCopies = copiesPerSet * 2;
+  const cardWidth = "clamp(70px, 12vw, 160px)";
+  const gap = "clamp(6px, 1.5vw, 14px)";
   return (
     <div
       className="snobbycover-row"
       style={{
         overflow: "hidden",
-        flex: "1 1 0",
-        minHeight: 0,
+        height: "20vh",
+        minHeight: "60px",
         display: "flex",
         alignItems: "center",
         boxSizing: "border-box",
@@ -68,11 +68,11 @@ function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
         className={direction === "right" ? "snobbycover-strip snobbycover-strip--right" : "snobbycover-strip snobbycover-strip--left"}
         style={{
           display: "flex",
-          alignItems: "stretch",
+          alignItems: "center",
           gap,
-          padding: "0 clamp(12px, 3vw, 24px)",
+          padding: "0 clamp(8px, 2vw, 16px)",
           width: "200%",
-          minHeight: "min(22vh, 180px)",
+          height: "100%",
         }}
       >
         {Array.from({ length: totalCopies }).map((_, i) => (
@@ -82,10 +82,10 @@ function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
               flex: `0 0 ${cardWidth}`,
               width: cardWidth,
               minWidth: cardWidth,
-              borderRadius: "8px",
+              borderRadius: "6px",
               overflow: "hidden",
-              background: "rgba(255,255,255,0.92)",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
+              background: "transparent",
+              isolation: "isolate",
             }}
           >
             <img
@@ -93,10 +93,11 @@ function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
               alt=""
               style={{
                 width: "100%",
-                height: "100%",
-                minHeight: "120px",
-                objectFit: "cover",
+                height: "auto",
+                minHeight: "50px",
+                objectFit: "contain",
                 display: "block",
+                mixBlendMode: "multiply",
               }}
             />
           </div>
@@ -112,13 +113,17 @@ function SnobbyCoverOverlay() {
       style={{
         position: "absolute",
         inset: 0,
-        display: "flex",
-        flexDirection: "column",
         pointerEvents: "none",
       }}
     >
-      <SnobbyCoverScrollRow direction="right" />
-      <SnobbyCoverScrollRow direction="left" />
+      {/* 上段 1/5：GIF が右方向に流れる */}
+      <div style={{ position: "absolute", top: 0, left: 0, right: 0 }}>
+        <SnobbyCoverScrollRow direction="right" />
+      </div>
+      {/* 下段 1/5：GIF が左方向に流れる（中央 3/5 は動画のみ） */}
+      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
+        <SnobbyCoverScrollRow direction="left" />
+      </div>
     </div>
   );
 }
