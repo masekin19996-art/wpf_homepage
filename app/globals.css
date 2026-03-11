@@ -327,7 +327,7 @@ html, body {
   background: linear-gradient(180deg, #80cef8 0%, #50a8e8 42%, #2c8edc 100%);
 }
 
-/* ── snobbycover: 2段の横スクロール（上段→右・下段→左） ── */
+/* ── snobbycover: 2段の横スクロール（上段→右・下段→左）・ミニマル・バウハウス ── */
 @keyframes snobbycoverScrollRight {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -335,6 +335,18 @@ html, body {
 @keyframes snobbycoverScrollLeft {
   0%   { transform: translateX(-50%); }
   100% { transform: translateX(0); }
+}
+@keyframes snobbycoverExitRight {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+@keyframes snobbycoverExitLeft {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(50%); }
+}
+@keyframes snobbycoverContentIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }
 .snobbycover-row {
   position: relative;
@@ -351,5 +363,11 @@ html, body {
 }
 .snobbycover-strip--left {
   animation-name: snobbycoverScrollLeft;
+}
+.snobbycover-strip--exit.snobbycover-strip--right {
+  animation: snobbycoverExitRight 2s linear forwards;
+}
+.snobbycover-strip--exit.snobbycover-strip--left {
+  animation: snobbycoverExitLeft 2s linear forwards;
 }
 

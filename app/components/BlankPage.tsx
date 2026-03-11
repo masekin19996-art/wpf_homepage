@@ -1,14 +1,12 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 /**
  * 4つのサブドメイン（ultra.omamori / snobbycover / hickeytattoo / gummygummy）で表示する、
  * まっさらなページです。後からデザインやコンテンツを足せます。
  */
 const SNobbyCoverHost = "snobbycover.whenpigsfly.jp";
-
-const SNobbyCoverBookSrc = "/snobbycover/book.png";
 
 function SnobbyCoverVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -46,14 +44,14 @@ function SnobbyCoverVideo() {
   );
 }
 
-/** 1行分：本画像を表示。白背景透過・横6個サイズ・隙間なくループ。 */
-function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
+/** 1行分：白枠＋BOOKテキスト。サイズ・動きは変更なし。 */
+function SnobbyCoverScrollRow({ direction, isExiting }: { direction: "right" | "left"; isExiting: boolean }) {
   const copiesPerSet = 6;
   const totalCopies = copiesPerSet * 2;
   const cardWidth = "calc(100vw / 6)";
   return (
     <div
-      className="snobbycover-row"
+      className={`snobbycover-row ${isExiting ? "snobbycover-row--exiting" : ""}`}
       style={{
         overflow: "hidden",
         height: "20vh",
@@ -64,7 +62,7 @@ function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
       }}
     >
       <div
-        className={direction === "right" ? "snobbycover-strip snobbycover-strip--right" : "snobbycover-strip snobbycover-strip--left"}
+        className={`snobbycover-strip snobbycover-strip--${direction} ${isExiting ? "snobbycover-strip--exit" : ""}`}
         style={{
           display: "flex",
           alignItems: "center",
@@ -77,6 +75,7 @@ function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
         {Array.from({ length: totalCopies }).map((_, i) => (
           <div
             key={i}
+            className="snobbycover-book-card"
             style={{
               flex: `0 0 ${cardWidth}`,
               width: cardWidth,
@@ -87,18 +86,16 @@ function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
               justifyContent: "center",
               overflow: "visible",
               background: "transparent",
+              border: "2px solid white",
+              borderRadius: 0,
+              fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+              fontWeight: 700,
+              fontSize: "clamp(14px, 3vw, 28px)",
+              color: "white",
+              letterSpacing: "0.08em",
             }}
           >
-            <img
-              src={SNobbyCoverBookSrc}
-              alt=""
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-                display: "block",
-              }}
-            />
+            BOOK
           </div>
         ))}
       </div>
@@ -106,33 +103,62 @@ function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
   );
 }
 
-function SnobbyCoverOverlay() {
+function SnobbyCoverContent() {
   return (
     <div
+      className="snobbycover-content"
       style={{
         position: "absolute",
         inset: 0,
-        pointerEvents: "none",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "clamp(32px, 6vw, 80px)",
+        background: "rgba(250,250,250,0.92)",
+        fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+        color: "#111",
       }}
     >
-      {/* 上段 1/5：GIF が右方向に流れる */}
-      <div style={{ position: "absolute", top: 0, left: 0, right: 0 }}>
-        <SnobbyCoverScrollRow direction="right" />
-      </div>
-      {/* 下段 1/5：GIF が左方向に流れる（中央 3/5 は動画のみ） */}
-      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
-        <SnobbyCoverScrollRow direction="left" />
-      </div>
+      <h2
+        style={{
+          fontSize: "clamp(20px, 3vw, 28px)",
+          fontWeight: 700,
+          marginBottom: "32px",
+          letterSpacing: "0.12em",
+        }}
+      >
+        商品
+      </h2>
+      <p
+        style={{
+          fontSize: "clamp(14px, 1.5vw, 16px)",
+          lineHeight: 1.8,
+          maxWidth: "520px",
+          textAlign: "center",
+          fontWeight: 400,
+          letterSpacing: "0.04em",
+        }}
+      >
+        コンテンツの説明や商品をここに並べることができます。
+      </p>
     </div>
   );
 }
 
 export default function BlankPage({ host = "" }: { host?: string }) {
   const isSnobbyCover = host === SNobbyCoverHost;
+  const [phase, setPhase] = useState<"idle" | "exiting" | "entered">("idle");
+
+  const handleEnter = () => {
+    if (phase !== "idle") return;
+    setPhase("exiting");
+    setTimeout(() => setPhase("entered"), 2200);
+  };
 
   return (
     <div
-      className="min-h-screen w-full relative overflow-hidden"
+      className={`min-h-screen w-full relative overflow-hidden ${isSnobbyCover ? "snobbycover-page" : ""}`}
       style={{
         background: isSnobbyCover ? undefined : "#f8f9fa",
         margin: 0,
@@ -142,7 +168,92 @@ export default function BlankPage({ host = "" }: { host?: string }) {
       {isSnobbyCover && (
         <>
           <SnobbyCoverVideo />
-          <SnobbyCoverOverlay />
+
+          {/* 上段・下段：白枠BOOK（Enterでハイスピード流れて消える） */}
+          <div
+            className="snobbycover-strips-wrap"
+            style={{
+              position: "absolute",
+              inset: 0,
+              pointerEvents: "none",
+              opacity: phase === "entered" ? 0 : 1,
+              transition: phase === "entered" ? "opacity 0.4s ease" : "none",
+            }}
+          >
+            <div style={{ position: "absolute", top: 0, left: 0, right: 0 }}>
+              <SnobbyCoverScrollRow direction="right" isExiting={phase === "exiting"} />
+            </div>
+            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
+              <SnobbyCoverScrollRow direction="left" isExiting={phase === "exiting"} />
+            </div>
+          </div>
+
+          {/* 中央：タイトル＋Enter（Enterでフェードアウト） */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              pointerEvents: phase === "idle" ? "auto" : "none",
+              opacity: phase === "entered" ? 0 : 1,
+              transition: phase === "exiting" ? "opacity 1.2s ease-out" : "none",
+            }}
+          >
+            <h1
+              style={{
+                fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                fontWeight: 700,
+                fontSize: "clamp(32px, 6vw, 72px)",
+                color: "white",
+                textShadow: "0 2px 20px rgba(0,0,0,0.4)",
+                letterSpacing: "0.06em",
+                marginBottom: "28px",
+              }}
+            >
+              Snobby Book Cover
+            </h1>
+            <button
+              onClick={handleEnter}
+              style={{
+                fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+                fontWeight: 600,
+                fontSize: "clamp(14px, 1.5vw, 18px)",
+                letterSpacing: "0.2em",
+                color: "white",
+                background: "transparent",
+                border: "2px solid white",
+                padding: "12px 32px",
+                cursor: "pointer",
+                transition: "background 0.2s, color 0.2s",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = "white";
+                e.currentTarget.style.color = "#111";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.color = "white";
+              }}
+            >
+              Enter
+            </button>
+          </div>
+
+          {/* コンテンツ（Enter後に表示・背景動画のまま） */}
+          {phase === "entered" && (
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                animation: "snobbycoverContentIn 0.6s ease-out forwards",
+              }}
+            >
+              <SnobbyCoverContent />
+            </div>
+          )}
         </>
       )}
     </div>
