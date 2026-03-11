@@ -1,12 +1,16 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import ShopifyStoryPage from "./ShopifyStoryPage";
+import { STORY_GUM, STORY_KISS } from "@/data/shopifyStory";
 
 /**
  * 4つのサブドメイン（ultra.omamori / snobbycover / hickeytattoo / gummygummy）で表示する、
  * まっさらなページです。後からデザインやコンテンツを足せます。
  */
 const SNobbyCoverHost = "snobbycover.whenpigsfly.jp";
+const GummyGummyHost = "gummygummy.whenpigsfly.jp";
+const HickeyTattooHost = "hickeytattoo.whenpigsfly.jp";
 
 function SnobbyCoverVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -148,7 +152,28 @@ function SnobbyCoverContent() {
 
 export default function BlankPage({ host = "" }: { host?: string }) {
   const isSnobbyCover = host === SNobbyCoverHost;
+  const isGummyGummy = host === GummyGummyHost;
+  const isHickeyTattoo = host === HickeyTattooHost;
   const [phase, setPhase] = useState<"idle" | "exiting" | "entered">("idle");
+
+  if (isGummyGummy) {
+    return (
+      <ShopifyStoryPage
+        config={STORY_GUM}
+        itemHref={`https://${GummyGummyHost}/`}
+        storyHref={`https://${GummyGummyHost}/`}
+      />
+    );
+  }
+  if (isHickeyTattoo) {
+    return (
+      <ShopifyStoryPage
+        config={STORY_KISS}
+        itemHref={`https://${HickeyTattooHost}/`}
+        storyHref={`https://${HickeyTattooHost}/`}
+      />
+    );
+  }
 
   const handleEnter = () => {
     if (phase !== "idle") return;
