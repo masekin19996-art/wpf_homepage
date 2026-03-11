@@ -92,7 +92,6 @@ function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
             <img
               src={SNobbyCoverBookSrc}
               alt=""
-              className="snobbycover-book-img"
               style={{
                 width: "100%",
                 height: "100%",

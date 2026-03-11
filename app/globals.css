@@ -353,7 +353,3 @@ html, body {
   animation-name: snobbycoverScrollLeft;
 }
 
-/* 本画像：白背景を完全透過（multiply で白が背景と合成）。透過PNGなら不要 */
-.snobbycover-book-img {
-  mix-blend-mode: multiply;
-}
