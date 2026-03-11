@@ -46,19 +46,18 @@ function SnobbyCoverVideo() {
   );
 }
 
-/** 1行分：本画像を表示。白背景を消し、矢印方向に無限スクロール。 */
+/** 1行分：本画像を表示。白背景透過・横6個サイズ・隙間なくループ。 */
 function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
-  const copiesPerSet = 4;
+  const copiesPerSet = 6;
   const totalCopies = copiesPerSet * 2;
-  const cardWidth = "clamp(70px, 12vw, 160px)";
-  const gap = "clamp(6px, 1.5vw, 14px)";
+  const cardWidth = "calc(100vw / 6)";
   return (
     <div
       className="snobbycover-row"
       style={{
         overflow: "hidden",
         height: "20vh",
-        minHeight: "60px",
+        minHeight: "70px",
         display: "flex",
         alignItems: "center",
         boxSizing: "border-box",
@@ -69,10 +68,10 @@ function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
         style={{
           display: "flex",
           alignItems: "center",
-          gap,
-          padding: "0 clamp(8px, 2vw, 16px)",
+          gap: 0,
           width: "200%",
           height: "100%",
+          flexShrink: 0,
         }}
       >
         {Array.from({ length: totalCopies }).map((_, i) => (
@@ -82,22 +81,23 @@ function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
               flex: `0 0 ${cardWidth}`,
               width: cardWidth,
               minWidth: cardWidth,
-              borderRadius: "6px",
-              overflow: "hidden",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              overflow: "visible",
               background: "transparent",
-              isolation: "isolate",
             }}
           >
             <img
               src={SNobbyCoverBookSrc}
               alt=""
+              className="snobbycover-book-img"
               style={{
                 width: "100%",
-                height: "auto",
-                minHeight: "50px",
+                height: "100%",
                 objectFit: "contain",
                 display: "block",
-                mixBlendMode: "multiply",
               }}
             />
           </div>
