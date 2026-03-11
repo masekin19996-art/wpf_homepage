@@ -50,7 +50,11 @@ export default function WiiTile({ tile, index, isClickable = false, linkUrl, lin
     >
       <div className="absolute inset-0 flex items-center justify-center z-20">
         {/* 後から画像や動画を入れられるサムネイル枠 */}
-        <div className={isClickable ? "wii-thumb-slot wii-thumb-slot--active" : "wii-thumb-slot"} />
+        <div className={isClickable ? "wii-thumb-slot wii-thumb-slot--active" : "wii-thumb-slot"}>
+          {isClickable && linkTitle && (
+            <span className="wii-tile-label">{linkTitle}</span>
+          )}
+        </div>
       </div>
     </motion.div>
   );

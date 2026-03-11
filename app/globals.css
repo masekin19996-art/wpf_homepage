@@ -73,6 +73,7 @@ html, body {
 .wii-thumb-slot,
 .wii-thumb-slot--active,
 .wii-tile--recessed .wii-thumb-slot {
+  position: relative;
   width: 78%;
   aspect-ratio: 16/9;
   border-radius: 10px;
@@ -80,6 +81,20 @@ html, body {
   box-shadow: none !important;
   border: none !important;
   outline: none !important;
+}
+/* 上段4つのタイル内ホスト名（中央・Helvetica・文字間隔小さめ） */
+.wii-tile-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(11px, 1.8vw, 18px);
+  font-weight: 600;
+  color: rgba(60, 80, 120, 0.9);
+  letter-spacing: -0.02em;
+  pointer-events: none;
 }
 
 /* ── Detail Panel ── */
