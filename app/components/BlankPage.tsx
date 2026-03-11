@@ -8,6 +8,8 @@ import { useRef, useEffect } from "react";
  */
 const SNobbyCoverHost = "snobbycover.whenpigsfly.jp";
 
+const SNobbyCoverBookSrc = "/snobbycover/book.png";
+
 function SnobbyCoverVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -44,6 +46,83 @@ function SnobbyCoverVideo() {
   );
 }
 
+/** 1行分：白長方形の枠で本画像を表示。矢印方向に無限スクロール（上段→右・下段→左）。 */
+function SnobbyCoverScrollRow({ direction }: { direction: "right" | "left" }) {
+  const copiesPerSet = 4;
+  const totalCopies = copiesPerSet * 2; /* 2組でループ */
+  const cardWidth = "clamp(140px, 28vw, 320px)";
+  const gap = "clamp(8px, 2vw, 20px)";
+  return (
+    <div
+      className="snobbycover-row"
+      style={{
+        overflow: "hidden",
+        flex: "1 1 0",
+        minHeight: 0,
+        display: "flex",
+        alignItems: "center",
+        boxSizing: "border-box",
+      }}
+    >
+      <div
+        className={direction === "right" ? "snobbycover-strip snobbycover-strip--right" : "snobbycover-strip snobbycover-strip--left"}
+        style={{
+          display: "flex",
+          alignItems: "stretch",
+          gap,
+          padding: "0 clamp(12px, 3vw, 24px)",
+          width: "200%",
+          minHeight: "min(22vh, 180px)",
+        }}
+      >
+        {Array.from({ length: totalCopies }).map((_, i) => (
+          <div
+            key={i}
+            style={{
+              flex: `0 0 ${cardWidth}`,
+              width: cardWidth,
+              minWidth: cardWidth,
+              borderRadius: "8px",
+              overflow: "hidden",
+              background: "rgba(255,255,255,0.92)",
+              boxShadow: "0 4px 20px rgba(0,0,0,0.12)",
+            }}
+          >
+            <img
+              src={SNobbyCoverBookSrc}
+              alt=""
+              style={{
+                width: "100%",
+                height: "100%",
+                minHeight: "120px",
+                objectFit: "cover",
+                display: "block",
+              }}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SnobbyCoverOverlay() {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        display: "flex",
+        flexDirection: "column",
+        pointerEvents: "none",
+      }}
+    >
+      <SnobbyCoverScrollRow direction="right" />
+      <SnobbyCoverScrollRow direction="left" />
+    </div>
+  );
+}
+
 export default function BlankPage({ host = "" }: { host?: string }) {
   const isSnobbyCover = host === SNobbyCoverHost;
 
@@ -56,7 +135,12 @@ export default function BlankPage({ host = "" }: { host?: string }) {
         padding: 0,
       }}
     >
-      {isSnobbyCover && <SnobbyCoverVideo />}
+      {isSnobbyCover && (
+        <>
+          <SnobbyCoverVideo />
+          <SnobbyCoverOverlay />
+        </>
+      )}
     </div>
   );
 }
