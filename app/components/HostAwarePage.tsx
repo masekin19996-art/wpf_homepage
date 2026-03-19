@@ -8,6 +8,7 @@ import BlankPage from "./BlankPage";
 const BLANK_PAGE_HOSTS = [
   "ultra.omamori.whenpigsfly.jp",
   "snobbycover.whenpigsfly.jp",
+  "findthedragonball.whenpigsfly.jp",
   "hickeytattoo.whenpigsfly.jp",
   "gummygummy.whenpigsfly.jp",
 ];

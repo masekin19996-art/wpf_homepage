@@ -9,6 +9,7 @@ import { STORY_GUM, STORY_KISS } from "@/data/shopifyStory";
  * まっさらなページです。後からデザインやコンテンツを足せます。
  */
 const SNobbyCoverHost = "snobbycover.whenpigsfly.jp";
+const FindTheDragonballHost = "findthedragonball.whenpigsfly.jp";
 const GummyGummyHost = "gummygummy.whenpigsfly.jp";
 const HickeyTattooHost = "hickeytattoo.whenpigsfly.jp";
 
@@ -150,12 +151,39 @@ function SnobbyCoverContent() {
   );
 }
 
+function FindTheDragonballPlaceholder() {
+  return (
+    <div
+      className="min-h-screen w-full flex flex-col items-center justify-center"
+      style={{
+        background: "#ffffff",
+        fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+        color: "#111",
+      }}
+    >
+      <span
+        style={{
+          fontSize: "clamp(24px, 4vw, 40px)",
+          fontWeight: 400,
+          letterSpacing: "0.04em",
+        }}
+      >
+        dragonball
+      </span>
+    </div>
+  );
+}
+
 export default function BlankPage({ host = "" }: { host?: string }) {
   const isSnobbyCover = host === SNobbyCoverHost;
+  const isFindTheDragonball = host === FindTheDragonballHost;
   const isGummyGummy = host === GummyGummyHost;
   const isHickeyTattoo = host === HickeyTattooHost;
   const [phase, setPhase] = useState<"idle" | "exiting" | "entered">("idle");
 
+  if (isFindTheDragonball) {
+    return <FindTheDragonballPlaceholder />;
+  }
   if (isGummyGummy) {
     return (
       <ShopifyStoryPage
