@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import ShopifyStoryPage from "./ShopifyStoryPage";
+import SnobbyCoverFigmaPage from "./SnobbyCoverFigmaPage";
 import { STORY_GUM, STORY_KISS } from "@/data/shopifyStory";
 
 /**
@@ -183,6 +184,9 @@ export default function BlankPage({ host = "" }: { host?: string }) {
 
   if (isFindTheDragonball) {
     return <FindTheDragonballPlaceholder />;
+  }
+  if (isSnobbyCover) {
+    return <SnobbyCoverFigmaPage />;
   }
   if (isGummyGummy) {
     return (
