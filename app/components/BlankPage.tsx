@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import ShopifyStoryPage from "./ShopifyStoryPage";
+import SnobbyCoverFigmaPage from "./SnobbyCoverFigmaPage";
 import { STORY_GUM, STORY_KISS } from "@/data/shopifyStory";
 
 /**
@@ -156,6 +157,9 @@ export default function BlankPage({ host = "" }: { host?: string }) {
   const isHickeyTattoo = host === HickeyTattooHost;
   const [phase, setPhase] = useState<"idle" | "exiting" | "entered">("idle");
 
+  if (isSnobbyCover) {
+    return <SnobbyCoverFigmaPage />;
+  }
   if (isGummyGummy) {
     return (
       <ShopifyStoryPage
