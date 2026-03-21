@@ -1,0 +1,20 @@
+{
+  "snobbycover": {
+    "fileKey": "OxkTCaOwlejjSgqn4YCbpe",
+    "outputDir": "public/snobbycover",
+    "format": "png",
+    "scale": 2,
+    "exportAll": {
+      "enabled": true,
+      "pageName": null,
+      "description": "null = 全ページ。ページ名を指定するとそのページのみ。例: \"Page 1\""
+    },
+    "assets": [
+      {
+        "filename": "book.png",
+        "nodeId": "",
+        "description": "個別指定時のみ使用。exportAll を使う場合は空でOK"
+      }
+    ]
+  }
+}
