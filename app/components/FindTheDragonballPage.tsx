@@ -1,10 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
   UNIVERSITIES,
   RIDDLES,
-  LIBRARY_HINTS,
+  getLibraryHintForQuestion,
   passesMatch,
   checkRiddleAnswer,
   type UniversityId,
@@ -81,9 +81,11 @@ export default function FindTheDragonballPage() {
   const [answerDraft, setAnswerDraft] = useState("");
   const [feedback, setFeedback] = useState<string | null>(null);
   const [gateError, setGateError] = useState<string | null>(null);
-  const [showLibraryModal, setShowLibraryModal] = useState(false);
-  /** 図書館ヒントのモーダルは一度だけ */
-  const libraryPopupConsumedRef = useRef(false);
+  /** 設問正解ごとの図書館ヒント */
+  const [libraryModal, setLibraryModal] = useState<{
+    q: number;
+    body: string;
+  } | null>(null);
 
   const ts = useCallback(
     () => new Date().toISOString().slice(11, 19),
@@ -110,8 +112,6 @@ export default function FindTheDragonballPage() {
     () => UNIVERSITIES.find((u) => u.id === university)?.label ?? null,
     [university],
   );
-
-  const allSolved = solved.every(Boolean);
 
   const selectedMeta = university
     ? UNIVERSITIES.find((u) => u.id === university)
@@ -165,14 +165,6 @@ export default function FindTheDragonballPage() {
     runLoadingSequence();
   };
 
-  useEffect(() => {
-    if (allSolved && university && !libraryPopupConsumedRef.current) {
-      libraryPopupConsumedRef.current = true;
-      setShowLibraryModal(true);
-      pushLog("COMPLETE // library_hint_modal");
-    }
-  }, [allSolved, university, pushLog]);
-
   const onSubmitAnswer = (e: React.FormEvent) => {
     e.preventDefault();
     setFeedback(null);
@@ -185,9 +177,19 @@ export default function FindTheDragonballPage() {
       setSolved((prev) => {
         const next = [...prev];
         next[n - 1] = true;
+        if (next.every(Boolean)) {
+          queueMicrotask(() => pushLog("COMPLETE // all_riddles_cleared"));
+        }
         return next;
       });
       pushLog(`RIDDLE_OK // Q${n}`);
+      if (university) {
+        const hint = getLibraryHintForQuestion(university, n);
+        if (hint) {
+          setLibraryModal({ q: n, body: hint });
+          pushLog(`LIBRARY_HINT_MODAL // Q${n}`);
+        }
+      }
       setAnswerDraft("");
     } else {
       setFeedback(`Q${n}: 不一致`);
@@ -214,8 +216,8 @@ export default function FindTheDragonballPage() {
         aria-hidden
       />
 
-      {/* 図書館ヒント：全問正解後に一度だけ */}
-      {showLibraryModal && university && (
+      {/* 設問正解ごと：対応する図書館所在 */}
+      {libraryModal && (
         <div
           className="fixed inset-0 z-[200] flex items-center justify-center bg-[#020403]/88 px-4 backdrop-blur-[2px]"
           role="dialog"
@@ -226,26 +228,31 @@ export default function FindTheDragonballPage() {
             className={`max-h-[85vh] w-full max-w-lg overflow-y-auto border border-[#5eead4]/50 bg-[#0a100e] shadow-[0_0_40px_rgba(94,234,212,0.12)] ${mono}`}
           >
             <div className="border-b border-[#2a3d36] px-4 py-3 text-[10px] uppercase tracking-[0.3em] text-[#5eead4]">
-              LIBRARY_VECTOR // one_shot
+              LIBRARY_VECTOR // Q{libraryModal.q.toString().padStart(2, "0")}
             </div>
             <div className="p-5">
               <h2
                 id="ftdb-library-title"
                 className={`mb-4 text-[11px] tracking-[0.2em] text-[#6f8a7d] ${mono}`}
               >
-                DROP_COORDINATE
+                DROP_COORDINATE —{" "}
+                {uniLabel ? (
+                  <span className="text-[#9fbdaa]">{uniLabel}</span>
+                ) : (
+                  "—"
+                )}
               </h2>
               <p
                 className={`text-[15px] leading-[1.75] text-[#e8f0ec] md:text-[16px] ${sans}`}
               >
-                {LIBRARY_HINTS[university]}
+                {libraryModal.body}
               </p>
               <p className={`mt-4 text-[11px] leading-relaxed text-[#5a6f66] ${sans}`}>
-                この内容は再表示されません。必要ならメモしてください。
+                このポップは閉じたあと、同じ設問からは再表示されません（メモ推奨）。
               </p>
               <button
                 type="button"
-                onClick={() => setShowLibraryModal(false)}
+                onClick={() => setLibraryModal(null)}
                 className="mt-6 w-full border border-[#3d5248] bg-[#0f1614] py-3 text-[11px] uppercase tracking-[0.25em] text-[#8ecabc] transition-colors hover:border-[#5eead4]/45 hover:text-[#5eead4]"
               >
                 Acknowledge
