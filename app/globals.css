@@ -386,3 +386,12 @@ html.snobbycover-scrollable body {
   align-content: stretch;
 }
 
+/* Find the Dragonball: 縦スクロール・選択可能 */
+html.ftdb-scrollable,
+html.ftdb-scrollable body {
+  overflow: auto;
+  height: auto;
+  min-height: 100%;
+  user-select: text;
+}
+

@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import ShopifyStoryPage from "./ShopifyStoryPage";
 import SnobbyCoverFigmaPage from "./SnobbyCoverFigmaPage";
+import FindTheDragonballPage from "./FindTheDragonballPage";
 import { STORY_GUM, STORY_KISS } from "@/data/shopifyStory";
 
 /**
@@ -152,29 +153,6 @@ function SnobbyCoverContent() {
   );
 }
 
-function FindTheDragonballPlaceholder() {
-  return (
-    <div
-      className="min-h-screen w-full flex flex-col items-center justify-center"
-      style={{
-        background: "#ffffff",
-        fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
-        color: "#111",
-      }}
-    >
-      <span
-        style={{
-          fontSize: "clamp(24px, 4vw, 40px)",
-          fontWeight: 400,
-          letterSpacing: "0.04em",
-        }}
-      >
-        dragonball
-      </span>
-    </div>
-  );
-}
-
 export default function BlankPage({ host = "" }: { host?: string }) {
   const isSnobbyCover = host === SNobbyCoverHost;
   const isFindTheDragonball = host === FindTheDragonballHost;
@@ -183,7 +161,7 @@ export default function BlankPage({ host = "" }: { host?: string }) {
   const [phase, setPhase] = useState<"idle" | "exiting" | "entered">("idle");
 
   if (isFindTheDragonball) {
-    return <FindTheDragonballPlaceholder />;
+    return <FindTheDragonballPage />;
   }
   if (isSnobbyCover) {
     return <SnobbyCoverFigmaPage />;

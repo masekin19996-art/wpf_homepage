@@ -13,91 +13,90 @@ const imgImage7 = "/snobbycover-pc/d3219ff9aca3a57348b46d03ffd6924943e0b135.png"
 const imgImage8 = "/snobbycover-pc/52e3b78475a5d3b593e87d1143103835e18860c0.png";
 const imgPageFlipAnimation11 = "/snobbycover-pc/6612dcc3fbb4db103577f57022c2a8262b6ab6ed.png";
 
-function Frame2() {
+/** マーキー 1周分（8枚）。ホバー時は次のインデックスの表紙に切り替え */
+const MARQUEE_COVERS = [
+  imgImage1,
+  imgImage2,
+  imgImage3,
+  imgImage4,
+  imgImage5,
+  imgImage6,
+  imgImage7,
+  imgImage8,
+] as const;
+
+function hoverCoverSrc(src: string): string {
+  const i = MARQUEE_COVERS.indexOf(src as (typeof MARQUEE_COVERS)[number]);
+  if (i === -1) return src;
+  return MARQUEE_COVERS[(i + 1) % MARQUEE_COVERS.length];
+}
+
+const marqueeImgFade =
+  "transition-opacity duration-100 ease-out pointer-events-none";
+
+function MarqueeBookFull({ src }: { src: string }) {
+  const h = hoverCoverSrc(src);
   return (
-    <div className="absolute content-stretch flex gap-[180px] items-center left-0 top-0 animate-scroll-left">
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 1">
-        <div className="absolute inset-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]" data-name="image 1">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 2">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 3">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 4">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 5">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 6">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 7">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 8">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 9">
-        <div className="absolute inset-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]" data-name="image 1">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 10">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 11">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 12">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 13">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 14">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 15">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 16">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
-        </div>
-      </div>
+    <div
+      className="absolute inset-0 overflow-hidden shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] group"
+      data-name="image 1"
+    >
+      <img
+        alt=""
+        className={`absolute inset-0 max-w-none object-cover size-full ${marqueeImgFade} group-hover:opacity-0`}
+        src={src}
+      />
+      <img
+        alt=""
+        className={`absolute inset-0 max-w-none object-cover size-full opacity-0 ${marqueeImgFade} group-hover:opacity-100`}
+        src={h}
+      />
     </div>
   );
+}
+
+function MarqueeBookAspect({ src }: { src: string }) {
+  const h = hoverCoverSrc(src);
+  return (
+    <div
+      className="absolute aspect-[319/494] left-0 right-0 top-0 overflow-hidden shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] group"
+      data-name="image 2"
+    >
+      <img
+        alt=""
+        className={`absolute inset-0 max-w-none object-cover size-full ${marqueeImgFade} group-hover:opacity-0`}
+        src={src}
+      />
+      <img
+        alt=""
+        className={`absolute inset-0 max-w-none object-cover size-full opacity-0 ${marqueeImgFade} group-hover:opacity-100`}
+        src={h}
+      />
+    </div>
+  );
+}
+
+function MarqueeBookStrip({ direction }: { direction: "left" | "right" }) {
+  const cells = [...MARQUEE_COVERS, ...MARQUEE_COVERS];
+  return (
+    <div
+      className={
+        direction === "left"
+          ? "absolute content-stretch flex gap-[180px] items-center left-0 top-0 animate-scroll-left"
+          : "absolute content-stretch flex gap-[180px] items-center left-[-2530px] top-0 animate-scroll-right"
+      }
+    >
+      {cells.map((src, i) => (
+        <div key={i} className="h-[170px] relative shrink-0 w-[110px]" data-name={`image ${i + 1}`}>
+          {i % 8 === 0 ? <MarqueeBookFull src={src} /> : <MarqueeBookAspect src={src} />}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Frame2() {
+  return <MarqueeBookStrip direction="left" />;
 }
 
 function Component() {
@@ -140,90 +139,7 @@ function Navbar() {
 }
 
 function Frame3() {
-  return (
-    <div className="absolute content-stretch flex gap-[180px] items-center left-[-2530px] top-0 animate-scroll-right">
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 1">
-        <div className="absolute inset-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]" data-name="image 1">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 2">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 3">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 4">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 5">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 6">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 7">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 8">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 9">
-        <div className="absolute inset-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]" data-name="image 1">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 10">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 11">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 12">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 13">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 14">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 15">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
-        </div>
-      </div>
-      <div className="h-[170px] relative shrink-0 w-[110px]" data-name="image 16">
-        <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
-          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
-        </div>
-      </div>
-    </div>
-  );
+  return <MarqueeBookStrip direction="right" />;
 }
 
 function Container() {
