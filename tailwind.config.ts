@@ -16,6 +16,8 @@ export default {
         "pulse-ring": "pulseRing 2s ease-in-out infinite",
         "spin-slow": "spin 20s linear infinite",
         "spin-slow-reverse": "spinReverse 15s linear infinite",
+        "scroll-left": "snobby-scroll-left 30s linear infinite",
+        "scroll-right": "snobby-scroll-right 30s linear infinite",
       },
       keyframes: {
         float: {
@@ -29,6 +31,14 @@ export default {
         spinReverse: {
           from: { transform: "rotate(360deg)" },
           to: { transform: "rotate(0deg)" },
+        },
+        "snobby-scroll-left": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-2530px)" },
+        },
+        "snobby-scroll-right": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(2530px)" },
         },
       },
     },

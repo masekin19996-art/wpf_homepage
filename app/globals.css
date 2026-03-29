@@ -372,3 +372,17 @@ html, body {
   animation-name: snobbycoverScrollLeft;
 }
 
+/* Snobby Cover PC（Snobby_cover_test）: ページ全体を縦スクロール可能に */
+html.snobbycover-scrollable,
+html.snobbycover-scrollable body {
+  overflow: auto;
+  height: auto;
+  min-height: 100%;
+  user-select: text;
+}
+
+/* Figma エクスポートのユーティリティ（Tailwind v4 相当） */
+.snobbycover-pc-top .content-stretch {
+  align-content: stretch;
+}
+
