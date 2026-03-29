@@ -3,14 +3,14 @@
 import { useEffect } from "react";
 import svgPaths from "@/data/snobbyCoverPcSvgPaths";
 
-const imgImage1 = "/snobbycover-pc/7e54fefff7f475211e360b4f1f885093de587142.png";
-const imgImage2 = "/snobbycover-pc/6cbc192fcb77a36c641a6739b105db80af5cbcf3.png";
-const imgImage3 = "/snobbycover-pc/069f0a85e4aeb7da10d674f63bae81e5d33f3937.png";
-const imgImage4 = "/snobbycover-pc/f0c9d57b28a67bf29f8cacb8124594a91023f590.png";
-const imgImage5 = "/snobbycover-pc/1274b7660cafb010ee27addadafc36f4eec414b1.png";
-const imgImage6 = "/snobbycover-pc/2c3b6dd6821be3ac97fb007612198a6c55073c5f.png";
-const imgImage7 = "/snobbycover-pc/d3219ff9aca3a57348b46d03ffd6924943e0b135.png";
-const imgImage8 = "/snobbycover-pc/52e3b78475a5d3b593e87d1143103835e18860c0.png";
+const imgImage1 = "/snobbycover-pc/cover-marquee-01-dragonball.png";
+const imgImage2 = "/snobbycover-pc/cover-marquee-02-akira.png";
+const imgImage3 = "/snobbycover-pc/cover-marquee-03-tokyo-girls-bravo.png";
+const imgImage4 = "/snobbycover-pc/cover-marquee-04-evangelion.png";
+const imgImage5 = "/snobbycover-pc/cover-marquee-05-slamdunk.png";
+const imgImage6 = "/snobbycover-pc/cover-marquee-06-nana.png";
+const imgImage7 = "/snobbycover-pc/cover-marquee-07-akagi.png";
+const imgImage8 = "/snobbycover-pc/cover-marquee-08-kimi-ni-todoke.png";
 const imgPageFlipAnimation11 = "/snobbycover-pc/6612dcc3fbb4db103577f57022c2a8262b6ab6ed.png";
 
 /** マーキー 1周分（8枚）。ホバー時は次のインデックスの表紙に切り替え */
