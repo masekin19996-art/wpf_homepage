@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import svgPaths from "@/data/snobbyCoverPcSvgPaths";
 
 const imgImage1 = "/snobbycover-pc/7e54fefff7f475211e360b4f1f885093de587142.png";
@@ -417,40 +417,18 @@ function Frame1() {
   );
 }
 
-function SnobbyCoverBackgroundVideo() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const el = videoRef.current;
-    if (!el) return;
-    el.muted = true;
-    el.playsInline = true;
-    const play = () => {
-      el.play().catch(() => {});
-    };
-    play();
-    el.addEventListener("loadeddata", play);
-    el.addEventListener("canplay", play);
-    return () => {
-      el.removeEventListener("loadeddata", play);
-      el.removeEventListener("canplay", play);
-    };
-  }, []);
-
+/** 夜・読書シーンの写真背景（full-bleed / cover） */
+function SnobbyCoverBackgroundImage() {
   return (
-    <video
-      ref={videoRef}
+    <img
+      src="/snobbycover/hero-bg-night-reading.png"
+      alt=""
       className="absolute inset-0 z-0 h-full min-h-screen w-full max-w-none object-cover pointer-events-none"
       style={{ objectFit: "cover" }}
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="auto"
+      decoding="async"
+      fetchPriority="high"
       aria-hidden
-    >
-      <source src="/videos/snobbycover-bg.mp4" type="video/mp4" />
-    </video>
+    />
   );
 }
 
@@ -465,7 +443,7 @@ export default function SnobbyCoverPcTop() {
       className="snobbycover-pc-top content-stretch flex flex-col items-center relative w-full min-h-screen"
       data-name="PC_TOP"
     >
-      <SnobbyCoverBackgroundVideo />
+      <SnobbyCoverBackgroundImage />
       <div className="relative z-10 flex w-full flex-col items-center">
         <Container />
         <Container1 />
