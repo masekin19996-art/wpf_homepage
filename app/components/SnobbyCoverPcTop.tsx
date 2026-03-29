@@ -3,18 +3,18 @@
 import { useEffect } from "react";
 import svgPaths from "@/data/snobbyCoverPcSvgPaths";
 
-const imgImage1 = "/snobbycover-pc/cover-marquee-01-dragonball.png";
-const imgImage2 = "/snobbycover-pc/cover-marquee-02-akira.png";
-const imgImage3 = "/snobbycover-pc/cover-marquee-03-tokyo-girls-bravo.png";
-const imgImage4 = "/snobbycover-pc/cover-marquee-04-evangelion.png";
-const imgImage5 = "/snobbycover-pc/cover-marquee-05-slamdunk.png";
-const imgImage6 = "/snobbycover-pc/cover-marquee-06-nana.png";
-const imgImage7 = "/snobbycover-pc/cover-marquee-07-akagi.png";
-const imgImage8 = "/snobbycover-pc/cover-marquee-08-kimi-ni-todoke.png";
+/** マーキー用・Collection 用のデザイン表紙（非ホバー時・下段プレビュー） */
+const imgImage1 = "/snobbycover-pc/7e54fefff7f475211e360b4f1f885093de587142.png";
+const imgImage2 = "/snobbycover-pc/6cbc192fcb77a36c641a6739b105db80af5cbcf3.png";
+const imgImage3 = "/snobbycover-pc/069f0a85e4aeb7da10d674f63bae81e5d33f3937.png";
+const imgImage4 = "/snobbycover-pc/f0c9d57b28a67bf29f8cacb8124594a91023f590.png";
+const imgImage5 = "/snobbycover-pc/1274b7660cafb010ee27addadafc36f4eec414b1.png";
+const imgImage6 = "/snobbycover-pc/2c3b6dd6821be3ac97fb007612198a6c55073c5f.png";
+const imgImage7 = "/snobbycover-pc/d3219ff9aca3a57348b46d03ffd6924943e0b135.png";
+const imgImage8 = "/snobbycover-pc/52e3b78475a5d3b593e87d1143103835e18860c0.png";
 const imgPageFlipAnimation11 = "/snobbycover-pc/6612dcc3fbb4db103577f57022c2a8262b6ab6ed.png";
 
-/** マーキー 1周分（8枚）。ホバー時は次のインデックスの表紙に切り替え */
-const MARQUEE_COVERS = [
+const MARQUEE_DESIGN_COVERS = [
   imgImage1,
   imgImage2,
   imgImage3,
@@ -25,17 +25,22 @@ const MARQUEE_COVERS = [
   imgImage8,
 ] as const;
 
-function hoverCoverSrc(src: string): string {
-  const i = MARQUEE_COVERS.indexOf(src as (typeof MARQUEE_COVERS)[number]);
-  if (i === -1) return src;
-  return MARQUEE_COVERS[(i + 1) % MARQUEE_COVERS.length];
-}
+/** マーキー ホバー時のみ差し替える実コミック表紙（8枚・順は MARQUEE_DESIGN と対応） */
+const MARQUEE_MANGA_COVERS = [
+  "/snobbycover-pc/cover-marquee-01-dragonball.png",
+  "/snobbycover-pc/cover-marquee-02-akira.png",
+  "/snobbycover-pc/cover-marquee-03-tokyo-girls-bravo.png",
+  "/snobbycover-pc/cover-marquee-04-evangelion.png",
+  "/snobbycover-pc/cover-marquee-05-slamdunk.png",
+  "/snobbycover-pc/cover-marquee-06-nana.png",
+  "/snobbycover-pc/cover-marquee-07-akagi.png",
+  "/snobbycover-pc/cover-marquee-08-kimi-ni-todoke.png",
+] as const;
 
 const marqueeImgFade =
   "transition-opacity duration-100 ease-out pointer-events-none";
 
-function MarqueeBookFull({ src }: { src: string }) {
-  const h = hoverCoverSrc(src);
+function MarqueeBookFull({ baseSrc, hoverSrc }: { baseSrc: string; hoverSrc: string }) {
   return (
     <div
       className="absolute inset-0 overflow-hidden shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] group"
@@ -44,19 +49,18 @@ function MarqueeBookFull({ src }: { src: string }) {
       <img
         alt=""
         className={`absolute inset-0 max-w-none object-cover size-full ${marqueeImgFade} group-hover:opacity-0`}
-        src={src}
+        src={baseSrc}
       />
       <img
         alt=""
         className={`absolute inset-0 max-w-none object-cover size-full opacity-0 ${marqueeImgFade} group-hover:opacity-100`}
-        src={h}
+        src={hoverSrc}
       />
     </div>
   );
 }
 
-function MarqueeBookAspect({ src }: { src: string }) {
-  const h = hoverCoverSrc(src);
+function MarqueeBookAspect({ baseSrc, hoverSrc }: { baseSrc: string; hoverSrc: string }) {
   return (
     <div
       className="absolute aspect-[319/494] left-0 right-0 top-0 overflow-hidden shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] group"
@@ -65,19 +69,19 @@ function MarqueeBookAspect({ src }: { src: string }) {
       <img
         alt=""
         className={`absolute inset-0 max-w-none object-cover size-full ${marqueeImgFade} group-hover:opacity-0`}
-        src={src}
+        src={baseSrc}
       />
       <img
         alt=""
         className={`absolute inset-0 max-w-none object-cover size-full opacity-0 ${marqueeImgFade} group-hover:opacity-100`}
-        src={h}
+        src={hoverSrc}
       />
     </div>
   );
 }
 
 function MarqueeBookStrip({ direction }: { direction: "left" | "right" }) {
-  const cells = [...MARQUEE_COVERS, ...MARQUEE_COVERS];
+  const pairIndices = [...MARQUEE_DESIGN_COVERS.keys(), ...MARQUEE_DESIGN_COVERS.keys()];
   return (
     <div
       className={
@@ -86,9 +90,13 @@ function MarqueeBookStrip({ direction }: { direction: "left" | "right" }) {
           : "absolute content-stretch flex gap-[180px] items-center left-[-2530px] top-0 animate-scroll-right"
       }
     >
-      {cells.map((src, i) => (
+      {pairIndices.map((slot, i) => (
         <div key={i} className="h-[170px] relative shrink-0 w-[110px]" data-name={`image ${i + 1}`}>
-          {i % 8 === 0 ? <MarqueeBookFull src={src} /> : <MarqueeBookAspect src={src} />}
+          {i % 8 === 0 ? (
+            <MarqueeBookFull baseSrc={MARQUEE_DESIGN_COVERS[slot]} hoverSrc={MARQUEE_MANGA_COVERS[slot]} />
+          ) : (
+            <MarqueeBookAspect baseSrc={MARQUEE_DESIGN_COVERS[slot]} hoverSrc={MARQUEE_MANGA_COVERS[slot]} />
+          )}
         </div>
       ))}
     </div>
