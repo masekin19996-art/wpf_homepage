@@ -11,6 +11,8 @@ interface WiiTileProps {
   linkUrl?: string;
   /** ボタン名（アクセシビリティ用） */
   linkTitle?: string;
+  /** サムネイル画像（public からのパス例: /thumbs/foo.svg） */
+  thumbnailSrc?: string;
 }
 
 const tileVariants = {
@@ -24,7 +26,14 @@ const tileVariants = {
 };
 
 /* タイル: 上4つだけクリック可能なサムネイル枠、それ以外は凹みのみ */
-export default function WiiTile({ tile, index, isClickable = false, linkUrl, linkTitle }: WiiTileProps) {
+export default function WiiTile({
+  tile,
+  index,
+  isClickable = false,
+  linkUrl,
+  linkTitle,
+  thumbnailSrc,
+}: WiiTileProps) {
   const url = linkUrl ?? tile.url;
   const handleClick = () => {
     if (!isClickable) return;
@@ -51,8 +60,22 @@ export default function WiiTile({ tile, index, isClickable = false, linkUrl, lin
       <div className="absolute inset-0 flex items-center justify-center z-20">
         {/* 後から画像や動画を入れられるサムネイル枠 */}
         <div className={isClickable ? "wii-thumb-slot wii-thumb-slot--active" : "wii-thumb-slot"}>
+          {thumbnailSrc && (
+            <img
+              src={thumbnailSrc}
+              alt=""
+              className="wii-thumb-slot__img"
+              draggable={false}
+            />
+          )}
           {isClickable && linkTitle && (
-            <span className="wii-tile-label">{linkTitle}</span>
+            <span
+              className={
+                thumbnailSrc ? "wii-tile-label wii-tile-label--on-thumb" : "wii-tile-label"
+              }
+            >
+              {linkTitle}
+            </span>
           )}
         </div>
       </div>

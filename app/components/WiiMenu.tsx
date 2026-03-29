@@ -12,6 +12,11 @@ import ShopModal from "./ShopModal";
 /* ── リンク設定（ここを変更） ── */
 const ABOUT_URL = "https://example.com/about";  // whenpigsfly Aboutページ
 
+/** 1ページ目グリッド（4列×3行）の真ん中の段・左＝インデックス 4 */
+const HOME_DRAGONBALL_TILE_INDEX = 4;
+const DRAGONBALL_SITE_URL = "https://findthedragonball.whenpigsfly.jp/";
+const DRAGONBALL_THUMB_SRC = "/thumbs/findthedragonball.svg";
+
 const ITEMS_PER_PAGE = 12;
 const PAGE_COUNT = Math.ceil(tiles.length / ITEMS_PER_PAGE); // 3
 
@@ -162,16 +167,40 @@ export default function WiiMenu() {
             className="grid grid-cols-4 gap-3"
             style={{ width: "min(1280px, 94vw)", willChange: "transform, opacity, filter" }}
           >
-            {currentTiles.map((tile, i) => (
-              <WiiTile
-                key={tile.id}
-                tile={tile}
-                index={i}
-                isClickable={page === 0 && i < 4}
-                linkUrl={page === 0 && i < 4 ? homeLinks[i].url : undefined}
-                linkTitle={page === 0 && i < 4 ? homeLinks[i].title : undefined}
-              />
-            ))}
+            {currentTiles.map((tile, i) => {
+              const isHomeTopLink = page === 0 && i < 4;
+              const isDragonballTile =
+                page === 0 && i === HOME_DRAGONBALL_TILE_INDEX;
+              const clickable = isHomeTopLink || isDragonballTile;
+              const linkUrl = isHomeTopLink
+                ? homeLinks[i].url
+                : isDragonballTile
+                  ? DRAGONBALL_SITE_URL
+                  : undefined;
+              const linkTitle = isHomeTopLink
+                ? homeLinks[i].title
+                : isDragonballTile
+                  ? "Find the Dragonball"
+                  : undefined;
+              const thumbnailSrc =
+                isHomeTopLink && homeLinks[i].imageUrl
+                  ? homeLinks[i].imageUrl
+                  : isDragonballTile
+                    ? DRAGONBALL_THUMB_SRC
+                    : undefined;
+
+              return (
+                <WiiTile
+                  key={tile.id}
+                  tile={tile}
+                  index={i}
+                  isClickable={clickable}
+                  linkUrl={linkUrl}
+                  linkTitle={linkTitle}
+                  thumbnailSrc={thumbnailSrc}
+                />
+              );
+            })}
           </motion.div>
         </AnimatePresence>
 
