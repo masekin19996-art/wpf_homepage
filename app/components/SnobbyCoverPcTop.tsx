@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import svgPaths from "@/data/snobbyCoverPcSvgPaths";
 
 const imgImage1 = "/snobbycover-pc/7e54fefff7f475211e360b4f1f885093de587142.png";
@@ -417,6 +417,43 @@ function Frame1() {
   );
 }
 
+function SnobbyCoverBackgroundVideo() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.muted = true;
+    el.playsInline = true;
+    const play = () => {
+      el.play().catch(() => {});
+    };
+    play();
+    el.addEventListener("loadeddata", play);
+    el.addEventListener("canplay", play);
+    return () => {
+      el.removeEventListener("loadeddata", play);
+      el.removeEventListener("canplay", play);
+    };
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      className="absolute inset-0 z-0 h-full min-h-screen w-full max-w-none object-cover pointer-events-none"
+      style={{ objectFit: "cover" }}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+      aria-hidden
+    >
+      <source src="/videos/snobbycover-bg.mp4" type="video/mp4" />
+    </video>
+  );
+}
+
 export default function SnobbyCoverPcTop() {
   useEffect(() => {
     document.documentElement.classList.add("snobbycover-scrollable");
@@ -428,13 +465,7 @@ export default function SnobbyCoverPcTop() {
       className="snobbycover-pc-top content-stretch flex flex-col items-center relative w-full min-h-screen"
       data-name="PC_TOP"
     >
-      <iframe
-        title="Snobby Cover background video"
-        className="absolute inset-0 z-0 max-w-none object-cover w-full min-h-screen h-full pointer-events-none"
-        src="https://drive.google.com/file/d/1WaF5fMrzGdH1E_ocsYt-5XDLlYfeoYiC/preview"
-        allow="autoplay"
-        style={{ border: 'none' }}
-      />
+      <SnobbyCoverBackgroundVideo />
       <div className="relative z-10 flex w-full flex-col items-center">
         <Container />
         <Container1 />
