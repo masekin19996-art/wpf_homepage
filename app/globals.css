@@ -427,7 +427,7 @@ html.ftdb-scrollable body {
   font-style: normal;
 }
 .font-snobby-mincho {
-  font-family: hiragino-mincho-pron, sans-serif;
+  font-family: "hiragino-mincho-pron", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
