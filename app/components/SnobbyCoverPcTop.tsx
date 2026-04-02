@@ -256,19 +256,19 @@ function Frame7() {
 function CollectionItemsRow() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0 w-full" data-name="Collection Items Row 1">
-      <Link href="/type/a" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
+      <Link href="/type/a" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-95" data-name="PcItems">
         <Frame4 />
         <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type A</p>
       </Link>
-      <Link href="/type/b" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
+      <Link href="/type/b" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-95" data-name="PcItems">
         <Frame5 />
         <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type B</p>
       </Link>
-      <Link href="/type/c" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
+      <Link href="/type/c" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-95" data-name="PcItems">
         <Frame6 />
         <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type C</p>
       </Link>
-      <Link href="/type/d" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
+      <Link href="/type/d" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-95" data-name="PcItems">
         <Frame7 />
         <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type D</p>
       </Link>
@@ -335,19 +335,19 @@ function Frame11() {
 function CollectionItemsRow1() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0 w-full" data-name="Collection Items Row 2">
-      <Link href="/type/e" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
+      <Link href="/type/e" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-95" data-name="PcItems">
         <Frame8 />
         <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type E</p>
       </Link>
-      <Link href="/type/f" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
+      <Link href="/type/f" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-95" data-name="PcItems">
         <Frame9 />
         <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type F</p>
       </Link>
-      <Link href="/type/g" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
+      <Link href="/type/g" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-95" data-name="PcItems">
         <Frame10 />
         <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type G</p>
       </Link>
-      <Link href="/type/h" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
+      <Link href="/type/h" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-95" data-name="PcItems">
         <Frame11 />
         <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type H</p>
       </Link>
