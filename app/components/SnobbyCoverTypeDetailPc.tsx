@@ -31,7 +31,7 @@ function Frame2() {
 function AboutSection() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full" data-name="About Section">
-      <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[28px] tracking-[-0.28px] whitespace-nowrap">About</p>
+      <p className="font-snobby-din leading-[normal] relative shrink-0 text-[28px] tracking-[-0.28px] whitespace-nowrap">About</p>
       <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[30px] min-w-full relative shrink-0 text-[13px] tracking-[0.26px] w-[min-content]">
         都市空間における熱狂といわゆる「排除」のメカニズムを、記号論のアプローチから解剖した伝説的論考。社会の安定を維持するために、共同体はいかにして「祝祭」という名の合法的な狂気を演出し、大衆の鬱屈を処理してきたのか。演劇的手法を用いて現代社会の虚構性を暴き、日常という名の舞台をハックするための戦略を提示した、アヴァンギャルドな社会学の極北。
         <br aria-hidden="true" />
@@ -44,7 +44,7 @@ function AboutSection() {
 function HowToUseSection() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full" data-name="How to Use Section">
-      <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[28px] tracking-[-0.28px] whitespace-nowrap">How to Use</p>
+      <p className="font-snobby-din leading-[normal] relative shrink-0 text-[28px] tracking-[-0.28px] whitespace-nowrap">How to Use</p>
       <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[30px] min-w-full relative shrink-0 text-[13px] tracking-[0.26px] w-[min-content]">下のダウンロードボタンから、カバーのデザインデータをダウンロードいただけます。アクセアなどの印刷会社へそのまま入稿できるほか、ご自身でプリントアウトして使うことも可能です。</p>
     </div>
   );
@@ -92,7 +92,7 @@ function DescriptionSection() {
             onClick={() => setIsOpen(!isOpen)}
             className="bg-[#002daa] content-stretch cursor-pointer flex gap-[10px] items-center justify-center px-[16px] py-[10px] relative w-full" data-name="PC_pull-down-button"
           >
-            <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[28px] text-left text-white tracking-[-0.28px] whitespace-nowrap">DOWNLOAD This Cover Data</p>
+            <p className="font-snobby-din leading-[normal] relative shrink-0 text-[28px] text-left text-white tracking-[-0.28px] whitespace-nowrap">DOWNLOAD This Cover Data</p>
             <div className={`content-stretch flex flex-col items-center justify-center relative shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`} data-name="Down Arrow">
               <div className="h-[14.846px] relative w-[20px]">
                 <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 14.8462">
@@ -110,7 +110,7 @@ function DescriptionSection() {
 function SizeGuideSection() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-full items-start min-h-px min-w-px relative text-black" data-name="Size Guide Section">
-      <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[28px] tracking-[-0.28px] whitespace-nowrap">Size Guide</p>
+      <p className="font-snobby-din leading-[normal] relative shrink-0 text-[28px] tracking-[-0.28px] whitespace-nowrap">Size Guide</p>
       <div className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[0] min-w-full relative shrink-0 text-[0px] tracking-[0.26px] w-[min-content] whitespace-pre-wrap">
         <p className="[text-decoration-skip-ink:none] decoration-solid leading-[30px] mb-0 text-[13px] underline">文庫判：105 × 148mm</p>
         <p className="leading-[30px] mb-0 text-[13px]">一般的な文庫本のサイズ。岩波文庫、新潮文庫、講談社文庫などのほか、A6判の小型手帳などにも適合。</p>
@@ -144,7 +144,7 @@ function Container() {
       <div className="content-stretch flex gap-[30px] items-start pb-[60px] pt-[45px] px-[45px] relative w-full">
         <div className="content-stretch flex flex-[1_0_0] flex-col gap-[30px] items-start min-h-px min-w-px relative" data-name="Book Cover">
           <Frame2 />
-          <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[48px] text-black tracking-[-0.48px] w-full">Type A</p>
+          <p className="font-snobby-din leading-[normal] relative shrink-0 text-[48px] text-black tracking-[-0.48px] w-full">Type A</p>
         </div>
         <InformationSection />
       </div>
@@ -186,7 +186,7 @@ function Frame() {
 function Frame1() {
   return (
     <div className="content-stretch flex items-center relative shrink-0 w-full">
-      <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[20px] text-white whitespace-nowrap">@2026 Snobby BOOK Cover</p>
+      <p className="font-snobby-din leading-[normal] relative shrink-0 text-[20px] text-white whitespace-nowrap">@2026 Snobby BOOK Cover</p>
     </div>
   );
 }

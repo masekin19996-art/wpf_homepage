@@ -420,3 +420,14 @@ html.ftdb-scrollable body {
   user-select: text;
 }
 
+/* Adobe Fonts（Typekit kit dqk2gmh）— Snobby 用。実際の family 名はキット内容に合わせて調整可 */
+.font-snobby-din {
+  font-family: "din-condensed-vf", "din-condensed", "DINCondensed-Regular", "Arial Narrow", sans-serif;
+  font-weight: 350;
+  font-style: normal;
+}
+.font-snobby-mincho {
+  font-family: "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Hiragino Mincho Pro W3", "游明朝", "Yu Mincho",
+    "YuMincho", "Noto Serif JP", serif;
+}
+

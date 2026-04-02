@@ -31,7 +31,7 @@ function Frame4() {
 function Frame() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start pt-[30px] relative shrink-0 text-black w-full">
-      <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[20px] whitespace-nowrap">Size Guide</p>
+      <p className="font-snobby-din leading-[normal] relative shrink-0 text-[20px] whitespace-nowrap">Size Guide</p>
       <div className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[0] min-w-full relative shrink-0 text-[0px] tracking-[0.22px] w-[min-content] whitespace-pre-wrap">
         <p className="[text-decoration-skip-ink:none] decoration-solid leading-[22px] mb-0 text-[11px] underline">文庫判：105 × 148mm</p>
         <p className="leading-[22px] mb-0 text-[11px]">一般的な文庫本のサイズ。岩波文庫、新潮文庫、講談社文庫などのほか、A6判の小型手帳などにも適合。</p>
@@ -53,7 +53,7 @@ function Frame() {
 function Frame1() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 text-black w-full">
-      <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[20px] whitespace-nowrap">How to Use</p>
+      <p className="font-snobby-din leading-[normal] relative shrink-0 text-[20px] whitespace-nowrap">How to Use</p>
       <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[22px] min-w-full relative shrink-0 text-[11px] tracking-[0.22px] w-[min-content]">下のダウンロードボタンから、カバーのデザインデータをダウンロードいただけます。アクセアなどの印刷会社へそのまま入稿できるほか、ご自身でプリントアウトして使うことも可能です。</p>
     </div>
   );
@@ -66,7 +66,7 @@ function Container() {
       <div className="content-stretch flex flex-col gap-[15px] items-start pb-[45px] pt-[15px] px-[20px] relative w-full">
         <div className="content-stretch flex flex-col gap-[10px] items-center relative shrink-0 w-full" data-name="Phone_Item">
           <Frame4 />
-          <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[24px] text-black tracking-[-0.24px] w-full">Type A</p>
+          <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-black tracking-[-0.24px] w-full">Type A</p>
         </div>
         <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[22px] min-w-full relative shrink-0 text-[11px] text-black tracking-[0.22px] w-[min-content]">
           都市空間における熱狂といわゆる「排除」のメカニズムを、記号論のアプローチから解剖した伝説的論考。社会の安定を維持するために、共同体はいかにして「祝祭」という名の合法的な狂気を演出し、大衆の鬱屈を処理してきたのか。演劇的手法を用いて現代社会の虚構性を暴き、日常という名の舞台をハックするための戦略を提示した、アヴァンギャルドな社会学の極北。
@@ -79,7 +79,7 @@ function Container() {
               onClick={() => setIsOpen(!isOpen)}
               className="bg-[#002daa] content-stretch cursor-pointer flex gap-[10px] items-center justify-center px-[16px] py-[10px] relative w-full" data-name="Phone_pull-down-button"
             >
-              <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[24px] text-left text-white tracking-[-0.24px] whitespace-nowrap">DOWNLOAD This Cover Data</p>
+              <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-left text-white tracking-[-0.24px] whitespace-nowrap">DOWNLOAD This Cover Data</p>
               <div className={`content-stretch flex flex-col items-center justify-center relative shrink-0 transition-transform ${isOpen ? "" : "rotate-180"}`} data-name="Arrow Icon">
                 <div className="h-[9.65px] relative w-[13px]">
                   <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13 9.65">
@@ -154,7 +154,7 @@ function Frame2() {
 function Frame3() {
   return (
     <div className="content-stretch flex items-center relative shrink-0 w-full">
-      <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[10px] text-white whitespace-nowrap">@2026 Snobby BOOK Cover</p>
+      <p className="font-snobby-din leading-[normal] relative shrink-0 text-[10px] text-white whitespace-nowrap">@2026 Snobby BOOK Cover</p>
     </div>
   );
 }

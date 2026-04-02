@@ -155,7 +155,7 @@ function Container() {
 function Container2() {
   return (
     <div className="bg-[#002daa] relative shrink-0 w-full" data-name="Container">
-      <div className="content-stretch flex flex-col font-['Hiragino_Mincho_Pro:W3',sans-serif] gap-[15px] items-start not-italic pt-[40px] px-[40px] relative text-white w-full">
+      <div className="content-stretch flex flex-col font-snobby-mincho gap-[15px] items-start not-italic pt-[40px] px-[40px] relative text-white w-full">
         <p className="leading-[40px] relative shrink-0 text-[34px] tracking-[1.02px] w-full" style={{ fontFeatureSettings: "'hwid'" }}>
           「賢い」は作れる。
         </p>
@@ -199,7 +199,7 @@ function Container1() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="content-stretch flex flex-col gap-[15px] items-start p-[15px] relative w-full">
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[30px] text-white tracking-[-0.3px] whitespace-nowrap">STORY</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[30px] text-white tracking-[-0.3px] whitespace-nowrap">STORY</p>
         <StoryContainer />
       </div>
     </div>
@@ -229,13 +229,13 @@ function Frame6() {
 function Container4() {
   return (
     <div className="content-stretch flex gap-[15px] items-start relative shrink-0 w-full" data-name="Container">
-      <Link href="/type/a" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer active:opacity-70 transition-opacity" data-name="Collection Item">
+      <Link href="/type/a" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer transition-all duration-300 hover:brightness-110 active:opacity-70" data-name="Collection Item">
         <Frame4 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type A</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type A</p>
       </Link>
-      <Link href="/type/b" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer active:opacity-70 transition-opacity" data-name="Collection Item">
+      <Link href="/type/b" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer transition-all duration-300 hover:brightness-110 active:opacity-70" data-name="Collection Item">
         <Frame6 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type B</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type B</p>
       </Link>
     </div>
   );
@@ -272,13 +272,13 @@ function Frame8() {
 function Container5() {
   return (
     <div className="content-stretch flex gap-[15px] items-start relative shrink-0 w-full" data-name="Container">
-      <Link href="/type/c" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer active:opacity-70 transition-opacity" data-name="Collection Item">
+      <Link href="/type/c" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer transition-all duration-300 hover:brightness-110 active:opacity-70" data-name="Collection Item">
         <Frame7 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type C</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type C</p>
       </Link>
-      <Link href="/type/d" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer active:opacity-70 transition-opacity" data-name="Collection Item">
+      <Link href="/type/d" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer transition-all duration-300 hover:brightness-110 active:opacity-70" data-name="Collection Item">
         <Frame8 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type D</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type D</p>
       </Link>
     </div>
   );
@@ -315,13 +315,13 @@ function Frame10() {
 function Container6() {
   return (
     <div className="content-stretch flex gap-[15px] items-start relative shrink-0 w-full" data-name="Container">
-      <Link href="/type/e" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer active:opacity-70 transition-opacity" data-name="Collection Item">
+      <Link href="/type/e" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer transition-all duration-300 hover:brightness-110 active:opacity-70" data-name="Collection Item">
         <Frame9 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type E</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type E</p>
       </Link>
-      <Link href="/type/f" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer active:opacity-70 transition-opacity" data-name="Collection Item">
+      <Link href="/type/f" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer transition-all duration-300 hover:brightness-110 active:opacity-70" data-name="Collection Item">
         <Frame10 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type F</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type F</p>
       </Link>
     </div>
   );
@@ -358,13 +358,13 @@ function Frame12() {
 function Container7() {
   return (
     <div className="content-stretch flex gap-[15px] items-start relative shrink-0 w-full" data-name="Container">
-      <Link href="/type/g" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer active:opacity-70 transition-opacity" data-name="Collection Item">
+      <Link href="/type/g" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer transition-all duration-300 hover:brightness-110 active:opacity-70" data-name="Collection Item">
         <Frame11 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type G</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type G</p>
       </Link>
-      <Link href="/type/h" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer active:opacity-70 transition-opacity" data-name="Collection Item">
+      <Link href="/type/h" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-h-px min-w-px relative cursor-pointer transition-all duration-300 hover:brightness-110 active:opacity-70" data-name="Collection Item">
         <Frame12 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type H</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[16px] text-white tracking-[-0.16px] whitespace-nowrap">Type H</p>
       </Link>
     </div>
   );
@@ -382,7 +382,7 @@ function Container3() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="content-stretch flex flex-col gap-[15px] items-start pb-[15px] px-[15px] relative w-full">
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[30px] text-white tracking-[-0.3px] uppercase whitespace-nowrap">Collection</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[30px] text-white tracking-[-0.3px] uppercase whitespace-nowrap">Collection</p>
         <CollectionContainer />
         <CollectionContainer1 />
         <CollectionContainer2 />
@@ -426,7 +426,7 @@ function Frame() {
 function Frame1() {
   return (
     <div className="content-stretch flex items-center relative shrink-0 w-full">
-      <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[10px] text-white whitespace-nowrap">@2026 Snobby BOOK Cover</p>
+      <p className="font-snobby-din leading-[normal] relative shrink-0 text-[10px] text-white whitespace-nowrap">@2026 Snobby BOOK Cover</p>
     </div>
   );
 }

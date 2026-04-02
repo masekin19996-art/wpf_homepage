@@ -143,7 +143,7 @@ function Container2() {
   return (
     <div className="flex-[1_0_0] min-h-px min-w-px relative" data-name="Container">
       <div className="flex flex-col justify-center size-full">
-        <div className="content-stretch flex flex-col font-['Hiragino_Mincho_Pro:W3',sans-serif] gap-[45px] items-start justify-center not-italic p-[90px] relative text-white w-full">
+        <div className="content-stretch flex flex-col font-snobby-mincho gap-[45px] items-start justify-center not-italic p-[90px] relative text-white w-full">
           <p className="leading-[65px] relative shrink-0 text-[64px] tracking-[1.92px] whitespace-nowrap" style={{ fontFeatureSettings: "'hwid'" }}>
             「賢い」は作れる。
           </p>
@@ -190,7 +190,7 @@ function Container1() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="content-stretch flex flex-col gap-[30px] items-start p-[45px] relative w-full">
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[48px] text-white tracking-[-0.48px] whitespace-nowrap">STORY</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[48px] text-white tracking-[-0.48px] whitespace-nowrap">STORY</p>
         <StoryContainer />
       </div>
     </div>
@@ -256,21 +256,21 @@ function Frame7() {
 function CollectionItemsRow() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0 w-full" data-name="Collection Items Row 1">
-      <Link href="/type/a" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link href="/type/a" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
         <Frame4 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type A</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type A</p>
       </Link>
-      <Link href="/type/b" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link href="/type/b" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
         <Frame5 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type B</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type B</p>
       </Link>
-      <Link href="/type/c" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link href="/type/c" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
         <Frame6 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type C</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type C</p>
       </Link>
-      <Link href="/type/d" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link href="/type/d" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
         <Frame7 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type D</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type D</p>
       </Link>
     </div>
   );
@@ -335,21 +335,21 @@ function Frame11() {
 function CollectionItemsRow1() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0 w-full" data-name="Collection Items Row 2">
-      <Link href="/type/e" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link href="/type/e" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
         <Frame8 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type E</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type E</p>
       </Link>
-      <Link href="/type/f" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link href="/type/f" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
         <Frame9 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type F</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type F</p>
       </Link>
-      <Link href="/type/g" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link href="/type/g" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
         <Frame10 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type G</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type G</p>
       </Link>
-      <Link href="/type/h" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link href="/type/h" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:brightness-110" data-name="PcItems">
         <Frame11 />
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type H</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type H</p>
       </Link>
     </div>
   );
@@ -359,7 +359,7 @@ function Container4() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
       <div className="content-stretch flex flex-col gap-[30px] items-start pb-[45px] px-[45px] relative w-full">
-        <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[48px] text-white tracking-[-0.48px] uppercase whitespace-nowrap">Collection</p>
+        <p className="font-snobby-din leading-[normal] relative shrink-0 text-[48px] text-white tracking-[-0.48px] uppercase whitespace-nowrap">Collection</p>
         <CollectionItemsRow />
         <CollectionItemsRow1 />
       </div>
@@ -401,7 +401,7 @@ function Frame() {
 function Frame1() {
   return (
     <div className="content-stretch flex items-center relative shrink-0 w-full">
-      <p className="font-['DIN_Condensed_VF:Regular',sans-serif] font-[350] leading-[normal] relative shrink-0 text-[20px] text-white whitespace-nowrap">@2026 Snobby BOOK Cover</p>
+      <p className="font-snobby-din leading-[normal] relative shrink-0 text-[20px] text-white whitespace-nowrap">@2026 Snobby BOOK Cover</p>
     </div>
   );
 }
