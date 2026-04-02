@@ -18,6 +18,8 @@ export default {
         "spin-slow-reverse": "spinReverse 15s linear infinite",
         "scroll-left": "snobby-scroll-left 30s linear infinite",
         "scroll-right": "snobby-scroll-right 30s linear infinite",
+        "scroll-left-mobile": "snobby-scroll-left-mobile 30s linear infinite",
+        "scroll-right-mobile": "snobby-scroll-right-mobile 30s linear infinite",
       },
       keyframes: {
         float: {
@@ -39,6 +41,14 @@ export default {
         "snobby-scroll-right": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(2530px)" },
+        },
+        "snobby-scroll-left-mobile": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-1272px)" },
+        },
+        "snobby-scroll-right-mobile": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(1272px)" },
         },
       },
     },
