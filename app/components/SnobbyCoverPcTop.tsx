@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import svgPaths from "@/data/snobbyCoverPcSvgPaths";
+import logoSvgPaths from "@/data/snobbyCoverPcLogoSvgPaths";
 import { SNOBBY_MARQUEE_PDF_SRC } from "@/data/snobbyMarqueePdf";
 import SnobbyMarqueePdfModal from "@/components/SnobbyMarqueePdfModal";
 
@@ -174,15 +175,38 @@ function Container({ onOpenMarqueePdf }: { onOpenMarqueePdf: () => void }) {
   );
 }
 
+function LogoComponent() {
+  return (
+    <div className="h-[65px] relative shrink-0 w-[419.2px]" data-name="_レイヤー_1">
+      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 419.2 65">
+        <g clipPath="url(#clip0_snobby_pc_logo)" id="snobby-pc-logo">
+          <path d={logoSvgPaths.p1c81ce80} fill="var(--fill-0, white)" id="Vector" />
+          <path d={logoSvgPaths.pf7a7100} fill="var(--fill-0, white)" id="Vector_2" />
+          <path d={logoSvgPaths.p3dda2a00} fill="var(--fill-0, white)" id="Vector_3" />
+          <path d={logoSvgPaths.p33335800} fill="var(--fill-0, white)" id="Vector_4" />
+          <path d={logoSvgPaths.p207aad80} fill="var(--fill-0, white)" id="Vector_5" />
+          <path d={logoSvgPaths.p33ff2b00} fill="var(--fill-0, white)" id="Vector_6" />
+          <path d={logoSvgPaths.p1e299e80} fill="var(--fill-0, white)" id="Vector_7" />
+          <path d={logoSvgPaths.p3cc5d880} fill="var(--fill-0, white)" id="Vector_8" />
+          <path d={logoSvgPaths.p3d477a00} fill="var(--fill-0, white)" id="Vector_9" />
+        </g>
+        <defs>
+          <clipPath id="clip0_snobby_pc_logo">
+            <rect fill="white" height="65" width="419.2" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  );
+}
+
 function Container2() {
   return (
     <div className="flex-[1_0_0] min-h-px min-w-px relative" data-name="Container">
       <div className="flex flex-col justify-center size-full">
-        <div className="content-stretch flex flex-col font-snobby-mincho gap-[45px] items-start justify-center not-italic p-[90px] relative text-white w-full">
-          <p className="leading-[65px] relative shrink-0 text-[64px] tracking-[1.92px] whitespace-nowrap" style={{ fontFeatureSettings: "'hwid'" }}>
-            「賢い」は作れる。
-          </p>
-          <div className="leading-[0] min-w-full relative shrink-0 text-[18px] tracking-[0.36px] w-[min-content]">
+        <div className="content-stretch flex flex-col gap-[45px] items-start justify-center leading-[0] p-[90px] relative w-full">
+          <LogoComponent />
+          <div className="font-snobby-mincho min-w-full not-italic relative shrink-0 text-[18px] text-white tracking-[0.36px] w-[min-content]">
             <p className="leading-[35px] mb-0">あなたは電車に乗っていて、向かいに座っている人が難しそうな本を読んでいる。</p>
             <p className="leading-[35px] mb-0">そういう人はどこか知的で魅力的だ。</p>
             <p className="leading-[35px] mb-0">しかしこんなサイトを見ているあなたはきっと読書をしても、Instagramの通知ひとつで本を閉じてしまう。</p>
@@ -200,8 +224,8 @@ function Container3() {
   return (
     <div className="flex-[1_0_0] min-h-px min-w-px relative self-stretch" data-name="Container">
       <div className="flex flex-col items-center justify-center size-full">
-        <div className="content-stretch flex flex-col items-center justify-center pl-[30px] pr-[100px] relative size-full">
-          <div className="aspect-[699/654] relative shrink-0 w-full" data-name="page_flip_animation_1 1">
+        <div className="content-stretch flex flex-col items-center justify-center pl-[30px] pr-[80px] relative size-full">
+          <div className="aspect-[699/654] relative shrink-0 w-full" data-name="Image">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
               <img alt="" className="absolute h-[100.2%] left-0 max-w-none top-[-0.21%] w-full" src={imgPageFlipAnimation11} />
             </div>
@@ -214,7 +238,7 @@ function Container3() {
 
 function StoryContainer() {
   return (
-    <div className="bg-[#002daa] content-stretch flex items-start relative rounded-[8px] shrink-0 w-full" data-name="Story Container">
+    <div className="bg-[#002daa] content-stretch flex items-center relative shrink-0 w-full" data-name="Story Container">
       <Container2 />
       <Container3 />
     </div>

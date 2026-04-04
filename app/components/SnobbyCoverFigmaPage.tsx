@@ -4,7 +4,7 @@ import SnobbyCoverPcTop from "./SnobbyCoverPcTop";
 import SnobbyCoverPhoneTop from "./SnobbyCoverPhoneTop";
 
 /**
- * snobbycover サブドメイン用ランディング（Snobby_Cover_web_260331 相当・PC/スマホ切替）
+ * snobbycover ランディング（Snobby-Cover_web PcTop-26-4483 / PhoneTop-26-4479 基板＋マーキーPDF・Collection hover 暗転）
  */
 export default function SnobbyCoverFigmaPage() {
   return (

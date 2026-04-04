@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import svgPaths from "@/data/snobbyCoverPhoneSvgPaths";
+import logoSvgPaths from "@/data/snobbyCoverPhoneLogoSvgPaths";
 import { SNOBBY_MARQUEE_PDF_SRC } from "@/data/snobbyMarqueePdf";
 import SnobbyMarqueePdfModal from "@/components/SnobbyMarqueePdfModal";
 
@@ -181,20 +182,44 @@ function Container({ onOpenMarqueePdf }: { onOpenMarqueePdf: () => void }) {
   );
 }
 
+function PhoneLogoComponent() {
+  return (
+    <div className="h-[35px] relative shrink-0 w-[225.723px]" data-name="_レイヤー_1">
+      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 225.723 35">
+        <g clipPath="url(#clip0_snobby_phone_logo)" id="snobby-phone-logo">
+          <path d={logoSvgPaths.p10b33600} fill="var(--fill-0, white)" id="Vector" />
+          <path d={logoSvgPaths.p544d180} fill="var(--fill-0, white)" id="Vector_2" />
+          <path d={logoSvgPaths.pbec5740} fill="var(--fill-0, white)" id="Vector_3" />
+          <path d={logoSvgPaths.p3e5ee240} fill="var(--fill-0, white)" id="Vector_4" />
+          <path d={logoSvgPaths.p1dc98700} fill="var(--fill-0, white)" id="Vector_5" />
+          <path d={logoSvgPaths.p11c5d600} fill="var(--fill-0, white)" id="Vector_6" />
+          <path d={logoSvgPaths.p3ceba940} fill="var(--fill-0, white)" id="Vector_7" />
+          <path d={logoSvgPaths.p28253a00} fill="var(--fill-0, white)" id="Vector_8" />
+          <path d={logoSvgPaths.p20725d80} fill="var(--fill-0, white)" id="Vector_9" />
+        </g>
+        <defs>
+          <clipPath id="clip0_snobby_phone_logo">
+            <rect fill="white" height="35" width="225.723" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  );
+}
+
 function Container2() {
   return (
-    <div className="bg-[#002daa] relative shrink-0 w-full" data-name="Container">
-      <div className="content-stretch flex flex-col font-snobby-mincho gap-[15px] items-start not-italic pt-[40px] px-[40px] relative text-white w-full">
-        <p className="leading-[40px] relative shrink-0 text-[34px] tracking-[1.02px] w-full" style={{ fontFeatureSettings: "'hwid'" }}>
-          「賢い」は作れる。
-        </p>
-        <div className="leading-[0] relative shrink-0 text-[12px] tracking-[0.24px] w-full">
-          <p className="leading-[24px] mb-0">あなたは電車に乗っていて、向かいに座っている人が難しそうな本を読んでいる。</p>
-          <p className="leading-[24px] mb-0">そういう人はどこか知的で魅力的だ。</p>
-          <p className="leading-[24px] mb-0">しかしこんなサイトを見ているあなたはきっと読書をしても、Instagramの通知ひとつで本を閉じてしまう。</p>
-          <p className="leading-[24px] mb-0">そのままでは電車で見かけたその人のように、知的な魅力を手にすることはできない。</p>
-          <p className="leading-[24px] mb-0">でも大丈夫。ここで自分の読みたい漫画のサイズに合ったブックカバーを印刷して被せれば、あなたはいつでもどこでも「賢い人」になれる。</p>
-          <p className="leading-[24px]">好きな漫画を読みながら、知的な魅力を演出しよう。</p>
+    <div className="relative shrink-0 w-full" data-name="Container">
+      <div className="content-stretch flex flex-col gap-[40px] items-start leading-[0] pt-[55px] px-[40px] relative w-full">
+        <PhoneLogoComponent />
+        <div className="font-snobby-mincho min-w-full not-italic relative shrink-0 text-[13px] text-white tracking-[0.26px] w-[min-content]">
+          <p className="leading-[26px] mb-0">あなたは電車に乗っていて、向かいに座っている人が難しそうな本を読んでいる。</p>
+          <p className="leading-[26px] mb-0">そういう人はどこか知的で魅力的だ。</p>
+          <p className="leading-[26px] mb-0">しかしこんなサイトを見ているあなたはきっと読書をしても、Instagramの通知ひとつで本を閉じてしまう。</p>
+          <p className="leading-[26px] mb-0">そのままでは電車で見かけたその人のように、知的な魅力を手にすることはできない。</p>
+          <p className="leading-[26px] mb-0">でも大丈夫。ここで自分の読みたい漫画のサイズに合ったブックカバーを印刷して被せれば、あなたはいつでもどこでも「賢い人」になれる。</p>
+          <p className="leading-[26px] mb-0">好きな漫画を読みながら、</p>
+          <p className="leading-[26px]">知的な魅力を演出しよう。</p>
         </div>
       </div>
     </div>
@@ -203,11 +228,11 @@ function Container2() {
 
 function Frame5() {
   return (
-    <div className="relative shrink-0 w-full">
-      <div className="content-stretch flex flex-col items-start px-[25px] relative w-full">
-        <div className="aspect-[322/305] relative shrink-0 w-full" data-name="page_flip_animation_1 1">
+    <div className="relative shrink-0 w-full" data-name="Animation Image">
+      <div className="content-stretch flex flex-col items-start px-[40px] relative w-full">
+        <div className="aspect-[352/317] relative shrink-0 w-full">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <img alt="" className="absolute h-[98.98%] left-0 max-w-none top-[0.52%] w-full" src={imgPageFlipAnimation11} />
+            <img alt="" className="absolute h-[104.1%] left-[-0.09%] max-w-none top-[-1.82%] w-full" src={imgPageFlipAnimation11} />
           </div>
         </div>
       </div>
@@ -217,7 +242,7 @@ function Frame5() {
 
 function StoryContainer() {
   return (
-    <div className="bg-[#002daa] content-stretch flex flex-col items-start relative rounded-[5px] shrink-0 w-full" data-name="Story Container">
+    <div className="bg-[#002daa] content-stretch flex flex-col gap-[15px] items-start pb-[20px] relative shrink-0 w-full" data-name="Story Container">
       <Container2 />
       <Frame5 />
     </div>
@@ -410,7 +435,7 @@ function CollectionContainer3() {
 function Container3() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="content-stretch flex flex-col gap-[15px] items-start pb-[15px] px-[15px] relative w-full">
+      <div className="content-stretch flex flex-col gap-[30px] items-start px-[15px] py-[30px] relative w-full">
         <p className="font-snobby-din leading-[normal] relative shrink-0 text-[30px] text-white tracking-[-0.3px] uppercase whitespace-nowrap">Collection</p>
         <CollectionContainer />
         <CollectionContainer1 />
