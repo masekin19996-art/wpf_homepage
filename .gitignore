@@ -1,5 +1,6 @@
 # Dependencies
 node_modules
+snobby-cover-web/dist
 .pnp
 .pnp.js
 
