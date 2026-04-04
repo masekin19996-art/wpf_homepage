@@ -32,7 +32,7 @@ function Frame() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start pt-[30px] relative shrink-0 text-black w-full">
       <p className="font-snobby-din leading-[normal] relative shrink-0 text-[20px] whitespace-nowrap">Size Guide</p>
-      <div className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[0] min-w-full relative shrink-0 text-[0px] tracking-[0.22px] w-[min-content] whitespace-pre-wrap">
+      <div className="font-snobby-mincho font-light leading-[0] min-w-full relative shrink-0 text-[0px] tracking-[0.22px] w-[min-content] whitespace-pre-wrap">
         <p className="[text-decoration-skip-ink:none] decoration-solid leading-[22px] mb-0 text-[11px] underline">文庫判：105 × 148mm</p>
         <p className="leading-[22px] mb-0 text-[11px]">一般的な文庫本のサイズ。岩波文庫、新潮文庫、講談社文庫などのほか、A6判の小型手帳などにも適合。</p>
         <p className="[text-decoration-skip-ink:none] decoration-solid leading-[22px] mb-0 text-[11px] underline">新書判：103 × 182mm</p>
@@ -54,7 +54,7 @@ function Frame1() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 text-black w-full">
       <p className="font-snobby-din leading-[normal] relative shrink-0 text-[20px] whitespace-nowrap">How to Use</p>
-      <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[22px] min-w-full relative shrink-0 text-[11px] tracking-[0.22px] w-[min-content]">下のダウンロードボタンから、カバーのデザインデータをダウンロードいただけます。アクセアなどの印刷会社へそのまま入稿できるほか、ご自身でプリントアウトして使うことも可能です。</p>
+      <p className="font-snobby-mincho font-light leading-[22px] min-w-full relative shrink-0 text-[11px] tracking-[0.22px] w-[min-content]">下のダウンロードボタンから、カバーのデザインデータをダウンロードいただけます。アクセアなどの印刷会社へそのまま入稿できるほか、ご自身でプリントアウトして使うことも可能です。</p>
     </div>
   );
 }
@@ -68,7 +68,7 @@ function Container() {
           <Frame4 />
           <p className="font-snobby-din leading-[normal] relative shrink-0 text-[24px] text-black tracking-[-0.24px] w-full">Type A</p>
         </div>
-        <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[22px] min-w-full relative shrink-0 text-[11px] text-black tracking-[0.22px] w-[min-content]">
+        <p className="font-snobby-mincho font-light leading-[22px] min-w-full relative shrink-0 text-[11px] text-black tracking-[0.22px] w-[min-content]">
           都市空間における熱狂といわゆる「排除」のメカニズムを、記号論のアプローチから解剖した伝説的論考。社会の安定を維持するために、共同体はいかにして「祝祭」という名の合法的な狂気を演出し、大衆の鬱屈を処理してきたのか。演劇的手法を用いて現代社会の虚構性を暴き、日常という名の舞台をハックするための戦略を提示した、アヴァンギャルドな社会学の極北。
           <br aria-hidden="true" />
           という体のブックカバーです。
@@ -103,7 +103,7 @@ function Container() {
                   className="group flex items-center justify-between px-[16px] py-[12px] border-t border-black cursor-pointer hover:bg-black transition-colors"
                   data-name="Phone_pull-down-menu-item"
                 >
-                  <p className="font-['Noto_Sans_JP:Regular',sans-serif] font-normal leading-[normal] relative text-[13px] text-black group-hover:text-white transition-colors">{option.label}</p>
+                  <p className="font-snobby-mincho font-normal leading-[normal] relative text-[13px] text-black group-hover:text-white transition-colors">{option.label}</p>
                   <svg className="w-[20px] h-[20px] opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none">
                     <path d="M12 4L12 16M12 16L8 12M12 16L16 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M4 20H20" stroke="white" strokeWidth="2" strokeLinecap="round"/>

@@ -20,6 +20,9 @@ export default function SnobbyMarqueePdfModal({ open, onClose, src }: Props) {
 
   if (!open) return null;
 
+  const base = src.split("#")[0];
+  const iframeSrc = `${base}#toolbar=0`;
+
   return (
     <div
       className="fixed inset-0 z-[10000] flex items-center justify-center bg-black/75 p-4"
@@ -33,8 +36,8 @@ export default function SnobbyMarqueePdfModal({ open, onClose, src }: Props) {
       >
         ESC
       </button>
-      <div className="relative h-[80vh] w-[80vw] max-h-[90vh] max-w-[90vw] bg-neutral-900 shadow-2xl">
-        <iframe title="PDF" src={src} className="size-full border-0" />
+      <div className="relative h-[80vh] w-[80vw] max-h-[90vh] max-w-[90vw] overflow-hidden bg-white">
+        <iframe title="PDF" src={iframeSrc} className="size-full border-0 bg-white" />
       </div>
     </div>
   );

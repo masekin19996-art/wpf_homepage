@@ -32,7 +32,7 @@ function AboutSection() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full" data-name="About Section">
       <p className="font-snobby-din leading-[normal] relative shrink-0 text-[28px] tracking-[-0.28px] whitespace-nowrap">About</p>
-      <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[30px] min-w-full relative shrink-0 text-[13px] tracking-[0.26px] w-[min-content]">
+      <p className="font-snobby-mincho font-light leading-[30px] min-w-full relative shrink-0 text-[13px] tracking-[0.26px] w-[min-content]">
         都市空間における熱狂といわゆる「排除」のメカニズムを、記号論のアプローチから解剖した伝説的論考。社会の安定を維持するために、共同体はいかにして「祝祭」という名の合法的な狂気を演出し、大衆の鬱屈を処理してきたのか。演劇的手法を用いて現代社会の虚構性を暴き、日常という名の舞台をハックするための戦略を提示した、アヴァンギャルドな社会学の極北。
         <br aria-hidden="true" />
         という体のブックカバーです。
@@ -45,7 +45,7 @@ function HowToUseSection() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full" data-name="How to Use Section">
       <p className="font-snobby-din leading-[normal] relative shrink-0 text-[28px] tracking-[-0.28px] whitespace-nowrap">How to Use</p>
-      <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[30px] min-w-full relative shrink-0 text-[13px] tracking-[0.26px] w-[min-content]">下のダウンロードボタンから、カバーのデザインデータをダウンロードいただけます。アクセアなどの印刷会社へそのまま入稿できるほか、ご自身でプリントアウトして使うことも可能です。</p>
+      <p className="font-snobby-mincho font-light leading-[30px] min-w-full relative shrink-0 text-[13px] tracking-[0.26px] w-[min-content]">下のダウンロードボタンから、カバーのデザインデータをダウンロードいただけます。アクセアなどの印刷会社へそのまま入稿できるほか、ご自身でプリントアウトして使うことも可能です。</p>
     </div>
   );
 }
@@ -79,7 +79,7 @@ function DescriptionSection() {
               onClick={(e) => e.preventDefault()}
               className="group flex items-center justify-between px-[16px] py-[12px] border-b border-black last:border-b-0 cursor-pointer hover:bg-black transition-colors"
             >
-              <span className="font-['Noto_Sans_JP:Light',sans-serif] font-light text-[14px] text-black group-hover:text-white transition-colors">{option.label}</span>
+              <span className="font-snobby-mincho font-light text-[14px] text-black group-hover:text-white transition-colors">{option.label}</span>
               <svg className="w-[18px] h-[18px] opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none">
                 <path d="M12 4L12 16M12 16L8 12M12 16L16 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M4 20H20" stroke="white" strokeWidth="2" strokeLinecap="round"/>
@@ -111,7 +111,7 @@ function SizeGuideSection() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-full items-start min-h-px min-w-px relative text-black" data-name="Size Guide Section">
       <p className="font-snobby-din leading-[normal] relative shrink-0 text-[28px] tracking-[-0.28px] whitespace-nowrap">Size Guide</p>
-      <div className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[0] min-w-full relative shrink-0 text-[0px] tracking-[0.26px] w-[min-content] whitespace-pre-wrap">
+      <div className="font-snobby-mincho font-light leading-[0] min-w-full relative shrink-0 text-[0px] tracking-[0.26px] w-[min-content] whitespace-pre-wrap">
         <p className="[text-decoration-skip-ink:none] decoration-solid leading-[30px] mb-0 text-[13px] underline">文庫判：105 × 148mm</p>
         <p className="leading-[30px] mb-0 text-[13px]">一般的な文庫本のサイズ。岩波文庫、新潮文庫、講談社文庫などのほか、A6判の小型手帳などにも適合。</p>
         <p className="[text-decoration-skip-ink:none] decoration-solid leading-[30px] mb-0 text-[13px] underline">新書判：103 × 182mm</p>

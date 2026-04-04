@@ -420,15 +420,16 @@ html.ftdb-scrollable body {
   user-select: text;
 }
 
-/* Adobe Fonts（Typekit kit dqk2gmh）— キットが公開する Web フォント名 */
+/* Snobby cover — Figma 基板（Barlow Condensed / Shippori Mincho） */
 .font-snobby-din {
-  font-family: "din-condensed-variable", sans-serif;
-  font-variation-settings: "wght" 350;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   font-style: normal;
 }
 .font-snobby-mincho {
-  font-family: "hiragino-mincho-pron", sans-serif;
-  font-weight: 300;
+  font-family: "Shippori Mincho", serif;
+  font-weight: 400;
   font-style: normal;
 }
 
