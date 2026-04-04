@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import svgPaths from "@/data/snobbyCoverPhoneSvgPaths";
+import { SNOBBY_MARQUEE_PDF_SRC } from "@/data/snobbyMarqueePdf";
+import SnobbyMarqueePdfModal from "@/components/SnobbyMarqueePdfModal";
 
 const imgImage1 = "/snobbycover-pc/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
 const imgImage2 = "/snobbycover-pc/ddaf5fd981ce79d1036782c7975f966b502396ab.png";
@@ -46,13 +48,38 @@ function MarqueeBookPhone({
   baseSrc,
   hoverSrc,
   cellClass,
+  onOpenPdf,
 }: {
   baseSrc: string;
   hoverSrc: string;
   cellClass: string;
+  onOpenPdf: () => void;
 }) {
+  const [hovered, setHovered] = useState(false);
+
+  const handleActivate = () => {
+    const needMangaHover =
+      typeof window !== "undefined" && window.matchMedia("(hover: hover)").matches;
+    if (needMangaHover && !hovered) return;
+    onOpenPdf();
+  };
+
   return (
-    <div className={`${cellClass} overflow-hidden group`}>
+    <div
+      className={`${cellClass} overflow-hidden group cursor-pointer`}
+      role="button"
+      tabIndex={0}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={handleActivate}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleActivate();
+        }
+      }}
+      aria-label="マーキーをタップしてPDFを表示"
+    >
       <img
         alt=""
         className={`absolute inset-0 max-w-none object-cover size-full pointer-events-none ${marqueeImgFade} group-hover:opacity-0`}
@@ -67,7 +94,7 @@ function MarqueeBookPhone({
   );
 }
 
-function Frame2() {
+function Frame2({ onOpenMarqueePdf }: { onOpenMarqueePdf: () => void }) {
   const pairIndices = [...MARQUEE_DESIGN_COVERS.keys(), ...MARQUEE_DESIGN_COVERS.keys()];
   return (
     <div className="absolute content-stretch flex gap-[90.48px] items-center left-0 top-0 animate-scroll-left-mobile">
@@ -77,6 +104,7 @@ function Frame2() {
           cellClass={marqueePhoneCellTop}
           baseSrc={MARQUEE_DESIGN_COVERS[slot]}
           hoverSrc={MARQUEE_MANGA_COVERS[slot]}
+          onOpenPdf={onOpenMarqueePdf}
         />
       ))}
     </div>
@@ -122,7 +150,7 @@ function Navbar() {
   );
 }
 
-function Frame3() {
+function Frame3({ onOpenMarqueePdf }: { onOpenMarqueePdf: () => void }) {
   const pairIndices = [...MARQUEE_DESIGN_COVERS.keys(), ...MARQUEE_DESIGN_COVERS.keys()];
   return (
     <div className="absolute content-stretch flex gap-[90.48px] items-center left-[-1271.75px] top-0 animate-scroll-right-mobile">
@@ -132,21 +160,22 @@ function Frame3() {
           cellClass={marqueePhoneCellBottom}
           baseSrc={MARQUEE_DESIGN_COVERS[slot]}
           hoverSrc={MARQUEE_MANGA_COVERS[slot]}
+          onOpenPdf={onOpenMarqueePdf}
         />
       ))}
     </div>
   );
 }
 
-function Container() {
+function Container({ onOpenMarqueePdf }: { onOpenMarqueePdf: () => void }) {
   return (
     <div className="content-stretch flex flex-col h-[649px] items-center justify-between py-[30px] relative shrink-0 w-[1300px]" data-name="Container">
       <div className="h-[85.454px] overflow-clip relative shrink-0 w-[970.149px]" data-name="frame36">
-        <Frame2 />
+        <Frame2 onOpenMarqueePdf={onOpenMarqueePdf} />
       </div>
       <Navbar />
       <div className="h-[85.454px] overflow-clip relative shrink-0 w-[970.149px]" data-name="frame36">
-        <Frame3 />
+        <Frame3 onOpenMarqueePdf={onOpenMarqueePdf} />
       </div>
     </div>
   );
@@ -432,6 +461,8 @@ function Frame1() {
 }
 
 export default function SnobbyCoverPhoneTop() {
+  const [marqueePdfOpen, setMarqueePdfOpen] = useState(false);
+
   useEffect(() => {
     document.documentElement.classList.add("snobbycover-scrollable");
     return () => document.documentElement.classList.remove("snobbycover-scrollable");
@@ -439,6 +470,11 @@ export default function SnobbyCoverPhoneTop() {
 
   return (
     <div className="content-stretch flex flex-col items-center pt-[45px] relative size-full min-h-screen" data-name="Phone_TOP">
+      <SnobbyMarqueePdfModal
+        open={marqueePdfOpen}
+        onClose={() => setMarqueePdfOpen(false)}
+        src={SNOBBY_MARQUEE_PDF_SRC}
+      />
       <video
         autoPlay
         muted
@@ -450,7 +486,7 @@ export default function SnobbyCoverPhoneTop() {
         <source src="/videos/snobbycover-bg.mp4" type="video/mp4" />
       </video>
       <div className="relative z-[1] content-stretch flex flex-col items-center w-full">
-        <Container />
+        <Container onOpenMarqueePdf={() => setMarqueePdfOpen(true)} />
         <Container1 />
         <Container3 />
         <div className="bg-black relative shrink-0 w-full" data-name="PcFooter">
