@@ -1,32 +1,15 @@
-import { defineConfig, type Plugin } from 'vite'
+import { defineConfig } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
-/** Figma Make 外の通常 Vite ビルド用: figma:asset/foo.png → /snobbycover-pc/foo.png */
-function figmaAssetPublicUrl(): Plugin {
-  const prefix = '\0figma-asset:'
-  return {
-    name: 'figma-asset-public-url',
-    resolveId(id) {
-      if (id.startsWith('figma:asset/')) {
-        return prefix + id.slice('figma:asset/'.length)
-      }
-      return null
-    },
-    load(id) {
-      if (id.startsWith(prefix)) {
-        const file = id.slice(prefix.length)
-        return `export default "/snobbycover-pc/${file}"`
-      }
-      return null
-    },
-  }
-}
-
 export default defineConfig({
+  optimizeDeps: {
+    include: ['pdfjs-dist'],
+  },
   plugins: [
-    figmaAssetPublicUrl(),
+    // The React and Tailwind plugins are both required for Make, even if
+    // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
   ],

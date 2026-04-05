@@ -1,93 +1,93 @@
 import svgPaths from "./svg-fsk1rapnl0";
-import imgImage1 from "figma:asset/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
-import imgImage2 from "figma:asset/ddaf5fd981ce79d1036782c7975f966b502396ab.png";
-import imgImage3 from "figma:asset/dabfc8b57e524b6c032d31a63968dc88b0c4ddcc.png";
-import imgImage4 from "figma:asset/31bf7224a75dc4cf12b1b54f930f5c6fcd1c865a.png";
-import imgImage5 from "figma:asset/216527f26b77a26dc101fee4191cdf3117f91333.png";
-import imgImage6 from "figma:asset/16ec4dd2d9b51bb5927bd12fb88057972145a52f.png";
-import imgImage7 from "figma:asset/02793cc22d98336be15c201cd980361daa39d989.png";
-import imgImage8 from "figma:asset/1a913b8f643c48fbc72b906a5fcd5b32b4dd539c.png";
-import imgPageFlipAnimation11 from "figma:asset/6612dcc3fbb4db103577f57022c2a8262b6ab6ed.png";
+import imgImage1 from "../assets/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
+import imgImage2 from "../assets/ddaf5fd981ce79d1036782c7975f966b502396ab.png";
+import imgImage3 from "../assets/dabfc8b57e524b6c032d31a63968dc88b0c4ddcc.png";
+import imgImage4 from "../assets/31bf7224a75dc4cf12b1b54f930f5c6fcd1c865a.png";
+import imgImage5 from "../assets/216527f26b77a26dc101fee4191cdf3117f91333.png";
+import imgImage6 from "../assets/16ec4dd2d9b51bb5927bd12fb88057972145a52f.png";
+import imgImage7 from "../assets/02793cc22d98336be15c201cd980361daa39d989.png";
+import imgImage8 from "../assets/1a913b8f643c48fbc72b906a5fcd5b32b4dd539c.png";
+import imgPageFlipAnimation11 from "../assets/6612dcc3fbb4db103577f57022c2a8262b6ab6ed.png";
 
 function Frame2() {
   return (
-    <div className="absolute content-stretch flex gap-[90.48px] items-center left-0 top-0 animate-scroll-left-mobile">
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 1">
+    <div className="absolute content-stretch flex gap-[65px] items-center left-0 top-0 animate-scroll-left-mobile">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 1">
         <div className="absolute inset-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)]" data-name="image 1">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 2">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 2">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 3">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 3">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 4">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 4">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 5">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 5">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 6">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 6">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 7">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 7">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 8">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 8">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 9">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 9">
         <div className="absolute inset-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)]" data-name="image 1">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 10">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 10">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 11">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 11">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 12">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 12">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 13">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 13">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 14">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 14">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 15">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 15">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 16">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 16">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
         </div>
@@ -137,83 +137,83 @@ function Navbar() {
 
 function Frame3() {
   return (
-    <div className="absolute content-stretch flex gap-[90.48px] items-center left-[-1271.75px] top-0 animate-scroll-right-mobile">
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 1">
+    <div className="absolute content-stretch flex gap-[65px] items-center left-[-1040px] top-0 animate-scroll-right-mobile">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 1">
         <div className="absolute inset-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)]" data-name="image 1">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 2">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 2">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 3">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 3">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 4">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 4">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 5">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 5">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 6">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 6">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 7">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 7">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 8">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 8">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 9">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 9">
         <div className="absolute inset-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)]" data-name="image 1">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 10">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 10">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 11">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 11">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 12">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 12">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 13">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 13">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 14">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 14">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 15">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 15">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
         </div>
       </div>
-      <div className="h-[85.454px] relative shrink-0 w-[55.293px]" data-name="image 16">
+      <div className="h-[100px] relative shrink-0 w-[65px]" data-name="image 16">
         <div className="absolute aspect-[319/494] left-0 right-0 shadow-[0px_2.011px_2.011px_0px_rgba(0,0,0,0.25)] top-0" data-name="image 2">
           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
         </div>
@@ -225,11 +225,11 @@ function Frame3() {
 function Container() {
   return (
     <div className="content-stretch flex flex-col h-[649px] items-center justify-between py-[30px] relative shrink-0 w-[1300px]" data-name="Container">
-      <div className="h-[85.454px] overflow-clip relative shrink-0 w-[970.149px]" data-name="UpperStream">
+      <div className="h-[100px] overflow-clip relative shrink-0 w-[970.149px]" data-name="UpperStream">
         <Frame2 />
       </div>
       <Navbar />
-      <div className="h-[85.454px] overflow-clip relative shrink-0 w-[970.149px]" data-name="LowerStream">
+      <div className="h-[100px] overflow-clip relative shrink-0 w-[970.149px]" data-name="LowerStream">
         <Frame3 />
       </div>
     </div>

@@ -1,67 +1,88 @@
 import svgPaths from "./svg-4647uwwlqn";
 import logoSvgPaths from "./MainContent-3/svg-v5bu1yr7f6";
-import imgImage1 from "figma:asset/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
-import imgImage2 from "figma:asset/ddaf5fd981ce79d1036782c7975f966b502396ab.png";
-import imgImage3 from "figma:asset/dabfc8b57e524b6c032d31a63968dc88b0c4ddcc.png";
-import imgImage4 from "figma:asset/31bf7224a75dc4cf12b1b54f930f5c6fcd1c865a.png";
-import imgImage5 from "figma:asset/216527f26b77a26dc101fee4191cdf3117f91333.png";
-import imgImage6 from "figma:asset/16ec4dd2d9b51bb5927bd12fb88057972145a52f.png";
-import imgImage7 from "figma:asset/02793cc22d98336be15c201cd980361daa39d989.png";
-import imgImage8 from "figma:asset/1a913b8f643c48fbc72b906a5fcd5b32b4dd539c.png";
-import imgPageFlipAnimation11 from "figma:asset/16a460214cc94501b5cc5ddc0d961f99b240f024.png";
+import imgImage1 from "../assets/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
+import imgImage2 from "../assets/ddaf5fd981ce79d1036782c7975f966b502396ab.png";
+import imgImage3 from "../assets/dabfc8b57e524b6c032d31a63968dc88b0c4ddcc.png";
+import imgImage4 from "../assets/31bf7224a75dc4cf12b1b54f930f5c6fcd1c865a.png";
+import imgImage5 from "../assets/216527f26b77a26dc101fee4191cdf3117f91333.png";
+import imgImage6 from "../assets/16ec4dd2d9b51bb5927bd12fb88057972145a52f.png";
+import imgImage7 from "../assets/02793cc22d98336be15c201cd980361daa39d989.png";
+import imgImage8 from "../assets/1a913b8f643c48fbc72b906a5fcd5b32b4dd539c.png";
+import imgStoryBlueSectionCover from "../assets/cover.gif";
+import imgMangaDragonBall from "../assets/cover-marquee-01-dragonball-4ef83bff-edd2-468c-ba67-f5bd2703e8f7.png";
+import imgMangaAkira from "../assets/cover-marquee-02-akira-4d2f304c-2413-4fed-8623-eb43dd3a7d83.png";
+import imgMangaTokyoGirlsBravo from "../assets/cover-marquee-03-tokyo-girls-bravo-8d6dd602-b93a-464a-9109-5ff9c1939476.png";
+import imgMangaEvangelion from "../assets/cover-marquee-04-evangelion-dde986b3-6de8-4891-83db-ba47ce248c52.png";
+import imgMangaSlamDunk from "../assets/cover-marquee-05-slamdunk-2d361dba-6744-4ebb-a26f-6b148be827c2.png";
+import imgMangaNana from "../assets/cover-marquee-06-nana-032ca25c-febe-45d8-bf24-5fc230c60c7b.png";
+import imgMangaAkagi from "../assets/cover-marquee-07-akagi-6a7be211-1812-43b3-8437-20a1129b167c.png";
+import imgMangaKimiNiTodoke from "../assets/cover-marquee-08-kimi-ni-todoke-0ca6801b-1dfa-4aea-ba7e-cec9fa5dfb58.png";
+import { useState } from "react";
+import ReaderPdfOverlay from "../components/ReaderPdfOverlay";
 import { Link } from "react-router";
 
-function Frame2() {
+const marqueeBunkoCovers = [
+  imgImage1,
+  imgImage2,
+  imgImage3,
+  imgImage4,
+  imgImage5,
+  imgImage6,
+  imgImage7,
+  imgImage8,
+];
+
+const marqueeMangaCovers = [
+  imgMangaDragonBall,
+  imgMangaAkira,
+  imgMangaTokyoGirlsBravo,
+  imgMangaEvangelion,
+  imgMangaSlamDunk,
+  imgMangaNana,
+  imgMangaAkagi,
+  imgMangaKimiNiTodoke,
+];
+
+function MarqueeBookPc({
+  bunko,
+  manga,
+  onMangaClick,
+}: {
+  bunko: string;
+  manga: string;
+  onMangaClick: () => void;
+}) {
   return (
-    <div className="absolute content-stretch flex gap-[180px] items-center left-0 top-0 animate-scroll-left">
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
-      </div>
+    <div className="h-[154px] relative shadow-[0px_3px_3px_0px_rgba(0,0,0,0.25)] shrink-0 w-[100px] group overflow-hidden">
+      <img
+        alt=""
+        className="pointer-events-none absolute inset-0 max-w-none object-cover size-full transition-opacity duration-300 ease-out group-hover:opacity-0"
+        src={bunko}
+      />
+      <img
+        alt=""
+        className="pointer-events-none absolute inset-0 max-w-none object-cover size-full opacity-0 transition-opacity duration-300 ease-out group-hover:pointer-events-auto group-hover:cursor-pointer group-hover:opacity-100"
+        src={manga}
+        onClick={(e) => {
+          e.stopPropagation();
+          onMangaClick();
+        }}
+      />
+    </div>
+  );
+}
+
+function Frame2({ onMangaClick }: { onMangaClick: () => void }) {
+  return (
+    <div className="absolute content-stretch flex gap-[130px] items-center left-0 top-0 animate-scroll-left">
+      {Array.from({ length: 16 }, (_, i) => (
+        <MarqueeBookPc
+          key={`left-${i}`}
+          bunko={marqueeBunkoCovers[i % 8]}
+          manga={marqueeMangaCovers[i % 8]}
+          onMangaClick={onMangaClick}
+        />
+      ))}
     </div>
   );
 }
@@ -100,75 +121,41 @@ function Component() {
 function Navbar() {
   return (
     <div className="content-stretch flex flex-col items-center overflow-clip pb-[30px] pt-[35px] relative shrink-0" data-name="Navbar">
-      <Component />
+      <a
+        href="https://home.whenpigsfly.jp/"
+        rel="noopener noreferrer"
+        className="cursor-pointer transition-opacity hover:opacity-80"
+      >
+        <Component />
+      </a>
     </div>
   );
 }
 
-function Frame3() {
+function Frame3({ onMangaClick }: { onMangaClick: () => void }) {
   return (
-    <div className="absolute content-stretch flex gap-[180px] items-center left-[-2530px] top-0 animate-scroll-right">
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage2} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage3} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage4} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage5} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage6} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage7} />
-      </div>
-      <div className="h-[170px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[110px]" data-name="image 2">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
-      </div>
+    <div className="absolute content-stretch flex gap-[130px] items-center left-[-1840px] top-0 animate-scroll-right">
+      {Array.from({ length: 16 }, (_, i) => (
+        <MarqueeBookPc
+          key={`right-${i}`}
+          bunko={marqueeBunkoCovers[i % 8]}
+          manga={marqueeMangaCovers[i % 8]}
+          onMangaClick={onMangaClick}
+        />
+      ))}
     </div>
   );
 }
 
-function Container() {
+function Container({ onMangaClick }: { onMangaClick: () => void }) {
   return (
     <div className="content-stretch flex flex-col h-screen items-center justify-between py-[30px] relative shrink-0 w-full" data-name="Container">
-      <div className="h-[170px] overflow-clip relative shrink-0 w-full" data-name="frame36">
-        <Frame2 />
+      <div className="h-[154px] overflow-clip relative shrink-0 w-full" data-name="frame36">
+        <Frame2 onMangaClick={onMangaClick} />
       </div>
       <Navbar />
-      <div className="h-[170px] overflow-clip relative shrink-0 w-full" data-name="frame36">
-        <Frame3 />
+      <div className="h-[154px] overflow-clip relative shrink-0 w-full" data-name="frame36">
+        <Frame3 onMangaClick={onMangaClick} />
       </div>
     </div>
   );
@@ -203,15 +190,15 @@ function Container2() {
   return (
     <div className="flex-[1_0_0] min-h-px min-w-px relative" data-name="Container">
       <div className="flex flex-col justify-center size-full">
-        <div className="content-stretch flex flex-col gap-[45px] items-start justify-center leading-[0] p-[90px] relative w-full">
+        <div className="content-stretch flex flex-col gap-[45px] items-start justify-center leading-[0] py-[20px] pl-2 pr-3 sm:py-[28px] sm:pl-4 sm:pr-4 md:py-[36px] lg:py-[44px] lg:pl-6 lg:pr-5 relative w-full min-w-0">
           <LogoComponent />
-          <div className="font-['Shippori_Mincho',sans-serif] min-w-full not-italic relative shrink-0 text-[18px] text-white tracking-[0.36px] w-[min-content]">
-            <p className="leading-[35px] mb-0">あなたは電車に乗っていて、向かいに座っている人が難しそうな本を読んでいる。</p>
-            <p className="leading-[35px] mb-0">そういう人はどこか知的で魅力的だ。</p>
-            <p className="leading-[35px] mb-0">しかしこんなサイトを見ているあなたはきっと読書をしても、Instagramの通知ひとつで本を閉じてしまう。</p>
-            <p className="leading-[35px] mb-0">そのままでは電車で見かけたその人のように、知的な魅力を手にすることはできない。</p>
-            <p className="leading-[35px] mb-0">でも大丈夫。ここで自分の読みたい漫画のサイズに合ったブックカバーを印刷して被せれば、あなたはいつでもどこでも「賢い人」になれる。</p>
-            <p className="leading-[35px]">好きな漫画を読みながら、知的な魅力を演出しよう。</p>
+          <div className="font-['Shippori_Mincho',sans-serif] min-w-full not-italic relative shrink-0 text-[17px] text-white tracking-[0.34px] w-[min-content]">
+            <p className="leading-[33px] mb-0">あなたは電車に乗っていて、向かいに座っている人が難しそうな本を読んでいる。</p>
+            <p className="leading-[33px] mb-0">そういう人はどこか知的で魅力的だ。</p>
+            <p className="leading-[33px] mb-0">しかしこんなサイトを見ているあなたはきっと読書をしても、Instagramの通知ひとつで本を閉じてしまう。</p>
+            <p className="leading-[33px] mb-0">そのままでは電車で見かけたその人のように、知的な魅力を手にすることはできない。</p>
+            <p className="leading-[33px] mb-0">でも大丈夫。ここで自分の読みたい漫画のサイズに合ったブックカバーを印刷して被せれば、あなたはいつでもどこでも「賢い人」になれる。</p>
+            <p className="leading-[33px]">好きな漫画を読みながら、知的な魅力を演出しよう。</p>
           </div>
         </div>
       </div>
@@ -223,10 +210,14 @@ function Container3() {
   return (
     <div className="flex-[1_0_0] min-h-px min-w-px relative self-stretch" data-name="Container">
       <div className="flex flex-col items-center justify-center size-full">
-        <div className="content-stretch flex flex-col items-center justify-center pl-[30px] pr-[80px] relative size-full">
-          <div className="aspect-[699/654] relative shrink-0 w-full" data-name="Image">
+        <div className="content-stretch flex flex-col items-center justify-center py-[20px] pl-3 pr-3 sm:py-[28px] sm:pl-4 sm:pr-4 md:py-[36px] lg:py-[44px] lg:pl-5 lg:pr-6 relative size-full min-w-0">
+          <div className="aspect-[1024/960] relative shrink-0 w-full" data-name="Image">
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <img alt="" className="absolute h-[100.2%] left-0 max-w-none top-[-0.21%] w-full" src={imgPageFlipAnimation11} />
+              <img
+                alt=""
+                className="absolute inset-0 size-full max-w-none object-contain object-center"
+                src={imgStoryBlueSectionCover}
+              />
             </div>
           </div>
         </div>
@@ -237,9 +228,11 @@ function Container3() {
 
 function StoryContainer() {
   return (
-    <div className="bg-[#002daa] content-stretch flex items-center relative shrink-0 w-full" data-name="Story Container">
-      <Container2 />
-      <Container3 />
+    <div className="bg-[#002daa] relative flex w-full shrink-0 justify-center px-5 sm:px-8 md:px-12 lg:px-16" data-name="Story Container">
+      <div className="flex w-full max-w-[min(1280px,100%)] min-w-0 flex-row items-center gap-5 md:gap-6 lg:gap-8">
+        <Container2 />
+        <Container3 />
+      </div>
     </div>
   );
 }
@@ -314,19 +307,19 @@ function Frame7() {
 function CollectionItemsRow() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0 w-full" data-name="Collection Items Row 1">
-      <Link to="/type/a" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link to="/type/a" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-[filter] duration-300 hover:brightness-[0.88] active:brightness-[0.88]" data-name="PcItems">
         <Frame4 />
         <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type A</p>
       </Link>
-      <Link to="/type/b" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link to="/type/b" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-[filter] duration-300 hover:brightness-[0.88] active:brightness-[0.88]" data-name="PcItems">
         <Frame5 />
         <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type B</p>
       </Link>
-      <Link to="/type/c" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link to="/type/c" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-[filter] duration-300 hover:brightness-[0.88] active:brightness-[0.88]" data-name="PcItems">
         <Frame6 />
         <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type C</p>
       </Link>
-      <Link to="/type/d" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link to="/type/d" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-[filter] duration-300 hover:brightness-[0.88] active:brightness-[0.88]" data-name="PcItems">
         <Frame7 />
         <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type D</p>
       </Link>
@@ -393,19 +386,19 @@ function Frame11() {
 function CollectionItemsRow1() {
   return (
     <div className="content-stretch flex gap-[15px] items-center relative shrink-0 w-full" data-name="Collection Items Row 2">
-      <Link to="/type/e" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link to="/type/e" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-[filter] duration-300 hover:brightness-[0.88] active:brightness-[0.88]" data-name="PcItems">
         <Frame8 />
         <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type E</p>
       </Link>
-      <Link to="/type/f" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link to="/type/f" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-[filter] duration-300 hover:brightness-[0.88] active:brightness-[0.88]" data-name="PcItems">
         <Frame9 />
         <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type F</p>
       </Link>
-      <Link to="/type/g" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link to="/type/g" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-[filter] duration-300 hover:brightness-[0.88] active:brightness-[0.88]" data-name="PcItems">
         <Frame10 />
         <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type G</p>
       </Link>
-      <Link to="/type/h" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-all duration-300 hover:scale-105 hover:brightness-110 active:scale-95" data-name="PcItems">
+      <Link to="/type/h" className="content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[424px] items-center min-h-px min-w-px relative rounded-[10px] cursor-pointer transition-[filter] duration-300 hover:brightness-[0.88] active:brightness-[0.88]" data-name="PcItems">
         <Frame11 />
         <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[24px] text-white tracking-[-0.24px] w-full">Type H</p>
       </Link>
@@ -416,8 +409,10 @@ function CollectionItemsRow1() {
 function Container4() {
   return (
     <div className="relative shrink-0 w-full" data-name="Container">
-      <div className="content-stretch flex flex-col gap-[30px] items-start pb-[45px] px-[45px] relative w-full">
-        <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[48px] text-white tracking-[-0.48px] uppercase whitespace-nowrap">Collection</p>
+      <div className="content-stretch flex flex-col gap-[30px] items-start pb-[45px] pt-[52px] px-[45px] relative w-full">
+        <p className="font-['Barlow_Condensed',sans-serif] font-medium leading-[0.92] relative shrink-0 text-[48px] text-white tracking-[0.03em] uppercase whitespace-nowrap [font-feature-settings:'kern'_1]">
+          Collection
+        </p>
         <CollectionItemsRow />
         <CollectionItemsRow1 />
       </div>
@@ -428,14 +423,28 @@ function Container4() {
 function Frame() {
   return (
     <div className="content-stretch flex gap-[15px] items-center justify-end relative shrink-0 w-full">
-      <div className="overflow-clip relative shrink-0 size-[25px]" data-name="Social Icons">
+      <a
+        href="https://x.com/a_pig_flying"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="overflow-clip relative shrink-0 size-[25px] cursor-pointer transition-opacity hover:opacity-80"
+        data-name="Social Icons"
+        aria-label="X (formerly Twitter)"
+      >
         <div className="absolute inset-[7.93%_4.17%_9.21%_4.17%]" data-name="Vector">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22.9167 20.7146">
             <path d={svgPaths.p399a3200} fill="var(--fill-0, white)" id="Vector" />
           </svg>
         </div>
-      </div>
-      <div className="overflow-clip relative shrink-0 size-[25px]" data-name="Social Icons">
+      </a>
+      <a
+        href="https://www.instagram.com/wpf.jp/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="overflow-clip relative shrink-0 size-[25px] cursor-pointer transition-opacity hover:opacity-80"
+        data-name="Social Icons"
+        aria-label="Instagram"
+      >
         <div className="absolute inset-[0_0.06%_0.02%_0]" data-name="Vector">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24.9854 24.9951">
             <path d={svgPaths.p29dd8d80} fill="var(--fill-0, white)" id="Vector" />
@@ -451,7 +460,7 @@ function Frame() {
             <path d={svgPaths.p1ff67d00} fill="var(--fill-0, white)" id="Vector" />
           </svg>
         </div>
-      </div>
+      </a>
     </div>
   );
 }
@@ -465,15 +474,27 @@ function Frame1() {
 }
 
 export default function PcTop() {
+  const [readerOpen, setReaderOpen] = useState(false);
+
   return (
     <div className="content-stretch flex flex-col items-center relative size-full" data-name="PC_TOP">
-      <video autoPlay className="absolute max-w-none object-cover size-full" controlsList="nodownload" loop playsInline>
-        <source src="/_videos/v1/be32026e7cf25677f5a3483cdeae14ff5f256ffb" />
+      <video
+        autoPlay
+        className="pointer-events-none fixed inset-0 z-0 h-full w-full object-cover bg-black"
+        controlsList="nodownload"
+        loop
+        muted
+        playsInline
+      >
+        <source src="/videos/snobbycover-bg.mp4" type="video/mp4" />
       </video>
-      <Container />
-      <StoryContainer />
-      <Container4 />
-      <div className="bg-black relative shrink-0 w-full" data-name="PC_Footer">
+      <ReaderPdfOverlay open={readerOpen} onClose={() => setReaderOpen(false)} />
+      <div className="relative z-10 w-full flex flex-col items-center">
+        <Container onMangaClick={() => setReaderOpen(true)} />
+        <StoryContainer />
+        <Container4 />
+      </div>
+      <div className="bg-black relative shrink-0 w-full z-10" data-name="PC_Footer">
         <div className="content-stretch flex flex-col gap-[30px] items-start p-[45px] relative w-full">
           <Frame />
           <Frame1 />

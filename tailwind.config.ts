@@ -5,6 +5,7 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./snobby-web2-src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {

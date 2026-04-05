@@ -1,21 +1,8 @@
 "use client";
 
-import SnobbyCoverPcTop from "./SnobbyCoverPcTop";
-import SnobbyCoverPhoneTop from "./SnobbyCoverPhoneTop";
+import SnobbyWeb2HomePage from "./SnobbyWeb2HomePage";
 
-/**
- * snobbycover ランディング。実装は本リポジトリの `snobby-cover-web/`
- * （Figma エクスポート＋本番同等のマーキーPDF・Collection hover）と同一ロジックの Next 版。
- */
+/** snobbycover サブドメイン — Snobby-Cover_web 2（snobby-web2-src）と同一実装 */
 export default function SnobbyCoverFigmaPage() {
-  return (
-    <>
-      <div className="hidden md:block">
-        <SnobbyCoverPcTop />
-      </div>
-      <div className="md:hidden">
-        <SnobbyCoverPhoneTop />
-      </div>
-    </>
-  );
+  return <SnobbyWeb2HomePage />;
 }

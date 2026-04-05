@@ -1,6 +1,7 @@
 import svgPaths from "./svg-w9ksoh39qg";
-import imgImage8 from "figma:asset/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
+import imgImage8 from "../assets/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
 import { Link } from "react-router";
+import { toast } from "sonner";
 
 function Frame9() {
   return (

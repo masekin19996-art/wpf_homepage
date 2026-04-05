@@ -2,8 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import SnobbyCoverTypeDetailPc from "./SnobbyCoverTypeDetailPc";
-import SnobbyCoverTypeDetailPhone from "./SnobbyCoverTypeDetailPhone";
+import SnobbyWeb2ResponsiveItemDetail from "./SnobbyWeb2ResponsiveItemDetail";
 
 const VALID = new Set(["a", "b", "c", "d", "e", "f", "g", "h"]);
 
@@ -24,14 +23,5 @@ export default function SnobbyCoverTypePageClient({ typeId }: { typeId: string }
     return <div className="min-h-screen bg-black" aria-hidden />;
   }
 
-  return (
-    <>
-      <div className="hidden md:block">
-        <SnobbyCoverTypeDetailPc />
-      </div>
-      <div className="md:hidden">
-        <SnobbyCoverTypeDetailPhone />
-      </div>
-    </>
-  );
+  return <SnobbyWeb2ResponsiveItemDetail typeId={id} />;
 }

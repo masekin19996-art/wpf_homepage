@@ -1,5 +1,5 @@
 import svgPaths from "./svg-7lura2m7jj";
-import imgImage8 from "figma:asset/1a913b8f643c48fbc72b906a5fcd5b32b4dd539c.png";
+import imgImage8 from "../../assets/1a913b8f643c48fbc72b906a5fcd5b32b4dd539c.png";
 import { Link } from "react-router";
 import { useState } from "react";
 

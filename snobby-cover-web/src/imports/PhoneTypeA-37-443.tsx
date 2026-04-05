@@ -1,7 +1,8 @@
 import svgPaths from "./svg-x2iqixtsuj";
-import imgImage1 from "figma:asset/7e54fefff7f475211e360b4f1f885093de587142.png";
+import imgImage1 from "../assets/7e54fefff7f475211e360b4f1f885093de587142.png";
 import { Link } from "react-router";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const SIZE_OPTIONS = [
   { label: "文庫判", id: "bunko" },

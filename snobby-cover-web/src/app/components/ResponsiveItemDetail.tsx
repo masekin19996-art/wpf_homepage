@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import PcTypeA from "../../imports/PcTypeA-2-1/PcTypeA-80-4826";
 import PcTypeB from "../../imports/PcTypeB-2-1/PcTypeB";
@@ -44,6 +45,11 @@ export default function ResponsiveItemDetail() {
 
   const validTypes = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
   const typeId = id?.toLowerCase() || 'a';
+
+  useLayoutEffect(() => {
+    if (!validTypes.includes(typeId)) return;
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [typeId]);
   
   if (!validTypes.includes(typeId)) {
     navigate('/');
@@ -54,16 +60,16 @@ export default function ResponsiveItemDetail() {
   const PhoneComponent = phoneComponents[typeId] || PhoneTypeA;
 
   return (
-    <>
+    <div className="min-w-0 max-w-full overflow-x-hidden">
       {/* PC Version - Hidden on mobile */}
-      <div className="hidden md:block">
+      <div className="hidden min-w-0 max-w-full md:block">
         <PcComponent />
       </div>
 
       {/* Mobile Version - Hidden on desktop */}
-      <div className="block md:hidden">
+      <div className="block min-w-0 max-w-full md:hidden">
         <PhoneComponent />
       </div>
-    </>
+    </div>
   );
 }

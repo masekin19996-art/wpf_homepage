@@ -1,6 +1,7 @@
 import svgPaths from "./svg-4u5d6559k9";
-import imgImage8 from "figma:asset/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
+import imgImage8 from "../assets/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
 import { Link } from "react-router";
+import { toast } from "sonner";
 
 function Frame2() {
   return (
@@ -203,7 +204,9 @@ export default function PcTypeA() {
         </div>
       </div>
       <div className="-translate-x-1/2 absolute bg-black content-stretch flex flex-col items-center left-1/2 overflow-clip pb-[25px] pt-[30px] top-0 w-[1920px]" data-name="PC_Header">
-        <Component />
+        <Link to="/" className="cursor-pointer transition-opacity hover:opacity-80 z-10 block">
+            <Component />
+          </Link>
       </div>
     </div>
   );

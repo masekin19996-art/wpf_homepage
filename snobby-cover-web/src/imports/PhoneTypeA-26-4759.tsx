@@ -1,6 +1,7 @@
 import svgPaths from "./svg-s1zzp3ete4";
-import imgImage1 from "figma:asset/7e54fefff7f475211e360b4f1f885093de587142.png";
+import imgImage1 from "../assets/7e54fefff7f475211e360b4f1f885093de587142.png";
 import { Link } from "react-router";
+import { toast } from "sonner";
 
 function Frame4() {
   return (
@@ -165,7 +166,9 @@ export default function PhoneTypeA() {
       </div>
       <div className="absolute bottom-0 h-[874px] left-[calc(50%+7.5px)] pointer-events-none top-0">
         <div className="-translate-x-1/2 bg-black content-stretch flex flex-col items-center overflow-clip pb-[11px] pointer-events-auto pt-[60px] sticky top-0 w-[500px]" data-name="Phone_Header">
-          <Component />
+          <Link to="/" className="cursor-pointer transition-opacity hover:opacity-80 z-10 block">
+            <Component />
+          </Link>
         </div>
       </div>
     </div>

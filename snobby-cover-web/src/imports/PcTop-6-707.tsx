@@ -1,13 +1,13 @@
 import svgPaths from "./svg-f7039dqko2";
-import imgImage1 from "figma:asset/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
-import imgImage2 from "figma:asset/ddaf5fd981ce79d1036782c7975f966b502396ab.png";
-import imgImage3 from "figma:asset/dabfc8b57e524b6c032d31a63968dc88b0c4ddcc.png";
-import imgImage4 from "figma:asset/31bf7224a75dc4cf12b1b54f930f5c6fcd1c865a.png";
-import imgImage5 from "figma:asset/216527f26b77a26dc101fee4191cdf3117f91333.png";
-import imgImage6 from "figma:asset/16ec4dd2d9b51bb5927bd12fb88057972145a52f.png";
-import imgImage7 from "figma:asset/02793cc22d98336be15c201cd980361daa39d989.png";
-import imgImage8 from "figma:asset/1a913b8f643c48fbc72b906a5fcd5b32b4dd539c.png";
-import imgPageFlipAnimation11 from "figma:asset/6612dcc3fbb4db103577f57022c2a8262b6ab6ed.png";
+import imgImage1 from "../assets/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
+import imgImage2 from "../assets/ddaf5fd981ce79d1036782c7975f966b502396ab.png";
+import imgImage3 from "../assets/dabfc8b57e524b6c032d31a63968dc88b0c4ddcc.png";
+import imgImage4 from "../assets/31bf7224a75dc4cf12b1b54f930f5c6fcd1c865a.png";
+import imgImage5 from "../assets/216527f26b77a26dc101fee4191cdf3117f91333.png";
+import imgImage6 from "../assets/16ec4dd2d9b51bb5927bd12fb88057972145a52f.png";
+import imgImage7 from "../assets/02793cc22d98336be15c201cd980361daa39d989.png";
+import imgImage8 from "../assets/1a913b8f643c48fbc72b906a5fcd5b32b4dd539c.png";
+import imgPageFlipAnimation11 from "../assets/6612dcc3fbb4db103577f57022c2a8262b6ab6ed.png";
 
 function Frame2() {
   return (

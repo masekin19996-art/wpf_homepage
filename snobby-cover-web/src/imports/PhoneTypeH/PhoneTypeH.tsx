@@ -1,14 +1,19 @@
 import svgPaths from "./svg-h2e8o7f6ts";
-import imgImage1 from "figma:asset/1a913b8f643c48fbc72b906a5fcd5b32b4dd539c.png";
+import imgImage1 from "../../assets/1a913b8f643c48fbc72b906a5fcd5b32b4dd539c.png";
 import { Link } from "react-router";
 import { useState } from "react";
+import { toast } from "sonner";
+import { coverPdfHref } from "../../lib/coverPdfHref";
+import { DownloadSizeAnchor } from "../../components/DownloadSizeAnchor";
+
+const COVER_TYPE = "H" as const;
 
 function Frame4() {
   return (
     <div className="bg-[#f6f6f6] h-[385px] relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
-          <div className="h-[280px] relative shadow-[0px_5px_5px_0px_rgba(0,0,0,0.25)] shrink-0 w-[181px]" data-name="image 1">
+          <div className="h-[280px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[181px]" data-name="image 1">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage1} />
           </div>
         </div>
@@ -52,11 +57,11 @@ function Container() {
   const [isOpen, setIsOpen] = useState(false);
 
   const sizes = [
-    { name: "文庫判", file: "bunko.pdf" },
-    { name: "新書判", file: "shinsho.pdf" },
-    { name: "B6判", file: "b6.pdf" },
-    { name: "四六判", file: "shirokunban.pdf" },
-    { name: "A5判", file: "a5.pdf" }
+    { name: "文庫判", size: "bunko" as const },
+    { name: "新書判", size: "shinsho" as const },
+    { name: "B6判", size: "b6" as const },
+    { name: "四六判", size: "46" as const },
+    { name: "A5判", size: "a5" as const },
   ];
 
   return (
@@ -97,20 +102,19 @@ function Container() {
             </div>
           </button>
           {isOpen && (
-            <div className="absolute top-full left-0 w-full bg-white border border-black shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] animate-slide-down z-10">
+            <div className="absolute top-full left-0 z-10 w-full divide-y divide-black border border-black bg-white shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] animate-slide-down">
               {sizes.map((size, index) => (
-                <a
+                <DownloadSizeAnchor
                   key={index}
-                  href={`#download-${size.file}`}
-                  className="block px-[15px] py-[10px] text-[13px] text-black hover:bg-gray-100 transition-colors font-['Inter',sans-serif] font-normal"
-                  onClick={(e) => {
-                    e.preventDefault();
+                  name={size.name}
+                  href={coverPdfHref(COVER_TYPE, size.size)}
+                  download
+                  className="[&>span]:text-[13px]"
+                  onClick={() => {
                     setIsOpen(false);
-                    console.log(`Downloading: ${size.file}`);
+                    toast.success(`「${size.name}」のカバー用PDFをダウンロードしました。`);
                   }}
-                >
-                  {size.name}
-                </a>
+                />
               ))}
             </div>
           )}
@@ -125,14 +129,28 @@ function Container() {
 function Frame2() {
   return (
     <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full">
-      <div className="overflow-clip relative shrink-0 size-[18px]" data-name="Social Icons">
+      <a
+        href="https://x.com/a_pig_flying"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="overflow-clip relative shrink-0 size-[18px] cursor-pointer transition-opacity hover:opacity-80"
+        data-name="Social Icons"
+        aria-label="X (formerly Twitter)"
+      >
         <div className="absolute inset-[7.93%_4.17%_9.21%_4.17%]" data-name="Vector">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.5 14.9145">
             <path d={svgPaths.pd787000} fill="var(--fill-0, white)" id="Vector" />
           </svg>
         </div>
-      </div>
-      <a className="block cursor-pointer overflow-clip relative shrink-0 size-[18px]" data-name="Social Icons" href="https://www.instagram.com/wpf.jp/" target="_blank">
+      </a>
+      <a
+        href="https://www.instagram.com/wpf.jp/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block cursor-pointer overflow-clip relative shrink-0 size-[18px] transition-opacity hover:opacity-80"
+        data-name="Social Icons"
+        aria-label="Instagram"
+      >
         <div className="absolute inset-[0_0.06%_0.02%_0]" data-name="Vector">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 17.9895 17.9965">
             <path d={svgPaths.p18a97b60} fill="var(--fill-0, white)" id="Vector" />
@@ -163,7 +181,7 @@ function Frame3() {
 
 function Component() {
   return (
-    <div className="h-[35px] relative shrink-0 w-[237px]" data-name="_レイヤー_1">
+    <div className="h-[30px] relative shrink-0 w-[203px]" data-name="_レイヤー_1">
       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 237 35">
         <g clipPath="url(#clip0_15_2450)" id="_ã¬ã¤ã¤ã¼_1">
           <path d={svgPaths.p43b2080} fill="var(--fill-0, white)" id="Vector" />
@@ -194,15 +212,15 @@ function Component() {
 
 export default function PhoneTypeH() {
   return (
-    <div className="bg-black content-stretch flex flex-col items-center pt-[105px] relative size-full" data-name="Phone_TypeH">
+    <div className="bg-black content-stretch flex flex-col items-center overflow-x-hidden pt-[54px] relative size-full min-w-0 max-w-full" data-name="Phone_TypeH">
       <Container />
       <div className="bg-black content-stretch flex flex-col gap-[15px] items-start px-[20px] py-[30px] relative shrink-0 w-[402px]" data-name="Phone_Footer">
         <Frame2 />
         <Frame3 />
       </div>
-      <div className="absolute bottom-0 h-[874px] left-[calc(50%+7.5px)] pointer-events-none top-0">
-        <div className="-translate-x-1/2 bg-black content-stretch flex flex-col items-center overflow-clip pb-[11px] pointer-events-auto pt-[60px] sticky top-0 w-[500px]" data-name="Phone_Header">
-          <Link to="/" className="cursor-pointer">
+      <div className="pointer-events-none absolute inset-x-0 top-0">
+        <div className="sticky top-0 z-10 flex w-full items-center justify-center bg-black px-4 py-3 pointer-events-auto" data-name="Phone_Header">
+          <Link to="/" className="inline-flex shrink-0 cursor-pointer transition-opacity hover:opacity-80">
             <Component />
           </Link>
         </div>

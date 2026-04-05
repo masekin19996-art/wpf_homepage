@@ -1,6 +1,5 @@
-/** 本番 Next（SnobbyCoverPcTop / PhoneTop）と同ロジック — react-router 版 */
-import PcTop from "./SnobbyCoverPcTop";
-import PhoneTop from "./SnobbyCoverPhoneTop";
+import PcTop from "../../imports/PcTop-26-4483";
+import PhoneTop from "../../imports/PhoneTop-26-4479";
 
 export default function HomePage() {
   return (

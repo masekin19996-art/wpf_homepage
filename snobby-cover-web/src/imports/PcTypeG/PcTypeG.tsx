@@ -1,14 +1,19 @@
 import svgPaths from "./svg-vanfwvf4er";
-import imgImage8 from "figma:asset/02793cc22d98336be15c201cd980361daa39d989.png";
+import imgImage8 from "../../assets/02793cc22d98336be15c201cd980361daa39d989.png";
 import { Link } from "react-router";
 import { useState } from "react";
+import { toast } from "sonner";
+import { coverPdfHref } from "../../lib/coverPdfHref";
+import { DownloadSizeAnchor } from "../../components/DownloadSizeAnchor";
+
+const COVER_TYPE = "G" as const;
 
 function Frame2() {
   return (
     <div className="bg-[#f6f6f6] h-[750px] relative shrink-0 w-full">
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
-          <div className="h-[589px] relative shadow-[0px_8px_8px_0px_rgba(0,0,0,0.25)] shrink-0 w-[380px]" data-name="image 8">
+          <div className="h-[589px] relative shadow-[0px_3.671px_3.671px_0px_rgba(0,0,0,0.25)] shrink-0 w-[380px]" data-name="image 8">
             <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage8} />
           </div>
         </div>
@@ -23,7 +28,7 @@ function AboutSection() {
       <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] not-italic relative shrink-0 text-[28px] tracking-[-0.28px] whitespace-nowrap">About</p>
       <div className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[0] min-w-full relative shrink-0 text-[13px] tracking-[0.26px] w-[min-content]">
         <p className="leading-[30px] mb-0">アートが美術館という特権的空間を離れ、情報の断片として社会の深層を漂流する時代の表現論。物理的な作品の「美」ではなく、人々の意識の中に「架空の現実」を構築し、既存の価値観を書き換えるための扇動的かつ実験的な手法を提示する。複製技術時代の先にある、情報の伝播そのものを作品化する「ミーム的芸術」の可能性を論じた現代の芸術聖典。</p>
-        <p className="leading-[30px]">という体のブックカバーです。</p>
+        <p className="leading-[30px]">という体のブックカバー。</p>
       </div>
     </div>
   );
@@ -51,11 +56,11 @@ function DescriptionSection() {
   const [isOpen, setIsOpen] = useState(false);
 
   const sizes = [
-    { name: "文庫判", file: "bunko.pdf" },
-    { name: "新書判", file: "shinsho.pdf" },
-    { name: "B6判", file: "b6.pdf" },
-    { name: "四六判", file: "shirokunban.pdf" },
-    { name: "A5判", file: "a5.pdf" }
+    { name: "文庫判", size: "bunko" as const },
+    { name: "新書判", size: "shinsho" as const },
+    { name: "B6判", size: "b6" as const },
+    { name: "四六判", size: "46" as const },
+    { name: "A5判", size: "a5" as const },
   ];
 
   return (
@@ -63,20 +68,18 @@ function DescriptionSection() {
       <InstructionsSection />
       <div className="relative shrink-0 w-full">
         {isOpen && (
-          <div className="absolute bottom-full left-0 mb-[-1px] w-full bg-white border border-black animate-slide-up z-10">
+          <div className="absolute bottom-full left-0 mb-[-1px] w-full divide-y divide-black border border-black bg-white animate-slide-up z-10">
             {sizes.map((size, index) => (
-              <a
+              <DownloadSizeAnchor
                 key={index}
-                href={`#download-${size.file}`}
-                className="block p-[15px] text-[14px] text-black hover:bg-gray-100 transition-colors font-['Noto_Sans_JP:Light',sans-serif]"
-                onClick={(e) => {
-                  e.preventDefault();
+                name={size.name}
+                href={coverPdfHref(COVER_TYPE, size.size)}
+                download
+                onClick={() => {
                   setIsOpen(false);
-                  console.log(`Downloading: ${size.file}`);
+                  toast.success(`「${size.name}」のカバー用PDFをダウンロードしました。`);
                 }}
-              >
-                {size.name}
-              </a>
+              />
             ))}
           </div>
         )}
@@ -165,14 +168,28 @@ function Container() {
 function Frame() {
   return (
     <div className="content-stretch flex gap-[15px] items-center justify-end relative shrink-0 w-full">
-      <div className="overflow-clip relative shrink-0 size-[25px]" data-name="Social Icons">
+      <a
+        href="https://x.com/a_pig_flying"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="overflow-clip relative shrink-0 size-[25px] cursor-pointer transition-opacity hover:opacity-80"
+        data-name="Social Icons"
+        aria-label="X (formerly Twitter)"
+      >
         <div className="absolute inset-[7.93%_4.17%_9.21%_4.17%]" data-name="Vector">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22.9167 20.7146">
             <path d={svgPaths.p399a3200} fill="var(--fill-0, white)" id="Vector" />
           </svg>
         </div>
-      </div>
-      <a className="block cursor-pointer overflow-clip relative shrink-0 size-[25px]" data-name="Social Icons" href="https://www.instagram.com/wpf.jp/" target="_blank">
+      </a>
+      <a
+        href="https://www.instagram.com/wpf.jp/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block cursor-pointer overflow-clip relative shrink-0 size-[25px] transition-opacity hover:opacity-80"
+        data-name="Social Icons"
+        aria-label="Instagram"
+      >
         <div className="absolute inset-[0_0.06%_0.02%_0]" data-name="Vector">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24.9854 24.9951">
             <path d={svgPaths.p29dd8d80} fill="var(--fill-0, white)" id="Vector" />
@@ -203,7 +220,7 @@ function Frame1() {
 
 function Component() {
   return (
-    <div className="h-[50px] relative shrink-0 w-[337px]" data-name="_レイヤー_1">
+    <div className="h-[42px] relative shrink-0 w-[283px]" data-name="_レイヤー_1">
       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 337 50">
         <g clipPath="url(#clip0_11_1874)" id="_ã¬ã¤ã¤ã¼_1">
           <path d={svgPaths.p1602d800} fill="var(--fill-0, white)" id="Vector" />
@@ -234,7 +251,7 @@ function Component() {
 
 export default function PcTypeG() {
   return (
-    <div className="bg-black content-stretch flex flex-col items-center pt-[105px] relative size-full" data-name="PC_TypeG">
+    <div className="bg-black content-stretch flex flex-col items-center overflow-x-hidden pt-[66px] relative size-full min-w-0 max-w-full" data-name="PC_TypeG">
       <Container />
       <div className="bg-black relative shrink-0 w-full" data-name="PC_Footer">
         <div className="content-stretch flex flex-col gap-[30px] items-start p-[45px] relative w-full">
@@ -242,9 +259,9 @@ export default function PcTypeG() {
           <Frame1 />
         </div>
       </div>
-      <div className="absolute bottom-0 h-[1117px] left-1/2 pointer-events-none top-0">
-        <div className="-translate-x-1/2 bg-black content-stretch flex flex-col items-center overflow-clip pb-[25px] pointer-events-auto pt-[30px] sticky top-0 w-[1920px]" data-name="PC_Header">
-          <Link to="/" className="cursor-pointer">
+      <div className="pointer-events-none absolute inset-x-0 top-0">
+        <div className="sticky top-0 z-10 flex w-full items-center justify-center bg-black px-4 py-3 sm:px-8 pointer-events-auto" data-name="PC_Header">
+          <Link to="/" className="inline-flex shrink-0 cursor-pointer transition-opacity hover:opacity-80">
             <Component />
           </Link>
         </div>

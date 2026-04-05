@@ -1,5 +1,5 @@
-import PcTop from "../../imports/PcTop-20-3337";
-import PhoneTop from "../../imports/PhoneTop-20-3333";
+import PcTop from "../../imports/PcTop-26-4483";
+import PhoneTop from "../../imports/PhoneTop-26-4479";
 
 export default function ResponsiveWebsite() {
   return (
