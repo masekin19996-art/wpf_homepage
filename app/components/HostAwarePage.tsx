@@ -3,6 +3,10 @@
 import { useState, useEffect } from "react";
 import WiiMenu from "./WiiMenu";
 import BlankPage from "./BlankPage";
+import HomePasscodeGate from "./HomePasscodeGate";
+
+/** 本番のホーム（Wii メニュー）にパスコードをかける */
+const HOME_WII_HOST = "home.whenpigsfly.jp";
 
 /** このドメインで開いたときは「まっさらなページ」を表示する */
 const BLANK_PAGE_HOSTS = [
@@ -31,5 +35,15 @@ export default function HostAwarePage() {
       />
     );
   }
-  return showWii ? <WiiMenu /> : <BlankPage host={host} />;
+  if (!showWii) {
+    return <BlankPage host={host} />;
+  }
+  if (host === HOME_WII_HOST) {
+    return (
+      <HomePasscodeGate>
+        <WiiMenu />
+      </HomePasscodeGate>
+    );
+  }
+  return <WiiMenu />;
 }
