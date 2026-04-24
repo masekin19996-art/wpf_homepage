@@ -56,22 +56,25 @@ function MarqueeBookPhone({
   onMangaClick: () => void;
 }) {
   return (
-    <div className={`${wrapClassName} group relative overflow-hidden`}>
+    <button
+      type="button"
+      className={`${wrapClassName} group relative cursor-pointer overflow-hidden border-0 bg-transparent p-0 [touch-action:manipulation] [-webkit-tap-highlight-color:transparent]`}
+      onClick={(e) => {
+        e.stopPropagation();
+        onMangaClick();
+      }}
+    >
       <img
         alt=""
-        className="pointer-events-none absolute inset-0 max-w-none object-cover size-full transition-opacity duration-300 ease-out group-hover:opacity-0"
+        className="pointer-events-none absolute inset-0 z-0 max-w-none object-cover size-full"
+        src={imgUrl(manga)}
+      />
+      <img
+        alt=""
+        className="pointer-events-none absolute inset-0 z-10 max-w-none object-cover size-full transition-opacity duration-300 ease-out group-hover:opacity-0 group-active:opacity-0"
         src={imgUrl(bunko)}
       />
-      <img
-        alt=""
-        className="pointer-events-none absolute inset-0 max-w-none object-cover size-full opacity-0 transition-opacity duration-300 ease-out group-hover:pointer-events-auto group-hover:cursor-pointer group-hover:opacity-100"
-        src={imgUrl(manga)}
-        onClick={(e) => {
-          e.stopPropagation();
-          onMangaClick();
-        }}
-      />
-    </div>
+    </button>
   );
 }
 
@@ -206,8 +209,8 @@ function Container2() {
           <p className="leading-[24px] mb-0">しかしこんなサイトを見ているあなたはきっと読書をしても、Instagramの通知ひとつで本を閉じてしまう。</p>
           <p className="leading-[24px] mb-0">そのままでは電車で見かけたその人のように、知的な魅力を手にすることはできない。</p>
           <p className="leading-[24px] mb-0">でも大丈夫。ここで自分の読みたい漫画のサイズに合ったブックカバーを印刷して被せれば、あなたはいつでもどこでも「賢い人」になれる。</p>
-          <p className="leading-[24px] mb-0">好きな漫画を読みながら、</p>
-          <p className="leading-[24px]">知的な魅力を演出しよう。</p>
+          <p className="leading-[24px] mb-0 -mt-2.5">好きな漫画を読みながら、</p>
+          <p className="leading-[24px] -mt-1">知的な魅力を演出しよう。</p>
         </div>
       </div>
     </div>

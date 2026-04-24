@@ -54,22 +54,25 @@ function MarqueeBookPc({
   onMangaClick: () => void;
 }) {
   return (
-    <div className="h-[154px] relative shadow-[0px_3px_3px_0px_rgba(0,0,0,0.25)] shrink-0 w-[100px] group overflow-hidden">
+    <button
+      type="button"
+      className="group relative h-[154px] w-[100px] shrink-0 cursor-pointer overflow-hidden border-0 bg-transparent p-0 shadow-[0px_3px_3px_0px_rgba(0,0,0,0.25)] [touch-action:manipulation] [-webkit-tap-highlight-color:transparent]"
+      onClick={(e) => {
+        e.stopPropagation();
+        onMangaClick();
+      }}
+    >
       <img
         alt=""
-        className="pointer-events-none absolute inset-0 max-w-none object-cover size-full transition-opacity duration-300 ease-out group-hover:opacity-0"
+        className="pointer-events-none absolute inset-0 z-0 max-w-none object-cover size-full"
+        src={imgUrl(manga)}
+      />
+      <img
+        alt=""
+        className="pointer-events-none absolute inset-0 z-10 max-w-none object-cover size-full transition-opacity duration-300 ease-out group-hover:opacity-0 group-active:opacity-0"
         src={imgUrl(bunko)}
       />
-      <img
-        alt=""
-        className="pointer-events-none absolute inset-0 max-w-none object-cover size-full opacity-0 transition-opacity duration-300 ease-out group-hover:pointer-events-auto group-hover:cursor-pointer group-hover:opacity-100"
-        src={imgUrl(manga)}
-        onClick={(e) => {
-          e.stopPropagation();
-          onMangaClick();
-        }}
-      />
-    </div>
+    </button>
   );
 }
 

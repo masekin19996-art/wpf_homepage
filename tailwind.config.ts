@@ -5,7 +5,7 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./snobby-web2-src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./snobby-cover/web2-src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -35,21 +35,22 @@ export default {
           from: { transform: "rotate(360deg)" },
           to: { transform: "rotate(0deg)" },
         },
+        /* 8冊ループ: PC 100+130=230 → 8×230=1840 / モバイル 52+65=117 → 8×117=936 */
         "snobby-scroll-left": {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-2530px)" },
+          to: { transform: "translateX(-1840px)" },
         },
         "snobby-scroll-right": {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(2530px)" },
+          to: { transform: "translateX(1840px)" },
         },
         "snobby-scroll-left-mobile": {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-1272px)" },
+          to: { transform: "translateX(-936px)" },
         },
         "snobby-scroll-right-mobile": {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(1272px)" },
+          to: { transform: "translateX(936px)" },
         },
       },
     },
