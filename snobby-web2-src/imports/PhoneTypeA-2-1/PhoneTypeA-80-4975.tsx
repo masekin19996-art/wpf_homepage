@@ -1,5 +1,6 @@
 import { imgUrl } from "../../imgUrl";
-import imgImage1 from "../../assets/7e54fefff7f475211e360b4f1f885093de587142.png";
+import svgPaths from "../PhoneTypeB-2-1/svg-jah2um0gm2";
+import imgImage1 from "../../assets/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
 import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -139,7 +140,7 @@ function Frame2() {
       >
         <div className="absolute inset-[7.93%_4.17%_9.21%_4.17%]" data-name="Vector">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.5 14.9145">
-            <path d="M16.5 14.9145H0V0H16.5V14.9145Z" fill="var(--fill-0, white)" id="Vector" />
+            <path d={svgPaths.pd787000} fill="white" id="Vector" />
           </svg>
         </div>
       </a>
@@ -153,17 +154,17 @@ function Frame2() {
       >
         <div className="absolute inset-[0_0.06%_0.02%_0]" data-name="Vector">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 17.9895 17.9965">
-            <path d="M17.9895 17.9965H0V0H17.9895V17.9965Z" fill="var(--fill-0, white)" id="Vector" />
+            <path d={svgPaths.p18a97b60} fill="white" id="Vector" />
           </svg>
         </div>
         <div className="absolute inset-[24.32%]" data-name="Vector">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.24609 9.24609">
-            <path d="M9.24609 9.24609H0V0H9.24609V9.24609Z" fill="var(--fill-0, white)" id="Vector" />
+            <path d={svgPaths.p12023800} fill="white" id="Vector" />
           </svg>
         </div>
         <div className="absolute inset-[17.3%_17.3%_70.7%_70.7%]" data-name="Vector">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 2.15859 2.1586">
-            <path d="M2.15859 2.1586H0V0H2.15859V2.1586Z" fill="var(--fill-0, white)" id="Vector" />
+            <path d={svgPaths.p1cee4d00} fill="white" id="Vector" />
           </svg>
         </div>
       </a>
@@ -184,21 +185,21 @@ function Component() {
     <div className="h-[30px] relative shrink-0 w-[203px]" data-name="_レイヤー_1">
       <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 237 35">
         <g clipPath="url(#clip0_15_2450)" id="_ã¬ã¤ã¤ã¼_1">
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_2" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_3" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_4" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_5" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_6" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_7" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_8" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_9" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_10" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_11" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_12" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_13" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_14" />
-          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_15" />
+          <path d={svgPaths.p43b2080} fill="white" id="Vector" />
+          <path d={svgPaths.p2d1e1b80} fill="white" id="Vector_2" />
+          <path d={svgPaths.p3fc17300} fill="white" id="Vector_3" />
+          <path d={svgPaths.p3647d100} fill="white" id="Vector_4" />
+          <path d={svgPaths.pd3d8700} fill="white" id="Vector_5" />
+          <path d={svgPaths.p27658400} fill="white" id="Vector_6" />
+          <path d={svgPaths.p3577f00} fill="white" id="Vector_7" />
+          <path d={svgPaths.p3f8ef440} fill="white" id="Vector_8" />
+          <path d={svgPaths.p35277a00} fill="white" id="Vector_9" />
+          <path d={svgPaths.p68b5a00} fill="white" id="Vector_10" />
+          <path d={svgPaths.p15c78680} fill="white" id="Vector_11" />
+          <path d={svgPaths.p170b8c0} fill="white" id="Vector_12" />
+          <path d={svgPaths.p4ddfa00} fill="white" id="Vector_13" />
+          <path d={svgPaths.p28ce8570} fill="white" id="Vector_14" />
+          <path d={svgPaths.p146a9a40} fill="white" id="Vector_15" />
         </g>
         <defs>
           <clipPath id="clip0_15_2450">
