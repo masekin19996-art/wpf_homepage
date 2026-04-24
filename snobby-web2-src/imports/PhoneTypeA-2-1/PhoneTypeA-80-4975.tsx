@@ -1,6 +1,5 @@
 import { imgUrl } from "../../imgUrl";
-import svgPaths from "../PhoneTypeB-2-1/svg-jah2um0gm2";
-import imgCoverHero from "../../assets/4b2c642b3dee2dfbf48cc77281e1d3c526ef7c8e.png";
+import imgImage1 from "../../assets/7e54fefff7f475211e360b4f1f885093de587142.png";
 import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -15,11 +14,7 @@ function Frame4() {
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
           <div className="h-[280px] relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] shrink-0 w-[181px]" data-name="image 1">
-            <img
-              alt=""
-              className="absolute inset-0 m-auto max-h-full max-w-full object-contain pointer-events-none"
-              src={imgUrl(imgCoverHero)}
-            />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgUrl(imgImage1)} />
           </div>
         </div>
       </div>
@@ -31,7 +26,7 @@ function Frame() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start pt-[30px] relative shrink-0 text-black w-full">
       <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[20px] whitespace-nowrap">Size Guide</p>
-      <div className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[0] min-w-0 w-full max-w-full relative shrink-0 text-[0px] tracking-[0.22px] whitespace-pre-wrap">
+      <div className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[0] min-w-full relative shrink-0 text-[0px] tracking-[0.22px] w-[min-content] whitespace-pre-wrap">
         <p className="[text-decoration-skip-ink:none] decoration-solid leading-[22px] mb-0 text-[11px] underline">文庫判：105 × 148mm</p>
         <p className="leading-[22px] mb-0 text-[11px]">一般的な文庫本のサイズ。岩波文庫、新潮文庫、講談社文庫などのほか、A6判の小型手帳などにも適合。</p>
         <p className="[text-decoration-skip-ink:none] decoration-solid leading-[22px] mb-0 text-[11px] underline">新書判：103 × 182mm</p>
@@ -53,95 +48,7 @@ function Frame1() {
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 text-black w-full">
       <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[20px] whitespace-nowrap">How to Use</p>
-      <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[22px] min-w-0 w-full max-w-full relative shrink-0 text-[11px] tracking-[0.22px]">上のダウンロードボタンから、カバーのデザインデータをダウンロードいただけます。アクセアなどの印刷会社へそのまま入稿できるほか、ご自身でプリントアウトして使うことも可能です。</p>
-    </div>
-  );
-}
-
-/** Type B の Phone_Header / Phone_Footer と同一 SVG（アセット・属性を揃えてモバイル描画を統一） */
-function PhoneFooterSocialRow() {
-  return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full">
-      <a
-        href="https://x.com/a_pig_flying"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="overflow-clip relative shrink-0 size-[18px] cursor-pointer transition-opacity hover:opacity-80"
-        data-name="Social Icons"
-        aria-label="X (formerly Twitter)"
-      >
-        <div className="absolute inset-[7.93%_4.17%_9.21%_4.17%]" data-name="Vector">
-          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.5 14.9145">
-            <path d={svgPaths.pd787000} fill="white" id="Vector" />
-          </svg>
-        </div>
-      </a>
-      <a
-        href="https://www.instagram.com/wpf.jp/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block cursor-pointer overflow-clip relative shrink-0 size-[18px] transition-opacity hover:opacity-80"
-        data-name="Social Icons"
-        aria-label="Instagram"
-      >
-        <div className="absolute inset-[0_0.06%_0.02%_0]" data-name="Vector">
-          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 17.9895 17.9965">
-            <path d={svgPaths.p18a97b60} fill="white" id="Vector" />
-          </svg>
-        </div>
-        <div className="absolute inset-[24.32%]" data-name="Vector">
-          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.24609 9.24609">
-            <path d={svgPaths.p12023800} fill="white" id="Vector" />
-          </svg>
-        </div>
-        <div className="absolute inset-[17.3%_17.3%_70.7%_70.7%]" data-name="Vector">
-          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 2.15859 2.1586">
-            <path d={svgPaths.p1cee4d00} fill="white" id="Vector" />
-          </svg>
-        </div>
-      </a>
-    </div>
-  );
-}
-
-function PhoneFooterCopyright() {
-  return (
-    <div className="content-stretch flex items-center relative shrink-0 w-full">
-      <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[10px] text-white whitespace-nowrap">
-        @2026 Snobby BOOK Cover
-      </p>
-    </div>
-  );
-}
-
-/** PhoneTypeB の `Component` と同一マークアップ（ロゴ表示の互換性） */
-function PhoneHeaderLogo() {
-  return (
-    <div className="h-[30px] relative shrink-0 w-[203px]" data-name="_レイヤー_1">
-      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 237 35">
-        <g clipPath="url(#clip0_15_2450)" id="_ã¬ã¤ã¤ã¼_1">
-          <path d={svgPaths.p43b2080} fill="white" id="Vector" />
-          <path d={svgPaths.p2d1e1b80} fill="white" id="Vector_2" />
-          <path d={svgPaths.p3fc17300} fill="white" id="Vector_3" />
-          <path d={svgPaths.p3647d100} fill="white" id="Vector_4" />
-          <path d={svgPaths.pd3d8700} fill="white" id="Vector_5" />
-          <path d={svgPaths.p27658400} fill="white" id="Vector_6" />
-          <path d={svgPaths.p3577f00} fill="white" id="Vector_7" />
-          <path d={svgPaths.p3f8ef440} fill="white" id="Vector_8" />
-          <path d={svgPaths.p35277a00} fill="white" id="Vector_9" />
-          <path d={svgPaths.p68b5a00} fill="white" id="Vector_10" />
-          <path d={svgPaths.p15c78680} fill="white" id="Vector_11" />
-          <path d={svgPaths.p170b8c0} fill="white" id="Vector_12" />
-          <path d={svgPaths.p4ddfa00} fill="white" id="Vector_13" />
-          <path d={svgPaths.p28ce8570} fill="white" id="Vector_14" />
-          <path d={svgPaths.p146a9a40} fill="white" id="Vector_15" />
-        </g>
-        <defs>
-          <clipPath id="clip0_15_2450">
-            <rect fill="white" height="35" width="237" />
-          </clipPath>
-        </defs>
-      </svg>
+      <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[22px] min-w-full relative shrink-0 text-[11px] tracking-[0.22px] w-[min-content]">上のダウンロードボタンから、カバーのデザインデータをダウンロードいただけます。アクセアなどの印刷会社へそのまま入稿できるほか、ご自身でプリントアウトして使うことも可能です。</p>
     </div>
   );
 }
@@ -164,37 +71,30 @@ function Container() {
           <Frame4 />
           <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[24px] text-black tracking-[-0.24px] w-full">Type A</p>
         </div>
-        <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[22px] min-w-0 w-full max-w-full relative shrink-0 text-[11px] text-black tracking-[0.22px]">
+        <p className="font-['Noto_Sans_JP:Light',sans-serif] font-light leading-[22px] min-w-full relative shrink-0 text-[11px] text-black tracking-[0.22px] w-[min-content]">
           都市空間における熱狂といわゆる「排除」のメカニズムを、記号論のアプローチから解剖した伝説的論考。社会の安定を維持するために、共同体はいかにして「祝祭」という名の合法的な狂気を演出し、大衆の鬱屈を処理してきたのか。演劇的手法を用いて現代社会の虚構性を暴き、日常という名の舞台をハックするための戦略を提示した、アヴァンギャルドな社会学の極北。
           <br aria-hidden="true" />
           という体のブックカバー。
         </p>
-        <div className="relative w-full max-w-[min(100%,300px)] min-w-0 mx-auto sm:mx-0">
+        <div className="relative w-[300px]">
           <button
-            className={`group content-stretch cursor-pointer flex gap-[10px] items-center justify-center px-[16px] py-[10px] relative w-full min-w-0 transition-colors transition-[border-radius] ${
+            className={`content-stretch cursor-pointer flex gap-[10px] items-center justify-center px-[16px] py-[10px] relative w-full transition-all ${
               isOpen
-                ? "rounded-t-md rounded-b-none bg-white border border-black border-b-0"
-                : "rounded-md bg-[#002daa] border border-transparent hover:bg-white hover:border-black"
+                ? 'bg-white border border-black'
+                : 'bg-[#002daa] hover:bg-white hover:border hover:border-black'
             }`}
             data-name="Phone_pull-down-button"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <p
-              className={`font-['Instrument_Serif',sans-serif] tracking-[-0.01em] leading-[normal] not-italic relative shrink-0 text-[clamp(18px,5.5vw,24px)] text-left min-w-0 truncate ${
-                isOpen ? "text-black" : "text-white group-hover:text-black"
-              }`}
-            >
-              DOWNLOAD Cover Data
-            </p>
+            <p className={`font-['Instrument_Serif',sans-serif] tracking-[-0.01em] leading-[normal] not-italic relative shrink-0 text-[24px] text-left whitespace-nowrap ${
+              isOpen ? 'text-black' : 'text-white'
+            }`}>DOWNLOAD Cover Data</p>
             <div className="content-stretch flex flex-col items-center justify-center relative shrink-0" data-name="Arrow Icon">
               <div className="flex items-center justify-center relative shrink-0">
-                <div className={`flex-none transition-transform duration-300 ${isOpen ? "" : "rotate-180"}`}>
+                <div className={`flex-none transition-transform duration-300 ${isOpen ? '' : 'rotate-180'}`}>
                   <div className="h-[9.65px] relative w-[13px]">
                     <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 13 9.65">
-                      <path
-                        d="M6.5 0L13 9.65H0L6.5 0Z"
-                        className={isOpen ? "fill-black" : "fill-white group-hover:fill-black"}
-                      />
+                      <path d="M6.5 0L13 9.65H0L6.5 0Z" fill={isOpen ? "black" : "white"} id="Polygon 1" />
                     </svg>
                   </div>
                 </div>
@@ -202,7 +102,7 @@ function Container() {
             </div>
           </button>
           {isOpen && (
-            <div className="absolute top-full left-0 right-0 z-10 w-full -mt-px divide-y divide-black rounded-b-md border border-t-0 border-black bg-white shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] animate-slide-down">
+            <div className="absolute top-full left-0 z-10 w-full divide-y divide-black border border-black bg-white shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] animate-slide-down">
               {sizes.map((size, index) => (
                 <DownloadSizeAnchor
                   key={index}
@@ -226,18 +126,102 @@ function Container() {
   );
 }
 
+function Frame2() {
+  return (
+    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full">
+      <a
+        href="https://x.com/a_pig_flying"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="overflow-clip relative shrink-0 size-[18px] cursor-pointer transition-opacity hover:opacity-80"
+        data-name="Social Icons"
+        aria-label="X (formerly Twitter)"
+      >
+        <div className="absolute inset-[7.93%_4.17%_9.21%_4.17%]" data-name="Vector">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.5 14.9145">
+            <path d="M16.5 14.9145H0V0H16.5V14.9145Z" fill="var(--fill-0, white)" id="Vector" />
+          </svg>
+        </div>
+      </a>
+      <a
+        href="https://www.instagram.com/wpf.jp/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block cursor-pointer overflow-clip relative shrink-0 size-[18px] transition-opacity hover:opacity-80"
+        data-name="Social Icons"
+        aria-label="Instagram"
+      >
+        <div className="absolute inset-[0_0.06%_0.02%_0]" data-name="Vector">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 17.9895 17.9965">
+            <path d="M17.9895 17.9965H0V0H17.9895V17.9965Z" fill="var(--fill-0, white)" id="Vector" />
+          </svg>
+        </div>
+        <div className="absolute inset-[24.32%]" data-name="Vector">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.24609 9.24609">
+            <path d="M9.24609 9.24609H0V0H9.24609V9.24609Z" fill="var(--fill-0, white)" id="Vector" />
+          </svg>
+        </div>
+        <div className="absolute inset-[17.3%_17.3%_70.7%_70.7%]" data-name="Vector">
+          <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 2.15859 2.1586">
+            <path d="M2.15859 2.1586H0V0H2.15859V2.1586Z" fill="var(--fill-0, white)" id="Vector" />
+          </svg>
+        </div>
+      </a>
+    </div>
+  );
+}
+
+function Frame3() {
+  return (
+    <div className="content-stretch flex items-center relative shrink-0 w-full">
+      <p className="font-['Barlow_Condensed',sans-serif] font-medium tracking-[-0.02em] leading-[normal] relative shrink-0 text-[10px] text-white whitespace-nowrap">@2026 Snobby BOOK Cover</p>
+    </div>
+  );
+}
+
+function Component() {
+  return (
+    <div className="h-[30px] relative shrink-0 w-[203px]" data-name="_レイヤー_1">
+      <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 237 35">
+        <g clipPath="url(#clip0_15_2450)" id="_ã¬ã¤ã¤ã¼_1">
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_2" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_3" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_4" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_5" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_6" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_7" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_8" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_9" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_10" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_11" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_12" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_13" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_14" />
+          <path d="M237 35H0V0H237V35Z" fill="var(--fill-0, white)" id="Vector_15" />
+        </g>
+        <defs>
+          <clipPath id="clip0_15_2450">
+            <rect fill="white" height="35" width="237" />
+          </clipPath>
+        </defs>
+      </svg>
+    </div>
+  );
+}
+
 export default function PhoneTypeA() {
   return (
-    <div className="bg-black content-stretch flex flex-col items-center overflow-x-hidden pt-[54px] relative w-full min-w-0 max-w-full" data-name="Phone_TypeA">
+    <div className="bg-black content-stretch flex flex-col items-center overflow-x-hidden pt-[54px] relative size-full min-w-0 max-w-full" data-name="Phone_TypeA">
       <Container />
-      <div className="bg-black content-stretch flex flex-col gap-[15px] items-start px-[20px] py-[30px] relative w-full max-w-[402px] shrink-0" data-name="Phone_Footer">
-        <PhoneFooterSocialRow />
-        <PhoneFooterCopyright />
+      <div className="bg-black content-stretch flex flex-col gap-[15px] items-start px-[20px] py-[30px] relative shrink-0 w-[402px]" data-name="Phone_Footer">
+        <Frame2 />
+        <Frame3 />
       </div>
       <div className="pointer-events-none absolute inset-x-0 top-0">
         <div className="sticky top-0 z-10 flex w-full items-center justify-center bg-black px-4 py-3 pointer-events-auto" data-name="Phone_Header">
           <Link href="/" className="inline-flex shrink-0 cursor-pointer transition-opacity hover:opacity-80">
-            <PhoneHeaderLogo />
+            <Component />
           </Link>
         </div>
       </div>

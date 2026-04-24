@@ -15,11 +15,7 @@ function Frame2() {
       <div className="flex flex-row items-center justify-center size-full">
         <div className="content-stretch flex items-center justify-center p-[10px] relative size-full">
           <div className="h-[589px] relative shadow-[0px_3.671px_3.671px_0px_rgba(0,0,0,0.25)] shrink-0 w-[380px]" data-name="image 8">
-            <img
-              alt=""
-              className="absolute inset-0 m-auto max-h-full max-w-full object-contain pointer-events-none"
-              src={imgUrl(imgImage8)}
-            />
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgUrl(imgImage8)} />
           </div>
         </div>
       </div>
@@ -72,9 +68,9 @@ function DescriptionSection() {
   return (
     <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-between min-h-px min-w-px relative" data-name="Description Section">
       <InstructionsSection />
-      <div className="relative min-w-0 w-full max-w-full">
+      <div className="relative shrink-0 w-full">
         {isOpen && (
-          <div className="absolute bottom-full left-0 right-0 z-10 mb-[-1px] w-full divide-y divide-black rounded-t-md border border-b-0 border-black bg-white animate-slide-up">
+          <div className="absolute bottom-full left-0 mb-[-1px] w-full divide-y divide-black border border-black bg-white animate-slide-up z-10">
             {sizes.map((size, index) => (
               <DownloadSizeAnchor
                 key={index}
@@ -90,34 +86,27 @@ function DescriptionSection() {
           </div>
         )}
         <button
-          className={`group cursor-pointer relative w-full min-w-0 transition-colors ${
+          className={`cursor-pointer relative w-full transition-all ${
             isOpen
-              ? "rounded-b-md rounded-t-none bg-white border border-black border-t-0"
-              : "rounded-md bg-[#002daa] border border-transparent hover:bg-white hover:border-black"
+              ? 'bg-white border border-black'
+              : 'bg-[#002daa] hover:bg-white hover:border hover:border-black'
           }`}
           data-name="PC_pull-down-button"
           onClick={() => setIsOpen(!isOpen)}
         >
           <div className="flex flex-row items-center justify-center overflow-clip rounded-[inherit] size-full">
-            <div className="content-stretch flex gap-[10px] items-center justify-center px-[16px] py-[10px] relative w-full min-w-0">
-              <p
-                className={`font-['Instrument_Serif',sans-serif] tracking-[-0.01em] leading-[normal] not-italic relative min-w-0 text-[clamp(18px,2.2vw,28px)] text-left ${
-                  isOpen ? "text-black" : "text-white group-hover:text-black"
-                }`}
-              >
-                DOWNLOAD Cover Data
-              </p>
-              <div className="flex shrink-0 items-center justify-center relative">
-                <div className={`flex-none transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}>
+            <div className="content-stretch flex gap-[10px] items-center justify-center px-[16px] py-[10px] relative w-full">
+              <p className={`font-['Instrument_Serif',sans-serif] tracking-[-0.01em] leading-[normal] not-italic relative shrink-0 text-[28px] text-left whitespace-nowrap ${
+                isOpen ? 'text-black' : 'text-white group-hover:text-black'
+              }`}>DOWNLOAD Cover Data</p>
+              <div className="flex items-center justify-center relative shrink-0">
+                <div className={`flex-none transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
                   <div className="content-stretch flex flex-col items-center justify-center relative" data-name="Down Arrow">
                     <div className="flex items-center justify-center relative shrink-0">
                       <div className="flex-none rotate-180">
                         <div className="h-[14.846px] relative w-[20px]">
                           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 14.8462">
-                            <path
-                              d="M10 0L20 14.8462H0L10 0Z"
-                              className={isOpen ? "fill-black" : "fill-white group-hover:fill-black"}
-                            />
+                            <path d="M10 0L20 14.8462H0L10 0Z" fill={isOpen ? "black" : "white"} id="Polygon 1" />
                           </svg>
                         </div>
                       </div>

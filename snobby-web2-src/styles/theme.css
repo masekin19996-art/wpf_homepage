@@ -179,7 +179,7 @@
     line-height: 1.5;
   }
 
-  /* Marquee: 8冊ループ PC 230px×8=1840 / モバイル 117px×8=936（tailwind.config と一致） */
+  /* Marquee: 8-book loop, book 100px + gap 130px = 230px → 8×230 = 1840px */
   @keyframes scroll-left {
     from {
       transform: translateX(0);
@@ -198,6 +198,7 @@
     }
   }
 
+  /* Mobile: book 52px + gap 65px = 117px → 8×117 = 936px */
   @keyframes scroll-left-mobile {
     from {
       transform: translateX(0);

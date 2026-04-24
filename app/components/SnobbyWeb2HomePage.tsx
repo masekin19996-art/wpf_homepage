@@ -11,19 +11,13 @@ export default function SnobbyWeb2HomePage() {
     return () => document.documentElement.classList.remove("snobbycover-scrollable");
   }, []);
 
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.location.hostname.includes("snobbycover")) {
-      document.title = "snobbybookcover";
-    }
-  }, []);
-
   return (
     <>
       <Toaster richColors position="top-center" />
-      <div className="hidden min-w-0 w-full max-w-[100vw] overflow-x-hidden md:block">
+      <div className="hidden md:block">
         <PcTop />
       </div>
-      <div className="min-w-0 w-full max-w-[100vw] overflow-x-hidden md:hidden">
+      <div className="md:hidden">
         <PhoneTop />
       </div>
     </>
