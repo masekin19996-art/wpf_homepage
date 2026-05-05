@@ -2,8 +2,18 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Wii Menu",
-  description: "A Wii-inspired portfolio menu",
+  title: "Snobby Book Cover",
+  description: "A book cover that makes you look smart",
+  openGraph: {
+    title: "Snobby Book Cover",
+    description: "A book cover that makes you look smart",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Snobby Book Cover",
+    description: "A book cover that makes you look smart",
+  },
 };
 
 export default function RootLayout({
